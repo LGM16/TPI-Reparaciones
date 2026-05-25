@@ -14,11 +14,14 @@ public:
 
     Tecnico();
 
-    //Setters y Getters
+    //Setters
 
     void setIdTecnico(int idTecnico);
     void setUsuario(std::string usuario);
     void setContrasenia(std::string contrasenia);
+
+    //Getters
+
     int getIdTecnico(){return _idTecnico;};
     std::string getUsuario(){return _usuario;};
     std::string getContrasenia(){return _contrasenia;};

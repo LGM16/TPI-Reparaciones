@@ -21,7 +21,7 @@ public:
 
     Cliente();
 
-    //Setters y Getters
+    //Setters
 
     void setIdCliente(int idCliente);
     void setTipoCliente(int tipoCliente);
@@ -29,12 +29,15 @@ public:
     void setEmail(std::string email);
     void setDireccion(std::string direccion);
     void setEstado(bool estado);
-    int getIdCliente(){return _idCliente;};
-    int getTipoCliente(){return _tipoCliente;};
-    std::string getTelefono(){return _telefono;};
-    std::string getEmail(){return _email;};
-    std::string getDireccion(){return _direccion;};
-    bool getEstado(){return _estado;};
+
+    //Getters
+
+    int getIdCliente(){return _idCliente;}
+    int getTipoCliente(){return _tipoCliente;}
+    std::string getTelefono(){return _telefono;}
+    std::string getEmail(){return _email;}
+    std::string getDireccion(){return _direccion;}
+    bool getEstado(){return _estado;}
 
     //Metodos
 
