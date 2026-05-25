@@ -1,3 +1,3 @@
-#include <iostream
+#include <iostream>
 using namespace std;
 #include "Equipo.h"

@@ -30,14 +30,19 @@ sistema
 
 
 #include <iostream>
-//#include "Cliente.h"
-// #include "Equipo.h"
-// #include "Reparacion.h"
+#include "Persona.h"
+#include "Cliente.h"
+//#include "Equipo.h"
+//#include "Reparacion.h"
 
 using namespace std;
 
 int main() {
-    cout << "Hello, putaso! c:" << endl;
+    //cout << "Hello, putaso! c:" << endl;
+    Persona p;
+    p.cargar();
+    p.mostrar();
+
     return 0;
 }
 

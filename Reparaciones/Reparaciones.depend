@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1779745990 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
+	<iostream>
+	"Cliente.h"
+
+1779746040 f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.h
+	"Persona.h"
+
+1779727580 f:\lucas\documents\programacion 2\tpi\reparaciones\persona.h
+	<string>
+
+1779406140 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
+	<iostream>
+
+1779744342 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
+	<iostream>
+	"Persona.h"
+
+1779406865 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.cpp
+	<iostream>
+	"Tecnico.h"
+
+1779727622 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.h
+	"Persona.h"
+
+1779746109 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.cpp
+	<iostream>
+	"Equipo.h"
+
+1779406611 f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.h
+

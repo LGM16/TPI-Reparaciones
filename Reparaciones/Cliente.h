@@ -43,4 +43,5 @@ public:
 
     void cargar();
     void mostrar();
+    bool validarTipoCliente(int tipoCliente);
 };
