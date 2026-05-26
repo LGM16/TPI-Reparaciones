@@ -5,6 +5,7 @@ teléfono, un email, la dirección y el tipo de cliente (1: particular; 2: empre
 
 #pragma once
 #include "Persona.h"
+
 class Cliente: public Persona{
 private:
 
