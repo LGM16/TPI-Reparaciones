@@ -97,6 +97,7 @@ void Cliente::cargar(){
     setDireccion(direccion);
 }
 
+// TODO ESTO (CARGAR Y MOSTRAR) VA EN MANAGER, NO EN LA CLASE
 void Cliente::mostrar(){
     Persona::mostrar();
     cout << "ID del Cliente: " << getIdCliente() << endl;
