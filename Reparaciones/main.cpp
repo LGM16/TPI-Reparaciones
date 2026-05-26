@@ -39,10 +39,14 @@ using namespace std;
 
 int main() {
     //cout << "Hello, putaso! c:" << endl;
+    /*
     Persona p;
     p.cargar();
     p.mostrar();
-
+    */
+    Cliente c;
+    c.cargar();
+    c.mostrar();
     return 0;
 }
 

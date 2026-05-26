@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1779745990 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
+1779757707 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
 	<iostream>
 	"Cliente.h"
 
@@ -9,8 +9,10 @@
 1779727580 f:\lucas\documents\programacion 2\tpi\reparaciones\persona.h
 	<string>
 
-1779406140 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
+1779757747 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
 	<iostream>
+	"Persona.h"
+	"Cliente.h"
 
 1779744342 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
 	<iostream>

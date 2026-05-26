@@ -29,12 +29,14 @@ void Persona::setApellido(string apellido){
 //Metodos
 
 void Persona::cargar(){
-    cout << "Apellido: " << endl;
-    cin >> _apellido;
-    cout << "Nombre: " << endl;
-    cin >> _nombre;
-    cout << "CUIT: " << endl;
-    cin >> _cuit;
+    string cuit, nombre, apellido
+    cout << "Apellido: ";
+    cin >> apellido;
+    setApellido();
+    cout << "Nombre: ";
+    cin >> nombre;
+    cout << "CUIT: ";
+    cin >> cuit;
 }
 
 void Persona::mostrar(){

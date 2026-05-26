@@ -25,7 +25,7 @@ void Cliente::setIdCliente(int idCliente){
 }
 
 void Cliente::setTipoCliente(int tipoCliente){
-    
+
     if(tipoCliente == 1 || tipoCliente == 2){
         _tipoCliente = tipoCliente;
     }
@@ -41,7 +41,7 @@ void Cliente::setTipoCliente(int tipoCliente){
         _tipoCliente = 1;
     }
     */
-    
+
 }
 
 void Cliente::setTelefono(string telefono){
@@ -100,7 +100,7 @@ void Cliente::cargar(){
 void Cliente::mostrar(){
     Persona::mostrar();
     cout << "ID del Cliente: " << getIdCliente() << endl;
-    
+
     if(getTipoCliente() == 1){
         cout << "Tipo de Cliente: Particular" << endl;
     }
@@ -109,8 +109,7 @@ void Cliente::mostrar(){
             cout << "Tipo de Cliente: Empresa" << endl;
         }
     }
-    }
-    
+
     cout << "Telefono de Cliente: " << getTelefono() << endl;
     cout << "Email de Cliente: " << getEmail() << endl;
     cout << "Direccion de Cliente: " << getDireccion() << endl;
