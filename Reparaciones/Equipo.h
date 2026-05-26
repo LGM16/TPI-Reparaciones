@@ -7,7 +7,15 @@ periférico, etc.
 */
 
 #pragma once
+#include <string>
+
 class Equipo{
 private:
+
+    int _numeroEquipo;
+    std::string _descripcion;
+    std::string _marca;
+    std::string _tipoEquipo;
+    
 public:
 };
