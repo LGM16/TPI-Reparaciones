@@ -7,15 +7,49 @@ periférico, etc.
 */
 
 #pragma once
-#include <string>
+#include "Tecnico.h"
+#include "Cliente.h"
+#include "Fecha.h"
 
 class Equipo{
 private:
 
-    int _numeroEquipo;
+    int _idEquipo;
+    Tecnico _idTecnico;
+    Cliente _idCliente;
     std::string _descripcion;
     std::string _marca;
     std::string _tipoEquipo;
+    Fecha _fechaIngreso;
+    bool _estado = true;
     
 public:
+
+    //Constructores
+
+    Equipo();
+
+    //Setters
+
+    void setIdEquipo(int idEquipo);
+    void setIdTecnico(Tecnico idTecnico);
+    void setIdCliente(Cliente idCliente);
+    void setDescripcion(std::string descripcion);
+    void setMarca(std::string marca);
+    void setTipoEquipo(std::string tipoEquipo);
+    void setFechaIngreso(Fecha fechaIngreso);
+    void setEstado(bool estado);
+
+    //Getters
+
+    int getIdEquipo();
+    Tecnico getIdTecnico();
+    Cliente getIdCliente();
+    std::string getDescripcion();
+    std::string getMarca();
+    std::string getTipoEquipo();
+    Fecha getFechaIngreso();
+    bool getEstado();
+
+    //Metodos
 };
