@@ -16,6 +16,7 @@ Cliente::Cliente(){
 //Setters
 
 void Cliente::setIdCliente(int idCliente){
+    
     if(idCliente > 0){
         _idCliente = idCliente;
     }
