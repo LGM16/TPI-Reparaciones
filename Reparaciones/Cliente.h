@@ -13,7 +13,7 @@ private:
     std::string _telefono;
     std::string _email;
     std::string _direccion;
-    bool _estado;
+    bool _estado = true;
 
 public:
 
