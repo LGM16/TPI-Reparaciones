@@ -2,8 +2,8 @@
 using namespace std;
 #include "ArchivoCliente.h"
 
-//Constructor
+///Constructor
 
-//Setters
+///Setters
 
-//Metodos
+///Metodos

@@ -2,8 +2,8 @@
 using namespace std;
 #include "Fecha.h"
 
-//Constructor
+///Constructor
 
-//Setters
+///Setters
 
-//Metodos
+///Metodos

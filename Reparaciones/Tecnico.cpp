@@ -2,7 +2,7 @@
 using namespace std;
 #include "Tecnico.h"
 
-//Constructores
+///Constructores
 
 Tecnico::Tecnico(){
     setIdTecnico(1);
@@ -10,7 +10,7 @@ Tecnico::Tecnico(){
     setContrasenia("");
 }
 
-//Setters
+///Setters
 
 void Tecnico::setIdTecnico(int idTecnico){
     if(idTecnico > 0){

@@ -2,8 +2,8 @@
 using namespace std;
 #include "Reparacion.h"
 
-//Constructor
+///Constructor
 
-//Setters
+///Setters
 
-//Metodos
+///Metodos

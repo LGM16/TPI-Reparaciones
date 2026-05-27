@@ -9,7 +9,8 @@ teléfono, un email, la dirección y el tipo de cliente (1: particular; 2: empre
 class Cliente: public Persona{
 private:
 
-    int _idCliente;
+    int _idCliente; // hacerlo autoincremental
+    
     int _tipoCliente; //1: particular; 2: empresa
     std::string _telefono;
     std::string _email;
@@ -18,11 +19,11 @@ private:
 
 public:
 
-    //Constructores
+    ///Constructores
 
     Cliente();
 
-    //Setters
+    ///Setters
 
     void setIdCliente(int idCliente);
     void setTipoCliente(int tipoCliente);
@@ -31,7 +32,7 @@ public:
     void setDireccion(std::string direccion);
     void setEstado(bool estado);
 
-    //Getters
+    ///Getters
 
     int getIdCliente(){return _idCliente;}
     int getTipoCliente(){return _tipoCliente;}
@@ -40,7 +41,7 @@ public:
     std::string getDireccion(){return _direccion;}
     bool getEstado(){return _estado;}
 
-    //Metodos
+    ///Metodos
 
     void cargar();
     void mostrar();

@@ -4,7 +4,7 @@
 using namespace std;
 #include "Persona.h"
 
-//Constructores
+///Constructores
 
 Persona::Persona(){
     setCuit("");
@@ -12,7 +12,7 @@ Persona::Persona(){
     setApellido("");
 }
 
-//Setters
+///Setters
 
 void Persona::setCuit(string cuit){
     _cuit = cuit;
@@ -26,7 +26,7 @@ void Persona::setApellido(string apellido){
     _apellido = apellido;
 }
 
-//Metodos
+///Metodos
 
 void Persona::cargar(){
     string cuit, nombre, apellido;

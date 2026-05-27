@@ -16,11 +16,11 @@ private:
 
 public:
 
-    //Constructores
+    ///Constructores
 
     Reparacion();
 
-    //Setters
+    ///Setters
 
     void setEquipo(Equipo equipo);
     void setIdCliente(Cliente idCliente);
@@ -29,7 +29,8 @@ public:
     void setImporte(float importe);
     void setEstadoRep(int estadoRep);
     void setEstado(bool estado);
-    //Getters
+
+    ///Getters
 
     Equipo getEquipo();
     Cliente getIdCliente();
@@ -39,5 +40,5 @@ public:
     int getEstadoRep();
     bool getEstado();
 
-    //Metodos
+    ///Metodos
 };

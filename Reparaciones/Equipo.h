@@ -15,6 +15,7 @@ class Equipo{
 private:
 
     int _idEquipo;
+    //sumar int numSerie
     Tecnico _idTecnico;
     Cliente _idCliente;
     std::string _descripcion;
@@ -25,11 +26,11 @@ private:
     
 public:
 
-    //Constructores
+    ///Constructores
 
     Equipo();
 
-    //Setters
+    ///Setters
 
     void setIdEquipo(int idEquipo);
     void setIdTecnico(Tecnico idTecnico);
@@ -40,7 +41,7 @@ public:
     void setFechaIngreso(Fecha fechaIngreso);
     void setEstado(bool estado);
 
-    //Getters
+    ///Getters
 
     int getIdEquipo();
     Tecnico getIdTecnico();
@@ -51,5 +52,5 @@ public:
     Fecha getFechaIngreso();
     bool getEstado();
 
-    //Metodos
+    ///Metodos
 };

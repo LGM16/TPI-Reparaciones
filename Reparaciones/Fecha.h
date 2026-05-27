@@ -9,23 +9,23 @@ private:
 
 public:
 
-    //Constructores
+    ///Constructores
     
     Fecha();
 
-    //Setters
+    ///Setters
 
     void setDia(int dia);
     void setMes(int mes);
     void setAnio(int anio);
 
-    //Getters
+    ///Getters
 
     int getDia();
     int getMes();
     int getAnio();
 
-    //Metodos
+    ///Metodos
 
     bool validarFecha(int dia, int mes, int anio);
 };

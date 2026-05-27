@@ -2,7 +2,7 @@
 using namespace std;
 #include "Equipo.h"
 
-//Constructores
+///Constructores
 
 Equipo::Equipo(){
     setIdEquipo(1);
@@ -15,7 +15,7 @@ Equipo::Equipo(){
     setEstado(true);
 }
 
-//Setters
+///Setters
 
 void Equipo::setIdEquipo(int idEquipo){
     if(idEquipo > 0){
@@ -54,4 +54,4 @@ void Equipo::setEstado(bool estado){
     _estado = estado;
 }
 
-//Metodos
+///Metodos

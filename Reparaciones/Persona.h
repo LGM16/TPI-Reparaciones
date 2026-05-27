@@ -12,24 +12,24 @@ protected:
 
 public:
 
-    //Constructores
+    ///Constructores
 
     Persona();
     Persona(std::string cuit, std::string nombre, std::string apellido);
     
-    //Setters
+    ///Setters
 
     void setCuit(std::string cuit);
     void setNombre(std::string nombre);
     void setApellido(std::string apellido);
     
-    //Getters
+    ///Getters
 
     std::string getCuit(){return _cuit;}
     std::string getNombre(){return _nombre;}
     std::string getApellido(){return _apellido;}
 
-    //Metodos
+    ///Metodos
 
     void cargar();
     void mostrar();

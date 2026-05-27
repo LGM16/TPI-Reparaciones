@@ -2,7 +2,7 @@
 using namespace std;
 #include "Cliente.h"
 
-//Constructores
+///Constructores
 
 Cliente::Cliente(){
     setIdCliente(1);
@@ -13,7 +13,7 @@ Cliente::Cliente(){
     setEstado(true);
 }
 
-//Setters
+///Setters
 
 void Cliente::setIdCliente(int idCliente){
     
@@ -50,7 +50,7 @@ void Cliente::setTelefono(string telefono){
         _telefono = telefono;
     }
     else{
-        _telefono = "";
+        _telefono = ""; 
     }
 }
 
@@ -71,14 +71,15 @@ void Cliente::setEstado(bool estado){
     _estado = estado;
 }
 
-//Metodos
+///Metodos
 
+// TODO ESTO (CARGAR Y MOSTRAR) VA EN MANAGER, NO EN LA CLASE
 void Cliente::cargar(){
 
     int idCliente, tipoCliente;
     string telefono, email, direccion;
 
-    Persona::cargar();
+    Persona::cargar(); //falta _estado
     // aca puedo hacer una metodo para incrementar el idCliente automaticamente verificando el ultimo cargado
     //implementar do while en cada carga para validar cada dato ingresado?
     cout << "Ingrese el ID del Cliente: " << endl;
@@ -98,7 +99,7 @@ void Cliente::cargar(){
     setDireccion(direccion);
 }
 
-// TODO ESTO (CARGAR Y MOSTRAR) VA EN MANAGER, NO EN LA CLASE
+
 void Cliente::mostrar(){
     Persona::mostrar();
     cout << "ID del Cliente: " << getIdCliente() << endl;
