@@ -21,8 +21,15 @@ Menu::ejecutar(){
 Menu::menuPrincipal(){
     int opcion;
     do{
-        cout << "Menu Principal" << endl;
-        
+        switch (opcion){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+
 
     }while(opcion != 0);
 }
