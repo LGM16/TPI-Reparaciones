@@ -1,5 +1,5 @@
 #pragma once
-#include "ManagerArchivo.h"
+#include "ManagerArchivo.h" //aca tengo que definir si hago un manager gral o no
 #include "Tecnico.h"
 
 class Menu{
@@ -7,7 +7,7 @@ private:
 
     Tecnico _tecnico;
     ManagerArchivo _manager;
-    bool _tecnicoLogueado = true;
+    bool _tecnicoLogueado = false;
 
 public:
 
@@ -17,7 +17,7 @@ public:
 
     //Setters
 
-    bool setSesionActiva(bool sesionActiva);
+    void setSesionActiva(bool tecnicoLogueado9);
 
     //Getters
 
@@ -26,11 +26,12 @@ public:
     //Metodos
 
     void ejecutar();
-    void menuLogin();
-    void menuPrincipal();
-    void menuClientes();
-    void menuEquipos();
-    void menuReparaciones();
-    void menuInformes();
+    void menuLogin();           // Menu de login para el tecnico
+    void menuPrincipal();       // Menu que se muestra una vez logueado
+    void menuClientes();        // Menu para gestionar clientes
+    void menuEquipos();         // Menu para gestionar equipos
+    void menuReparaciones();    // Menu para gestionar reparaciones
+    void menuInformes();        // Menu para generar informes
+    void menuTecnicos();        // Menu para gestionar tecnicos
 
 };
