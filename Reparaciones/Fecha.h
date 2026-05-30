@@ -12,6 +12,7 @@ public:
     ///Constructores
     
     Fecha();
+    Fecha(int dia, int mes, int anio);
 
     ///Setters
 
@@ -27,5 +28,6 @@ public:
 
     ///Metodos
 
+    int obtenerCantDias(int mes, int anio);
     bool validarFecha(int dia, int mes, int anio);
 };
