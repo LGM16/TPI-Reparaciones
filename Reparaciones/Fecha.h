@@ -7,6 +7,9 @@ private:
     int _mes;
     int _anio;
 
+    int obtenerCantDias(int mes, int anio);
+    bool validarFecha(int dia, int mes, int anio);
+
 public:
 
     ///Constructores
@@ -27,7 +30,6 @@ public:
     int getAnio();
 
     ///Metodos
-
-    int obtenerCantDias(int mes, int anio);
-    bool validarFecha(int dia, int mes, int anio);
+    
+    void agregarDias(int dias);
 };
