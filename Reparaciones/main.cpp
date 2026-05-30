@@ -34,6 +34,7 @@ sistema
 #include "Cliente.h"
 //#include "Equipo.h"
 //#include "Reparacion.h"
+#include "Menu.h"
 
 using namespace std;
 
