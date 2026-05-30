@@ -1,12 +1,13 @@
 #pragma once
-#include "ManagerArchivo.h" //aca tengo que definir si hago un manager gral o no
+//#include "ManagerArchivo.h" //aca tengo que definir si hago un manager gral o no
+//#include "ManagerTecnico.h"
 #include "Tecnico.h"
 
 class Menu{
 private:
 
     Tecnico _tecnico;
-    ManagerArchivo _manager;
+//    ManagerArchivo _manager;
     bool _tecnicoLogueado = false;
 
 public:
