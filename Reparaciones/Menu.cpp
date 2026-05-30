@@ -5,7 +5,7 @@ using namespace std;
 ///Constructor
 
 Menu::Menu(){
-    _sesionActiva = false;
+    _tecnicoLogueado = false;
 }
 
 ///Setters
@@ -13,16 +13,25 @@ Menu::Menu(){
 ///Metodos
 
 Menu::ejecutar(){
-    while(_sesionActiva){
+    while(_tecnicoLogueado){
         mostrarMenuPrincipal();
     }
 }
+
+Menu::menuLogin(){
+    int intentos = 0;
+    while(intentos < 3 && !getSesionActiva()){
+
+    }
+}
+
 
 Menu::menuPrincipal(){
     int opcion;
     do{
         switch (opcion){
             case 1:
+
                 break;
             case 2:
                 break;

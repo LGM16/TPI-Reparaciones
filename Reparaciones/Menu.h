@@ -5,9 +5,9 @@
 class Menu{
 private:
 
-    Tecnico _tecnicoLogueado;
+    Tecnico _tecnico;
     ManagerArchivo _manager;
-    bool _sesionActiva = true;
+    bool _tecnicoLogueado = true;
 
 public:
 
@@ -21,7 +21,7 @@ public:
 
     //Getters
 
-    bool getSesionActiva();
+    bool getSesionActiva(){return _tecnicoLogueado;}
 
     //Metodos
 
