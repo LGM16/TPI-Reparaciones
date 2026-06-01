@@ -7,6 +7,7 @@ private:
     int _mes;
     int _anio;
 
+    void establecerFechaDefecto();
     int obtenerCantDias(int mes, int anio);
     bool validarFecha(int dia, int mes, int anio);
 
@@ -25,11 +26,12 @@ public:
 
     ///Getters
 
-    int getDia();
-    int getMes();
-    int getAnio();
+    int getDia(){return _dia;}
+    int getMes(){return _mes;}
+    int getAnio(){return _anio;}
 
     ///Metodos
     
-    void agregarDias(int dias);
+    //void agregarDias(int dias); ?
+    // agregar cargar() y mostrar() para no crear un manager?
 };
