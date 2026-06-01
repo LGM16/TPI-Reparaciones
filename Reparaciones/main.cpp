@@ -46,8 +46,10 @@ int main() {
     p.mostrar();
     */
     Cliente c;
+
     c.cargar();
     c.mostrar();
+    
     return 0;
 }
 
