@@ -5,9 +5,7 @@ using namespace std;
 ///Constructor
 
 Fecha::Fecha(){
-    _dia = 1;
-    _mes = 1;
-    _anio = 2023;
+    establecerFechaDefecto();
 }
 
 Fecha::Fecha(int dia, int mes, int anio){
@@ -18,15 +16,58 @@ Fecha::Fecha(int dia, int mes, int anio){
         _anio = anio;
     }
     else{    
-        _dia = 1;
-        _mes = 1;
-        _anio = 2023;
+        establecerFechaDefecto();
     }
 }
 
 ///Setters
 
+void Fecha::setDia(int dia){
+    _dia = dia;
+}
+
+void Fecha::setMes(int mes){
+    _mes = mes;
+}
+
+void Fecha::setAnio(int anio){
+    _anio = anio;
+}
+
 ///Metodos
+
+void Fecha::establecerFechaDefecto(){
+    _dia = 1;
+    _mes = 1;
+    _anio = 2023;
+}
+
+int Fecha::obtenerCantDias(int mes, int anio){
+    
+    int maxDias;
+
+    switch (mes){
+    case 2: // Febrero
+        if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0))
+            maxDias = 29; // Bisiesto
+        else
+            maxDias = 28;
+        break;
+
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        maxDias = 30;
+        break;
+
+    default:
+        maxDias = 31;
+        break;
+    }
+
+    return maxDias;
+}
 
 bool Fecha::validarFecha(int dia, int mes, int anio){
     
@@ -46,6 +87,14 @@ bool Fecha::validarFecha(int dia, int mes, int anio){
 
     maxDias = obtenerCantDias(mes, anio);
 
+    /*
+    if(dia <= maxDias){
+        return true;
+    }
+    else{
+        return false;
+    }
+    */
 
-    return dia <= maxDias;
+    return dia <= maxDias; // Equivale al if comentado de arriba
 }
