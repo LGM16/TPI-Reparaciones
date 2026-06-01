@@ -36,3 +36,9 @@ public:
     void menuTecnicos();        // Menu para gestionar tecnicos
 
 };
+
+//
+//clase 6: https://www.youtube.com/watch?v=9iN5MoktbBk 1:40:00 aprox
+
+//menu y polimorfismo
+//clase 8: https://www.youtube.com/watch?v=t-A9Mpgc9h0 20:00 aprox
