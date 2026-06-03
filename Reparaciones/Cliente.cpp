@@ -3,6 +3,11 @@ using namespace std;
 #include "Cliente.h"
 
 ///Constructores
+Cliente:Cliente()
+:Persona(), _idCliente(1), _tipoCliente(1), _telefono(""), _email(""), _direccion(""), _estado(true) {
+{
+
+}
 
 Cliente::Cliente(){
     setIdCliente(1);
