@@ -54,6 +54,18 @@
 		<Unit filename="ManagerCliente.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="ManagerEquipos.cpp" />
+		<Unit filename="ManagerEquipos.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ManagerReparacion.cpp" />
+		<Unit filename="ManagerReparacion.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ManagerTecnico.cpp" />
+		<Unit filename="ManagerTecnico.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h">
 			<Option target="&lt;{~None~}&gt;" />
