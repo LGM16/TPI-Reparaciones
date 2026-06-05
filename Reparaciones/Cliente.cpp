@@ -1,42 +1,26 @@
-#include <iostream>
-using namespace std;
 #include "Cliente.h"
 
 ///Constructores
-Cliente:Cliente()
-:Persona(), _idCliente(1), _tipoCliente(1), _telefono(""), _email(""), _direccion(""), _estado(true) {
-{
 
-}
-
-Cliente::Cliente(){
-    setIdCliente(1);
-    setTipoCliente(1);
-    setTelefono("");
-    setEmail("");
-    setDireccion("");
+Cliente::Cliente(Persona persona, int idCliente, int tipoCliente, std::string telefono, std::string email, std::string direccion){
+    setIdCliente(idCliente);
+    setTipoCliente(tipoCliente);
+    setTelefono(telefono);
+    setEmail(email);
+    setDireccion(direccion);
     setEstado(true);
 }
 
 ///Setters
 
 void Cliente::setIdCliente(int idCliente){
-    
-    if(idCliente > 0){
         _idCliente = idCliente;
-    }
-    else{
-        _idCliente = 1;
-    }
 }
 
 void Cliente::setTipoCliente(int tipoCliente){
 
     if(tipoCliente == 1 || tipoCliente == 2){
         _tipoCliente = tipoCliente;
-    }
-    else{
-        _tipoCliente = 1;
     }
 
     /*
@@ -50,25 +34,19 @@ void Cliente::setTipoCliente(int tipoCliente){
 
 }
 
-void Cliente::setTelefono(string telefono){
+void Cliente::setTelefono(std::string telefono){
     if(telefono.length() >= 8 && telefono.length() <= 15){ //idem .size()
         _telefono = telefono;
     }
-    else{
-        _telefono = ""; 
-    }
 }
 
-void Cliente::setEmail(string email){
-    if(email.find('@') != string::npos){ // busca el caracter '@' en la cadena email, si lo encuentra devuelve la posición, sino devuelve string::npos
+void Cliente::setEmail(std::string email){
+    if(email.find('@') != std::string::npos){ // busca el caracter '@' en la cadena email, si lo encuentra devuelve la posición, sino devuelve std::string::npos
         _email = email;
     }
-    else{
-        _email = "";
-    }
 }
 
-void Cliente::setDireccion(string direccion){
+void Cliente::setDireccion(std::string direccion){
     _direccion = direccion;
 }
 
@@ -77,12 +55,12 @@ void Cliente::setEstado(bool estado){
 }
 
 ///Metodos
-
+/*
 // TODO ESTO (CARGAR Y MOSTRAR) VA EN MANAGER, NO EN LA CLASE
 void Cliente::cargar(){
 
     int idCliente, tipoCliente;
-    string telefono, email, direccion;
+    std::string telefono, email, direccion;
 
     Persona::cargar(); //falta _estado
     // aca puedo hacer una metodo para incrementar el idCliente automaticamente verificando el ultimo cargado
@@ -122,6 +100,8 @@ void Cliente::mostrar(){
     cout << "Email de Cliente: " << getEmail() << endl;
     cout << "Direccion de Cliente: " << getDireccion() << endl;
 }
+
+*/
 
 bool Cliente::validarTipoCliente(int tipoCliente){
     if(tipoCliente == 1 || tipoCliente == 2){

@@ -21,8 +21,6 @@ public:
 
     ///Constructores
 
-    Cliente();
-
     Cliente(Persona persona, int idCliente, int tipoCliente, std::string telefono,
             std::string email, std::string direccion, bool estado);
             

@@ -32,38 +32,30 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="ArchivoCliente.cpp" />
-		<Unit filename="ArchivoCliente.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="ArchivoEquipo.cpp" />
-		<Unit filename="ArchivoEquipo.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
+		<Unit filename="ClienteArchivo.cpp" />
+		<Unit filename="ClienteArchivo.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ClienteManager.cpp" />
+		<Unit filename="ClienteManager.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Equipo.cpp" />
 		<Unit filename="Equipo.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="EquipoArchivo.cpp" />
+		<Unit filename="EquipoArchivo.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="EquipoManager.cpp" />
+		<Unit filename="EquiposManager.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="ManagerCliente.cpp" />
-		<Unit filename="ManagerCliente.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="ManagerEquipos.cpp" />
-		<Unit filename="ManagerEquipos.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="ManagerReparacion.cpp" />
-		<Unit filename="ManagerReparacion.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="ManagerTecnico.cpp" />
-		<Unit filename="ManagerTecnico.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Menu.cpp" />
@@ -82,8 +74,16 @@
 		<Unit filename="Reparacion.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="ReparacionManager.cpp" />
+		<Unit filename="ReparacionManager.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Tecnico.cpp" />
 		<Unit filename="Tecnico.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="TecnicoManager.cpp" />
+		<Unit filename="TecnicoManager.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="main.cpp" />

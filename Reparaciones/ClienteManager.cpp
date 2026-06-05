@@ -1,9 +1,13 @@
 #include <iostream>
 using namespace std;
-#include "ArchivoCliente.h"
+#include "ManagerCliente.h"
 
 ///Constructor
 
 ///Setters
 
 ///Metodos
+
+void ManagerCliente::CargarCliente(){
+    
+}

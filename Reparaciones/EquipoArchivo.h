@@ -1,7 +1,11 @@
 #pragma once
+#include <string>
 
-class ArchivoCliente{
+class ArchivoEquipo{
 private:
+
+    std::string _ruta;
+
 public:
 
     //Constructores

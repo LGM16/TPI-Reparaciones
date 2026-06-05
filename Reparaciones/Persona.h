@@ -14,7 +14,6 @@ public:
 
     ///Constructores
 
-    Persona();
     Persona(std::string cuit, std::string nombre, std::string apellido);
     
     ///Setters

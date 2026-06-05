@@ -12,7 +12,7 @@ public:
 
     ///Constructores
 
-    Tecnico();
+    Tecnico(Persona persona, int idTecnico, std::string usuario, std::string contrasenia);
 
     ///Setters
 

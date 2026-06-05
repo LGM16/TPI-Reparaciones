@@ -1,14 +1,11 @@
 //Definicion de constructores, setters, getters y metodos de la clase Persona
 
 #include <iostream>
-using namespace std;
 #include "Persona.h"
 
 ///Constructores
-Persona::Persona():_cuit("Sin Asignar"), _nombre("Lucas"), _apellido("Migliore") {
-}
 
-Persona::Persona(string cuit, string nombre, string apellido){
+Persona::Persona(std::string cuit, std::string nombre, std::string apellido){
     setCuit(cuit);
     setNombre(nombre);
     setApellido(apellido);
@@ -16,38 +13,29 @@ Persona::Persona(string cuit, string nombre, string apellido){
 
 ///Setters
 
-void Persona::setCuit(string cuit){
-    if(cuit.length() == 11){
+void Persona::setCuit(std::string cuit){ 
+    if(cuit.length() == 11){ //esto puede ir como validacion en el archivo?
         _cuit = cuit;
     }
-    else{
-        _cuit = "00000000000";
-    }
 }
 
-void Persona::setNombre(string nombre){
-    if(nombre.length() >= 3 && nombre.length() <= 50){
+void Persona::setNombre(std::string nombre){
+    if(nombre.length() >= 3 && nombre.length() <= 50){ //esto puede ir como validacion en el archivo?
         _nombre = nombre;
     }
-    else{
-        _nombre = "Pepe";
-    }
 }
 
-void Persona::setApellido(string apellido){
-    if(apellido.length() >= 3 && apellido.length() <= 50){
+void Persona::setApellido(std::string apellido){
+    if(apellido.length() >= 3 && apellido.length() <= 50){ //esto puede ir como validacion en el archivo?
         _apellido = apellido;
-    }
-    else{
-        _apellido = "Lopez";
     }
 }
 
 ///Metodos
-
+/*
 void Persona::cargar(){
-    string cuit, nombre, apellido;
-    cout << "Apellido: ";
+    std::string cuit, nombre, apellido;
+    std::cout << "Apellido: ";
     cin >> apellido;
     setApellido(apellido);
     cout << "Nombre: ";
@@ -61,3 +49,4 @@ void Persona::cargar(){
 void Persona::mostrar(){
     cout << getApellido() << ", " << getNombre() << " - CUIT: " << getCuit() << endl;
 }
+*/

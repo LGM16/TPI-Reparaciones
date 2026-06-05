@@ -28,7 +28,8 @@ public:
 
     ///Constructores
 
-    Equipo();
+    Equipo(int idEquipo, Tecnico idTecnico, Cliente idCliente, std::string descripcion,
+           std::string marca, std::string tipoEquipo, Fecha fechaIngreso, bool estado);
 
     ///Setters
 
