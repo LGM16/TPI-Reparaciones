@@ -2,8 +2,23 @@
 
 ///Constructores
 
-Cliente::Cliente(Persona persona, int idCliente, int tipoCliente, std::string telefono, std::string email, std::string direccion){
-    setIdCliente(idCliente);
+Cliente::Cliente()
+    : Persona("", "", ""),
+      _idCliente(0),
+      _tipoCliente(0),
+      _telefono(""),
+      _email(""),
+      _direccion(""),
+      _estado(true)
+{
+}
+
+Cliente::Cliente(Persona persona, int idCliente, int tipoCliente, std::string telefono,
+                 std::string email, std::string direccion, bool estado)
+    : Persona(persona.getCuit(), persona.getNombre(), persona.getApellido()),
+      _idCliente(idCliente),
+      _estado(estado)
+{
     setTipoCliente(tipoCliente);
     setTelefono(telefono);
     setEmail(email);
