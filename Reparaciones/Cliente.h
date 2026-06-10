@@ -9,9 +9,8 @@ teléfono, un email, la dirección y el tipo de cliente (1: particular; 2: empre
 class Cliente: public Persona{
 private:
 
-    int _idCliente; // hacerlo autoincremental
-    
-    int _tipoCliente; //1: particular; 2: empresa
+    int _idCliente;         //asignado por ClienteManager 
+    int _tipoCliente;       //1: particular; 2: empresa
     std::string _telefono;
     std::string _email;
     std::string _direccion;
@@ -20,6 +19,8 @@ private:
 public:
 
     ///Constructores
+
+    Cliente();
 
     Cliente(Persona persona, int idCliente, int tipoCliente, std::string telefono,
             std::string email, std::string direccion, bool estado);
