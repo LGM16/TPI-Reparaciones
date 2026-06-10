@@ -2,6 +2,7 @@
 //#include "ManagerArchivo.h" //aca tengo que definir si hago un manager gral o no
 //#include "ManagerTecnico.h"
 #include "Tecnico.h"
+#include "ClienteManager.h"
 
 class Menu{
 private:
