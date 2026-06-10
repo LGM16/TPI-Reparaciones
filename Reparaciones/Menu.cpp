@@ -76,3 +76,7 @@ void Menu::menuPrincipal(){
 
     }while(opcion != 0);
 }
+
+void Menu::menuClientes(){
+    
+}
