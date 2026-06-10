@@ -114,6 +114,16 @@ void ClienteArchivo::leerTodos(Cliente *vec, int cantidadRegistros){
     fclose(p);
 }
 
-void ClienteArchivo::buscar(int id){
-    
+int ClienteArchivo::buscar(int id){
+    int i, cantidadRegistros = getCantidadRegistros();
+    Cliente reg;
+
+    for(i = 0; i < cantidadRegistros; i++){
+        reg = leer(i);
+
+        if(reg.getIdCliente() == id){
+            return i;
+        }
+    }
+    return -1;
 }
