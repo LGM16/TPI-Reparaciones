@@ -1,14 +1,15 @@
 #pragma once
 #include "Cliente.h"
-#include "ArchivoCliente.h"
+#include "ClienteArchivo.h"
 
 class ManagerCliente{
 private:
 
-    ArchivoCliente _archivoCliente;
+    ClienteArchivo _archivo;
     //ArchivoTecnico _archivoClienteBackUp;  un backup?
 
     bool existeId(int id);
+    int generarId();
 
 public:
 
@@ -22,7 +23,9 @@ public:
 
     //Metodos
 
-    void CargarCliente();
+    void cargarCliente();
     void listarClientes();
-    void listar
+    void listarXId();
+    void listar(Cliente Cliente);
+    //void darBajaCliente();?
 };
