@@ -3,6 +3,8 @@
 #pragma once
 #include <string>
 
+class Cliente;
+
 class Persona{
 protected:
 
@@ -28,8 +30,4 @@ public:
     std::string getNombre(){return _nombre;}
     std::string getApellido(){return _apellido;}
 
-    ///Metodos
-
-    void cargar();
-    void mostrar();
 };
