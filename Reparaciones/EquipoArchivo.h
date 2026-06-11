@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-class ArchivoEquipo{
+class EquipoArchivo{
 private:
 
     std::string _ruta;
