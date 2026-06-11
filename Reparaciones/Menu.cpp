@@ -10,14 +10,15 @@ Menu::Menu(){
 
 ///Setters
 
-///Metodos
+void Menu::setSesionActiva(bool tecnicoLogueado){
+    _tecnicoLogueado = tecnicoLogueado;
+}
 
-//Menu::ejecutar() es el metodo que se encarga de ejecutar el programa 
-//Mostrando el menu de login y luego el menu principal
-/*
+///Metodos
 
 void Menu::ejecutar(){
     menuLogin();
+
     if(getSesionActiva()){
         menuPrincipal();
     }
@@ -27,10 +28,20 @@ void Menu::ejecutar(){
 }
 
 void Menu::menuLogin(){
+    string usuario, contrasenia;
     int intentos = 0;
+
+    cout << "===== INICIO DE SESION =====" << endl;
+
     while(intentos < 3 && !getSesionActiva()){
-        if(algo){ //to do: aca tengo que validar contra archivosTecnicos?
-            cout << "Bievenido " << endl; //aca iria getnombre del tecnico?
+        cout << "Usuario: ";
+        cin >> usuario;
+        cout << "Contrasenia: ";
+        cin >> contrasenia;
+
+        if(_managerTecnico.validarCredenciales(usuario, contrasenia, _tecnico)){
+            setSesionActiva(true);
+            cout << "Bienvenido " << _tecnico.getNombre() << "!" << endl;
         }
         else{
             intentos++;
@@ -40,16 +51,22 @@ void Menu::menuLogin(){
     }
 }
 
-*/
-///Menu::menuPrincipal() es el menu que se muestra al tecnico una vez que se loguea
-//
-
 void Menu::menuPrincipal(){
     int opcion;
 
     do{
+        cout << endl;
+        cout << "===== MENU PRINCIPAL =====" << endl;
+        cout << "1. Clientes" << endl;
+        cout << "2. Equipos" << endl;
+        cout << "3. Reparaciones" << endl;
+        cout << "4. Informes" << endl;
+        cout << "5. Tecnicos" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
-        switch (opcion){
+
+        switch(opcion){
             case 1:
                 menuClientes();
                 break;
@@ -68,15 +85,64 @@ void Menu::menuPrincipal(){
             case 0:
                 cout << "Sesion cerrada, hasta luego!" << endl;
                 setSesionActiva(false);
+                break;
             default:
                 cout << "Opcion no valida, intente nuevamente" << endl;
                 break;
         }
 
-
     }while(opcion != 0);
 }
 
 void Menu::menuClientes(){
-    
+    int opcion;
+
+    do{
+        cout << endl;
+        cout << "===== MENU CLIENTES =====" << endl;
+        cout << "1. Cargar cliente" << endl;
+        cout << "2. Listar clientes" << endl;
+        cout << "3. Buscar cliente por ID" << endl;
+        cout << "4. Dar de baja cliente" << endl;
+        cout << "0. Volver" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                _managerCliente.cargarCliente();
+                break;
+            case 2:
+                _managerCliente.listarClientes();
+                break;
+            case 3:
+                _managerCliente.listarXId();
+                break;
+            case 4:
+                _managerCliente.darBajaCliente();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "Opcion no valida, intente nuevamente" << endl;
+                break;
+        }
+
+    }while(opcion != 0);
+}
+
+void Menu::menuEquipos(){
+    cout << "Menu de equipos en construccion." << endl;
+}
+
+void Menu::menuReparaciones(){
+    cout << "Menu de reparaciones en construccion." << endl;
+}
+
+void Menu::menuInformes(){
+    cout << "Menu de informes en construccion." << endl;
+}
+
+void Menu::menuTecnicos(){
+    cout << "Menu de tecnicos en construccion." << endl;
 }
