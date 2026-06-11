@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Cliente.h"
 
 ///Constructores
@@ -71,27 +72,25 @@ void Cliente::setEstado(bool estado){
 ///Metodos
 
 void Cliente::mostrar(){
-    cout << "ID del Cliente: " << getIdCliente() << endl;
-    cout << "CUIT: " << getCuit() << endl;
+    std::cout << "ID del Cliente: " << getIdCliente() << "\n";
+    std::cout << "CUIT: " << getCuit() << "\n";
 
     if(getTipoCliente() == 1){
-        cout << "Tipo de Cliente: Particular" << endl;
-        cout << "Nombre: " << getNombre() << endl;
-        cout << "Apellido: " << getApellido() << endl;
+        std::cout << "Tipo de Cliente: Particular" << "\n";
+        std::cout << "Nombre: " << getNombre() << "\n";
+        std::cout << "Apellido: " << getApellido() << "\n";
     }
     else{
         if(getTipoCliente() == 2){
-            cout << "Tipo de Cliente: Empresa" << endl;
-            cout << "Razon Social: " << getNombre() << endl;
+            std::cout << "Tipo de Cliente: Empresa" << "\n";
+            std::cout << "Razon Social: " << getNombre() << "\n";
         }
     }
 
-    cout << "Telefono de Cliente: " << getTelefono() << endl;
-    cout << "Email de Cliente: " << getEmail() << endl;
-    cout << "Direccion de Cliente: " << getDireccion() << endl;
+    std::cout << "Telefono de Cliente: " << getTelefono() << "\n";
+    std::cout << "Email de Cliente: " << getEmail() << "\n";
+    std::cout << "Direccion de Cliente: " << getDireccion() << "\n";
 }
-
-*/
 
 bool Cliente::validarTipoCliente(int tipoCliente){
     if(tipoCliente == 1 || tipoCliente == 2){
