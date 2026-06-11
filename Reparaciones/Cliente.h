@@ -45,7 +45,6 @@ public:
 
     ///Metodos
 
-    void cargar();
     void mostrar();
     bool validarTipoCliente(int tipoCliente);
 };
