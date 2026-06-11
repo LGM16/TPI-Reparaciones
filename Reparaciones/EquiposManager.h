@@ -1,6 +1,18 @@
-#ifndef MANAGEREQUIPOS_H_INCLUDED
-#define MANAGEREQUIPOS_H_INCLUDED
+#pragma once
+#include <string>
+
+class EquipoManager{
+private:
 
 
 
-#endif // MANAGEREQUIPOS_H_INCLUDED
+public:
+
+    //Constructores
+
+    //Setters
+
+    //Getters
+
+    //Metodos
+};
