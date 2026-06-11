@@ -1,6 +1,9 @@
-#ifndef MANAGERREPARACION_H_INCLUDED
-#define MANAGERREPARACION_H_INCLUDED
+#pragma once
 
+class ReparacionManager{
 
+private:
 
-#endif // MANAGERREPARACION_H_INCLUDED
+public:
+
+};
