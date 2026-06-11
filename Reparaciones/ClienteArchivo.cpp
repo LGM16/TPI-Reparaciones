@@ -1,3 +1,4 @@
+#include <cstring>
 #include "ClienteArchivo.h"
 
 ///Constructor
@@ -20,10 +21,6 @@ int ClienteArchivo::getCantidadRegistros(){
     }
     
     FILE *p = fopen(_ruta.c_str(), "rb"); //Lo abro nuevamente sabiendo que existe
-
-    if(p == NULL){
-        return 0;
-    }
 
     fseek(p, 0, SEEK_END);  //Mueve el puntero al final del archivo
 
@@ -59,6 +56,8 @@ bool ClienteArchivo::guardar(Cliente reg){
     return pudoEscribir;
 }
 
+/*
+
 bool ClienteArchivo::guardar(Cliente reg, int posicionReemplazada){
     FILE *p = fopen(_ruta.c_str(), "rb+");
 
@@ -73,6 +72,8 @@ bool ClienteArchivo::guardar(Cliente reg, int posicionReemplazada){
     fclose(p);
     return pudoEscribir;
 }
+    
+*/
 
 bool ClienteArchivo::guardar(Cliente *vec, int cantidadRegistros){
 

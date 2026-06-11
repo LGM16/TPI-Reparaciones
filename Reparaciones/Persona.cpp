@@ -5,6 +5,9 @@
 
 ///Constructores
 
+Persona::Persona(){
+}
+
 Persona::Persona(std::string cuit, std::string nombre, std::string apellido){
     setCuit(cuit);
     setNombre(nombre);

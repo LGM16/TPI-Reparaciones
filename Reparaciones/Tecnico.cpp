@@ -3,7 +3,7 @@
 ///Constructores
 
 Tecnico::Tecnico()
-    : Persona("", "", ""),
+    : Persona(),
       _idTecnico(0),
       _usuario(""),
       _contrasenia("")
@@ -33,7 +33,7 @@ void Tecnico::setUsuario(std::string usuario){
 }
 
 void Tecnico::setContrasenia(std::string contrasenia){
-    if(contrasenia.length() >= 1){
+    if(contrasenia.length() >= 1 && contrasenia.length() <= 50){
         _contrasenia = contrasenia;
     }
 }

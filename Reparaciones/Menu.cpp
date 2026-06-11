@@ -136,17 +136,17 @@ void Menu::menuClientes(){
 }
 
 void Menu::menuEquipos(){
-    cout << "Menu de equipos en construccion." << endl;
+    cout << "Menu en construccion." << endl;
 }
 
 void Menu::menuReparaciones(){
-    cout << "Menu de reparaciones en construccion." << endl;
+    cout << "Menu en construccion." << endl;
 }
 
 void Menu::menuInformes(){
-    cout << "Menu de informes en construccion." << endl;
+    cout << "Menu en construccion." << endl;
 }
 
 void Menu::menuTecnicos(){
-    cout << "Menu de tecnicos en construccion." << endl;
+    cout << "Menu en construccion." << endl;
 }

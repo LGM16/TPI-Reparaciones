@@ -4,7 +4,7 @@
 ///Constructores
 
 Cliente::Cliente()
-    : Persona("", "", ""),
+    : Persona(),
       _idCliente(0),
       _tipoCliente(0),
       _telefono(""),
@@ -56,13 +56,15 @@ void Cliente::setTelefono(std::string telefono){
 }
 
 void Cliente::setEmail(std::string email){
-    if(email.find('@') != std::string::npos){ // busca el caracter '@' en la cadena email, si lo encuentra devuelve la posición, sino devuelve std::string::npos
+    if(email.find('@') != std::string::npos && email.length() <= 50){
         _email = email;
     }
 }
 
 void Cliente::setDireccion(std::string direccion){
-    _direccion = direccion;
+    if(direccion.length() <= 100){
+        _direccion = direccion;
+    }
 }
 
 void Cliente::setEstado(bool estado){

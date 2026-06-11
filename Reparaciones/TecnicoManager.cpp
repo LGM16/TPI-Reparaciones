@@ -3,7 +3,7 @@
 bool TecnicoManager::validarCredenciales(std::string usuario, std::string contrasenia, Tecnico& tecnico){
     //Validacion provisoria hasta implementar TecnicoArchivo
     if(usuario == "admin" && contrasenia == "1234"){
-        Persona persona("20123456789", "Juan", "Perez");
+        Persona persona("20123456789", "Lucas", "Migliore");
         tecnico = Tecnico(persona, 1, usuario, contrasenia);
         return true;
     }

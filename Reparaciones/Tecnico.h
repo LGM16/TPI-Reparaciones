@@ -23,9 +23,9 @@ public:
 
     ///Getters
 
-    int getIdTecnico(){return _idTecnico;};
-    std::string getUsuario(){return _usuario;};
-    std::string getContrasenia(){return _contrasenia;};
+    int getIdTecnico(){return _idTecnico;}
+    std::string getUsuario(){return _usuario;}
+    std::string getContrasenia(){return _contrasenia;}
 
     ///Metodos
 
