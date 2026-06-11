@@ -1,14 +1,2 @@
-//Nombre: Lucas Gabriel Migliore
-//TP N°:
-//EJ N°:
-//Comentarios:
-/*
+#include "ReparacionManager.h"
 
-*/
-#include <iostream>
-using namespace std;
-
-int main(){
-
-	return 0;
-}
