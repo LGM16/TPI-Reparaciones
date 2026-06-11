@@ -1,6 +1,9 @@
-#ifndef MANAGERTECNICO_H_INCLUDED
-#define MANAGERTECNICO_H_INCLUDED
+#pragma once
+#include "Tecnico.h"
+#include <string>
 
+class TecnicoManager{
+public:
 
-
-#endif // MANAGERTECNICO_H_INCLUDED
+    bool validarCredenciales(std::string usuario, std::string contrasenia, Tecnico& tecnico);
+};
