@@ -2,10 +2,20 @@
 
 ///Constructores
 
-Tecnico::Tecnico(Persona persona, int idTecnico, std::string usuario, std::string contrasenia){
-    setIdTecnico(idTecnico);
-    setUsuario(usuario);
-    setContrasenia(contrasenia);
+Tecnico::Tecnico()
+    : Persona("", "", ""),
+      _idTecnico(0),
+      _usuario(""),
+      _contrasenia("")
+{
+}
+
+Tecnico::Tecnico(Persona persona, int idTecnico, std::string usuario, std::string contrasenia)
+    : Persona(persona.getCuit(), persona.getNombre(), persona.getApellido()),
+      _idTecnico(idTecnico),
+      _usuario(usuario),
+      _contrasenia(contrasenia)
+{
 }
 
 ///Setters
