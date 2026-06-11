@@ -3,8 +3,6 @@
 #pragma once
 #include <string>
 
-class Cliente;
-
 class Persona{
 protected:
 
@@ -17,13 +15,13 @@ public:
     ///Constructores
 
     Persona(std::string cuit, std::string nombre, std::string apellido);
-    
+
     ///Setters
 
     void setCuit(std::string cuit);
     void setNombre(std::string nombre);
     void setApellido(std::string apellido);
-    
+
     ///Getters
 
     std::string getCuit(){return _cuit;}
