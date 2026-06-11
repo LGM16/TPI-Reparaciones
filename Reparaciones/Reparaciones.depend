@@ -1,36 +1,36 @@
 # depslib dependency file v1.0
-1779758258 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
+1781147320 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
 	<iostream>
 	"Cliente.h"
 
-1779758421 f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.h
+1781145814 f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.h
 	"Persona.h"
 
-1779758422 f:\lucas\documents\programacion 2\tpi\reparaciones\persona.h
+1781147770 f:\lucas\documents\programacion 2\tpi\reparaciones\persona.h
 	<string>
 
-1779757747 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
+1781147565 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
+	<iostream>
+	"Menu.h"
+
+1780616594 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
 	<iostream>
 	"Persona.h"
-	"Cliente.h"
 
-1779744342 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
-	<iostream>
-	"Persona.h"
-
-1779758604 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.cpp
-	<iostream>
+1781145860 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.cpp
 	"Tecnico.h"
 
-1779727622 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.h
+1781145860 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.h
 	"Persona.h"
 
-1779758683 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.cpp
+1780617999 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.cpp
 	<iostream>
 	"Equipo.h"
 
-1779758682 f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.h
-	<string>
+1780617925 f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.h
+	"Tecnico.h"
+	"Cliente.h"
+	"Fecha.h"
 
 1779760270 source:f:\lucas\documents\programacion 2\tpi\reparaciones\archivocliente.cpp
 	<iostream>
@@ -44,23 +44,27 @@
 
 1779760270 f:\lucas\documents\programacion 2\tpi\reparaciones\archivoequipo.h
 
-1779759526 source:f:\lucas\documents\programacion 2\tpi\reparaciones\fecha.cpp
+1780265781 source:f:\lucas\documents\programacion 2\tpi\reparaciones\fecha.cpp
 	<iostream>
 	"Fecha.h"
 
-1779759581 f:\lucas\documents\programacion 2\tpi\reparaciones\fecha.h
+1780265534 f:\lucas\documents\programacion 2\tpi\reparaciones\fecha.h
 
 1779759693 source:f:\lucas\documents\programacion 2\tpi\reparaciones\registro.cpp
 	<iostream>
 	"Registro.h"
 
-1779759693 f:\lucas\documents\programacion 2\tpi\reparaciones\registro.h
+1780028743 f:\lucas\documents\programacion 2\tpi\reparaciones\registro.h
+	<string>
 
-1779759526 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacion.cpp
+1780028743 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacion.cpp
 	<iostream>
 	"Reparacion.h"
 
-1779759581 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacion.h
+1780028743 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacion.h
+	"Equipo.h"
+	"Cliente.h"
+	"Fecha.h"
 
 1780166636 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\archivoequipo.cpp
 	<iostream>
@@ -121,4 +125,45 @@
 	"Equipo.h"
 	"Cliente.h"
 	"Fecha.h"
+
+1781148227 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientearchivo.cpp
+	"ClienteArchivo.h"
+
+1781145825 f:\lucas\documents\programacion 2\tpi\reparaciones\clientearchivo.h
+	"Cliente.h"
+	<string>
+
+1781148226 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientemanager.cpp
+	<iostream>
+	"ClienteManager.h"
+
+1781145825 f:\lucas\documents\programacion 2\tpi\reparaciones\clientemanager.h
+	"Cliente.h"
+	"ClienteArchivo.h"
+
+1781147914 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipomanager.cpp
+
+1781146365 f:\lucas\documents\programacion 2\tpi\reparaciones\menu.h
+	"Tecnico.h"
+	"ClienteManager.h"
+	"TecnicoManager.h"
+
+1781145833 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.h
+	"Tecnico.h"
+	<string>
+
+1781148227 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
+	<iostream>
+	"Menu.h"
+
+1781147852 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionmanager.cpp
+	"ReparacionManager.h"
+
+1781145833 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.cpp
+	"TecnicoManager.h"
+
+1781146687 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipoarchivo.cpp
+	<iostream>
+
+1781147851 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionmanager.h
 
