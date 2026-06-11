@@ -1,14 +1,15 @@
 #pragma once
-//#include "ManagerArchivo.h" //aca tengo que definir si hago un manager gral o no
-//#include "ManagerTecnico.h"
+
 #include "Tecnico.h"
 #include "ClienteManager.h"
+#include "TecnicoManager.h"
 
 class Menu{
 private:
 
     Tecnico _tecnico;
-//    ManagerArchivo _manager;
+    ClienteManager _managerCliente;
+    TecnicoManager _managerTecnico;
     bool _tecnicoLogueado = false;
 
 public:
@@ -19,7 +20,7 @@ public:
 
     //Setters
 
-    void setSesionActiva(bool tecnicoLogueado9);
+    void setSesionActiva(bool tecnicoLogueado);
 
     //Getters
 
