@@ -21,6 +21,10 @@ int ClienteArchivo::getCantidadRegistros(){
     
     FILE *p = fopen(_ruta.c_str(), "rb"); //Lo abro nuevamente sabiendo que existe
 
+    if(p == NULL){
+        return 0;
+    }
+
     fseek(p, 0, SEEK_END);  //Mueve el puntero al final del archivo
 
     int cantidadRegistros = ftell(p) / sizeof(Cliente); //Devuelve la posicion actual del puntero
