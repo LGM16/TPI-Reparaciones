@@ -6,9 +6,9 @@
 class Persona{
 protected:
 
-    std::string _cuit;
-    std::string _nombre;
-    std::string _apellido;
+    char _cuit[12];
+    char _nombre[51];
+    char _apellido[51];
 
 public:
 

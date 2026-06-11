@@ -31,7 +31,7 @@ void Menu::menuLogin(){
     string usuario, contrasenia;
     int intentos = 0;
 
-    cout << "===== INICIO DE SESION =====" << endl;
+    cout << "========== INICIO DE SESION ==========" << endl;
 
     while(intentos < 3 && !getSesionActiva()){
         cout << "Usuario: ";

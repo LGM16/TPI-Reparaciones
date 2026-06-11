@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "Cliente.h"
 
 ///Constructores
@@ -7,11 +8,11 @@ Cliente::Cliente()
     : Persona(),
       _idCliente(0),
       _tipoCliente(0),
-      _telefono(""),
-      _email(""),
-      _direccion(""),
       _estado(true)
 {
+    _telefono[0] = '\0';
+    _email[0] = '\0';
+    _direccion[0] = '\0';
 }
 
 Cliente::Cliente(Persona persona, int idCliente, int tipoCliente, std::string telefono,
@@ -51,19 +52,19 @@ void Cliente::setTipoCliente(int tipoCliente){
 
 void Cliente::setTelefono(std::string telefono){
     if(telefono.length() >= 8 && telefono.length() <= 15){ //idem .size()
-        _telefono = telefono;
+        strcpy(_telefono, telefono.c_str());
     }
 }
 
 void Cliente::setEmail(std::string email){
     if(email.find('@') != std::string::npos && email.length() <= 50){
-        _email = email;
+        strcpy(_email, email.c_str());
     }
 }
 
 void Cliente::setDireccion(std::string direccion){
     if(direccion.length() <= 100){
-        _direccion = direccion;
+        strcpy(_direccion, direccion.c_str());
     }
 }
 

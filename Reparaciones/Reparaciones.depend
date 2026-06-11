@@ -1,26 +1,28 @@
 # depslib dependency file v1.0
-1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
+1781210559 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
 	<iostream>
+	<cstring>
 	"Cliente.h"
 
-1781150383 f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.h
+1781210555 f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.h
 	"Persona.h"
 
-1781150383 f:\lucas\documents\programacion 2\tpi\reparaciones\persona.h
+1781210554 f:\lucas\documents\programacion 2\tpi\reparaciones\persona.h
 	<string>
 
 1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
 	<iostream>
 	"Menu.h"
 
-1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
+1781210555 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
 	<iostream>
+	<cstring>
 	"Persona.h"
 
-1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.cpp
+1781151697 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.cpp
 	"Tecnico.h"
 
-1781150383 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.h
+1781151695 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.h
 	"Persona.h"
 
 1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.cpp
@@ -126,10 +128,10 @@
 	"Cliente.h"
 	"Fecha.h"
 
-1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientearchivo.cpp
+1781213370 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientearchivo.cpp
 	"ClienteArchivo.h"
 
-1781150383 f:\lucas\documents\programacion 2\tpi\reparaciones\clientearchivo.h
+1781153178 f:\lucas\documents\programacion 2\tpi\reparaciones\clientearchivo.h
 	"Cliente.h"
 	<string>
 
@@ -148,7 +150,7 @@
 	"ClienteManager.h"
 	"TecnicoManager.h"
 
-1781150383 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.h
+1781212815 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.h
 	"Tecnico.h"
 	<string>
 

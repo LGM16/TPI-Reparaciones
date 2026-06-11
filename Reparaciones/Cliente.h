@@ -11,9 +11,9 @@ private:
 
     int _idCliente;         //asignado por ClienteManager 
     int _tipoCliente;       //1: particular; 2: empresa
-    std::string _telefono;
-    std::string _email;
-    std::string _direccion;
+    char _telefono[16];
+    char _email[51];
+    char _direccion[101];
     bool _estado = true;
 
 public:
