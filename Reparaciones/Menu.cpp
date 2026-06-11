@@ -124,8 +124,12 @@ void Menu::menuClientes(){
             case 0:
                 break;
             default:
-                cout << "Opcion no valida, intente nuevamente" << endl;
+                cout << "\nOpcion no valida, intente nuevamente\n";
                 break;
+        }
+
+        if(opcion != 0){
+            cout << "\n";
         }
 
     }while(opcion != 0);
