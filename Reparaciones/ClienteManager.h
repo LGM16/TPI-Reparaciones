@@ -2,11 +2,10 @@
 #include "Cliente.h"
 #include "ClienteArchivo.h"
 
-class ManagerCliente{
+class ClienteManager{
 private:
 
     ClienteArchivo _archivo;
-    //ArchivoTecnico _archivoClienteBackUp;  un backup?
 
     bool existeId(int id);
     int generarId();
@@ -15,17 +14,13 @@ public:
 
     //Constructores
 
-    ManagerCliente();
-
-    //Setters
-
-    //Getters
+    ClienteManager();
 
     //Metodos
 
     void cargarCliente();
     void listarClientes();
     void listarXId();
-    void listar(Cliente Cliente);
-    //void darBajaCliente();?
+    void listar(Cliente cliente);
+    void darBajaCliente();
 };
