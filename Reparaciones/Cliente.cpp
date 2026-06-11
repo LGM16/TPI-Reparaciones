@@ -23,7 +23,6 @@ Cliente::Cliente(Persona persona, int idCliente, int tipoCliente, std::string te
     setTelefono(telefono);
     setEmail(email);
     setDireccion(direccion);
-    setEstado(true);
 }
 
 ///Setters
@@ -70,44 +69,20 @@ void Cliente::setEstado(bool estado){
 }
 
 ///Metodos
-/*
-// TODO ESTO (CARGAR Y MOSTRAR) VA EN MANAGER, NO EN LA CLASE
-void Cliente::cargar(){
-
-    int idCliente, tipoCliente;
-    std::string telefono, email, direccion;
-
-    Persona::cargar(); //falta _estado
-    // aca puedo hacer una metodo para incrementar el idCliente automaticamente verificando el ultimo cargado
-    //implementar do while en cada carga para validar cada dato ingresado?
-    cout << "Ingrese el ID del Cliente: " << endl;
-    cin >> idCliente;
-    setIdCliente(idCliente);
-    cout << "Ingrese el tipo de Cliente (1: Particular, 2: Empresa): " << endl;
-    cin >> tipoCliente;
-    setTipoCliente(tipoCliente);
-    cout << "Ingrese el telefono del Cliente: " << endl;
-    cin >> telefono;
-    setTelefono(telefono);
-    cout << "Ingrese el email del Cliente: " << endl;
-    cin >> email;
-    setEmail(email);
-    cout << "Ingrese la direccion del Cliente: " << endl;
-    cin >> direccion;
-    setDireccion(direccion);
-}
-
 
 void Cliente::mostrar(){
-    Persona::mostrar();
     cout << "ID del Cliente: " << getIdCliente() << endl;
+    cout << "CUIT: " << getCuit() << endl;
 
     if(getTipoCliente() == 1){
         cout << "Tipo de Cliente: Particular" << endl;
+        cout << "Nombre: " << getNombre() << endl;
+        cout << "Apellido: " << getApellido() << endl;
     }
     else{
-        if(getTipoCliente () == 2){
+        if(getTipoCliente() == 2){
             cout << "Tipo de Cliente: Empresa" << endl;
+            cout << "Razon Social: " << getNombre() << endl;
         }
     }
 
