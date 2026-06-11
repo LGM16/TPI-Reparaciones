@@ -2,8 +2,99 @@
 using namespace std;
 #include "Fecha.h"
 
-//Constructor
+///Constructor
 
-//Setters
+Fecha::Fecha(){
+    establecerFechaDefecto();
+}
 
-//Metodos
+Fecha::Fecha(int dia, int mes, int anio){
+
+    if(validarFecha(dia,mes,anio)){
+        _dia = dia;
+        _mes = mes;
+        _anio = anio;
+    }
+    else{    
+        establecerFechaDefecto();
+    }
+}
+
+///Setters
+
+void Fecha::setDia(int dia){
+    _dia = dia;
+}
+
+void Fecha::setMes(int mes){
+    _mes = mes;
+}
+
+void Fecha::setAnio(int anio){
+    _anio = anio;
+}
+
+///Metodos
+
+void Fecha::establecerFechaDefecto(){
+    _dia = 1;
+    _mes = 1;
+    _anio = 2023;
+}
+
+int Fecha::obtenerCantDias(int mes, int anio){
+    
+    int maxDias;
+
+    switch (mes){
+    case 2: // Febrero
+        if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0))
+            maxDias = 29; // Bisiesto
+        else
+            maxDias = 28;
+        break;
+
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        maxDias = 30;
+        break;
+
+    default:
+        maxDias = 31;
+        break;
+    }
+
+    return maxDias;
+}
+
+bool Fecha::validarFecha(int dia, int mes, int anio){
+    
+    // Año válido
+    if (anio <= 0)
+        return false;
+
+    // Mes válido
+    if (mes < 1 || mes > 12)
+        return false;
+
+    // Día mínimo válido
+    if (dia < 1)
+        return false;
+
+    int maxDias;
+
+    maxDias = obtenerCantDias(mes, anio);
+
+    /*
+    if(dia <= maxDias){
+        return true;
+    }
+    else{
+        return false;
+    }
+    */
+
+    return dia <= maxDias; // Equivale al if comentado de arriba
+}

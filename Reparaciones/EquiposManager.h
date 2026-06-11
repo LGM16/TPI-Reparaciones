@@ -1,7 +1,11 @@
 #pragma once
+#include <string>
 
-class ArchivoEquipo{
+class EquipoManager{
 private:
+
+
+
 public:
 
     //Constructores

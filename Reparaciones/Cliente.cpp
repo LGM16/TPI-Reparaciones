@@ -1,37 +1,41 @@
 #include <iostream>
-using namespace std;
 #include "Cliente.h"
 
-//Constructores
+///Constructores
 
-Cliente::Cliente(){
-    setIdCliente(1);
-    setTipoCliente(1);
-    setTelefono("");
-    setEmail("");
-    setDireccion("");
-    setEstado(true);
+Cliente::Cliente()
+    : Persona("", "", ""),
+      _idCliente(0),
+      _tipoCliente(0),
+      _telefono(""),
+      _email(""),
+      _direccion(""),
+      _estado(true)
+{
 }
 
-//Setters
+Cliente::Cliente(Persona persona, int idCliente, int tipoCliente, std::string telefono,
+                 std::string email, std::string direccion, bool estado)
+    : Persona(persona.getCuit(), persona.getNombre(), persona.getApellido()),
+      _idCliente(idCliente),
+      _estado(estado)
+{
+    setTipoCliente(tipoCliente);
+    setTelefono(telefono);
+    setEmail(email);
+    setDireccion(direccion);
+}
+
+///Setters
 
 void Cliente::setIdCliente(int idCliente){
-    
-    if(idCliente > 0){
         _idCliente = idCliente;
-    }
-    else{
-        _idCliente = 1;
-    }
 }
 
 void Cliente::setTipoCliente(int tipoCliente){
 
     if(tipoCliente == 1 || tipoCliente == 2){
         _tipoCliente = tipoCliente;
-    }
-    else{
-        _tipoCliente = 1;
     }
 
     /*
@@ -45,25 +49,19 @@ void Cliente::setTipoCliente(int tipoCliente){
 
 }
 
-void Cliente::setTelefono(string telefono){
+void Cliente::setTelefono(std::string telefono){
     if(telefono.length() >= 8 && telefono.length() <= 15){ //idem .size()
         _telefono = telefono;
     }
-    else{
-        _telefono = "";
-    }
 }
 
-void Cliente::setEmail(string email){
-    if(email.find('@') != string::npos){ // busca el caracter '@' en la cadena email, si lo encuentra devuelve la posición, sino devuelve string::npos
+void Cliente::setEmail(std::string email){
+    if(email.find('@') != std::string::npos){ // busca el caracter '@' en la cadena email, si lo encuentra devuelve la posición, sino devuelve std::string::npos
         _email = email;
     }
-    else{
-        _email = "";
-    }
 }
 
-void Cliente::setDireccion(string direccion){
+void Cliente::setDireccion(std::string direccion){
     _direccion = direccion;
 }
 
@@ -71,50 +69,27 @@ void Cliente::setEstado(bool estado){
     _estado = estado;
 }
 
-//Metodos
+///Metodos
 
-void Cliente::cargar(){
-
-    int idCliente, tipoCliente;
-    string telefono, email, direccion;
-
-    Persona::cargar();
-    // aca puedo hacer una metodo para incrementar el idCliente automaticamente verificando el ultimo cargado
-    //implementar do while en cada carga para validar cada dato ingresado?
-    cout << "Ingrese el ID del Cliente: " << endl;
-    cin >> idCliente;
-    setIdCliente(idCliente);
-    cout << "Ingrese el tipo de Cliente (1: Particular, 2: Empresa): " << endl;
-    cin >> tipoCliente;
-    setTipoCliente(tipoCliente);
-    cout << "Ingrese el telefono del Cliente: " << endl;
-    cin >> telefono;
-    setTelefono(telefono);
-    cout << "Ingrese el email del Cliente: " << endl;
-    cin >> email;
-    setEmail(email);
-    cout << "Ingrese la direccion del Cliente: " << endl;
-    cin >> direccion;
-    setDireccion(direccion);
-}
-
-// TODO ESTO (CARGAR Y MOSTRAR) VA EN MANAGER, NO EN LA CLASE
 void Cliente::mostrar(){
-    Persona::mostrar();
-    cout << "ID del Cliente: " << getIdCliente() << endl;
+    std::cout << "ID del Cliente: " << getIdCliente() << "\n";
+    std::cout << "CUIT: " << getCuit() << "\n";
 
     if(getTipoCliente() == 1){
-        cout << "Tipo de Cliente: Particular" << endl;
+        std::cout << "Tipo de Cliente: Particular" << "\n";
+        std::cout << "Nombre: " << getNombre() << "\n";
+        std::cout << "Apellido: " << getApellido() << "\n";
     }
     else{
-        if(getTipoCliente () == 2){
-            cout << "Tipo de Cliente: Empresa" << endl;
+        if(getTipoCliente() == 2){
+            std::cout << "Tipo de Cliente: Empresa" << "\n";
+            std::cout << "Razon Social: " << getNombre() << "\n";
         }
     }
 
-    cout << "Telefono de Cliente: " << getTelefono() << endl;
-    cout << "Email de Cliente: " << getEmail() << endl;
-    cout << "Direccion de Cliente: " << getDireccion() << endl;
+    std::cout << "Telefono de Cliente: " << getTelefono() << "\n";
+    std::cout << "Email de Cliente: " << getEmail() << "\n";
+    std::cout << "Direccion de Cliente: " << getDireccion() << "\n";
 }
 
 bool Cliente::validarTipoCliente(int tipoCliente){

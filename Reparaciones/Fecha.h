@@ -7,25 +7,31 @@ private:
     int _mes;
     int _anio;
 
+    void establecerFechaDefecto();
+    int obtenerCantDias(int mes, int anio);
+    bool validarFecha(int dia, int mes, int anio);
+
 public:
 
-    //Constructores
+    ///Constructores
     
     Fecha();
+    Fecha(int dia, int mes, int anio);
 
-    //Setters
+    ///Setters
 
     void setDia(int dia);
     void setMes(int mes);
     void setAnio(int anio);
 
-    //Getters
+    ///Getters
 
-    int getDia();
-    int getMes();
-    int getAnio();
+    int getDia(){return _dia;}
+    int getMes(){return _mes;}
+    int getAnio(){return _anio;}
 
-    //Metodos
-
-    bool validarFecha(int dia, int mes, int anio);
+    ///Metodos
+    
+    //void agregarDias(int dias); ?
+    // agregar cargar() y mostrar() para no crear un manager?
 };

@@ -9,13 +9,23 @@ protected:
     
 public:
 
-    //Constructores
+    ///Constructores
 
     Registro();
+    Registro(std::string nombreArchivo, FILE* archivo);
 
-    //Setters
+    ///Setters
 
-    //Getters
+    void setNombreArchivo(std::string nombreArchivo);
+    void setArchivo(FILE* archivo);
+    
+    ///Getters
 
-    //Metodos
+    std::string getNombreArchivo();
+    FILE* getArchivo();
+
+    ///Metodos
+
+    void leer();
+    void escribir();
 };

@@ -2,28 +2,24 @@
 using namespace std;
 #include "Equipo.h"
 
-//Constructores
+///Constructores
 
-Equipo::Equipo(){
-    setIdEquipo(1);
-    setIdTecnico(Tecnico());
-    setIdCliente(Cliente());
-    setDescripcion("");
-    setMarca("");
-    setTipoEquipo("");
-    setFechaIngreso(Fecha());
-    setEstado(true);
-}
+Equipo::Equipo(int idEquipo, Tecnico idTecnico, Cliente idCliente, std::string descripcion, 
+    std::string marca, std::string tipoEquipo, Fecha fechaIngreso, bool estado){
+        setIdEquipo(idEquipo);
+        setIdTecnico(idTecnico);
+        setIdCliente(idCliente);
+        setDescripcion(descripcion);
+        setMarca(marca);
+        setTipoEquipo(tipoEquipo);
+        setFechaIngreso(fechaIngreso);
+        setEstado(estado);
+    }
 
-//Setters
+///Setters
 
 void Equipo::setIdEquipo(int idEquipo){
-    if(idEquipo > 0){
         _idEquipo = idEquipo;
-    }
-    else{
-        _idEquipo = 1;
-    }
 }
 
 void Equipo::setIdTecnico(Tecnico idTecnico){
@@ -54,4 +50,4 @@ void Equipo::setEstado(bool estado){
     _estado = estado;
 }
 
-//Metodos
+///Metodos

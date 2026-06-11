@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "ArchivoCliente.h"
+//#include "ArchivoEquipo.h"
 
 //Constructor
 

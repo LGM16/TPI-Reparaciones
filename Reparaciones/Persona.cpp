@@ -1,36 +1,41 @@
 //Definicion de constructores, setters, getters y metodos de la clase Persona
 
 #include <iostream>
-using namespace std;
 #include "Persona.h"
 
-//Constructores
+///Constructores
 
-Persona::Persona(){
-    setCuit("");
-    setNombre("");
-    setApellido("");
+Persona::Persona(std::string cuit, std::string nombre, std::string apellido){
+    setCuit(cuit);
+    setNombre(nombre);
+    setApellido(apellido);
 }
 
-//Setters
+///Setters
 
-void Persona::setCuit(string cuit){
-    _cuit = cuit;
+void Persona::setCuit(std::string cuit){ 
+    if(cuit.length() == 11){ //esto puede ir como validacion en el archivo?
+        _cuit = cuit;
+    }
 }
 
-void Persona::setNombre(string nombre){
-    _nombre = nombre;
+void Persona::setNombre(std::string nombre){
+    if(nombre.length() >= 3 && nombre.length() <= 50){ //esto puede ir como validacion en el archivo?
+        _nombre = nombre;
+    }
 }
 
-void Persona::setApellido(string apellido){
-    _apellido = apellido;
+void Persona::setApellido(std::string apellido){
+    if(apellido.length() >= 3 && apellido.length() <= 50){ //esto puede ir como validacion en el archivo?
+        _apellido = apellido;
+    }
 }
 
-//Metodos
-
+///Metodos
+/*
 void Persona::cargar(){
-    string cuit, nombre, apellido;
-    cout << "Apellido: ";
+    std::string cuit, nombre, apellido;
+    std::cout << "Apellido: ";
     cin >> apellido;
     setApellido(apellido);
     cout << "Nombre: ";
@@ -44,3 +49,4 @@ void Persona::cargar(){
 void Persona::mostrar(){
     cout << getApellido() << ", " << getNombre() << " - CUIT: " << getCuit() << endl;
 }
+*/
