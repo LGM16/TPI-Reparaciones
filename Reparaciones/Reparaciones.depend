@@ -14,7 +14,7 @@
 	<iostream>
 	"Menu.h"
 
-1781210555 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
+1781216752 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
 	<iostream>
 	<cstring>
 	"Persona.h"
@@ -154,7 +154,7 @@
 	"Tecnico.h"
 	<string>
 
-1781151165 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
+1781213407 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
 	<iostream>
 	"Menu.h"
 

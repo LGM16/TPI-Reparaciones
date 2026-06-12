@@ -20,20 +20,20 @@ Persona::Persona(std::string cuit, std::string nombre, std::string apellido){
 
 ///Setters
 
-void Persona::setCuit(std::string cuit){ 
-    if(cuit.length() == 11){ //esto puede ir como validacion en el archivo?
+void Persona::setCuit(std::string cuit){
+    if(cuit.length() == 11){
         strcpy(_cuit, cuit.c_str());
     }
 }
 
 void Persona::setNombre(std::string nombre){
-    if(nombre.length() >= 3 && nombre.length() <= 50){ //esto puede ir como validacion en el archivo?
+    if(nombre.length() >= 3 && nombre.length() <= 50){
         strcpy(_nombre, nombre.c_str());
     }
 }
 
 void Persona::setApellido(std::string apellido){
-    if(apellido.length() >= 3 && apellido.length() <= 50){ //esto puede ir como validacion en el archivo?
+    if(apellido.length() >= 3 && apellido.length() <= 50){
         strcpy(_apellido, apellido.c_str());
     }
     else if(apellido.empty()){
