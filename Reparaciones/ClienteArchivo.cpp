@@ -16,12 +16,6 @@ ClienteArchivo::ClienteArchivo(std::string ruta){
 
 int ClienteArchivo::getCantidadRegistros(){
 
-    /*
-    if(!existeArchivo()){
-        return 0;
-    }
-    */
-
     FILE *p = fopen(_ruta.c_str(), "rb"); //Lo abro nuevamente sabiendo que existe
 
     if(p == NULL){
@@ -36,19 +30,6 @@ int ClienteArchivo::getCantidadRegistros(){
     return cantidadRegistros;
 }
 
-///Metodos
-/*
-bool ClienteArchivo::existeArchivo(){
-    FILE *p = fopen(_ruta.c_str(), "rb"); //Si el archivo no existe devuelve 0
-
-    if(p == NULL){
-        return false;
-    }
-
-    fclose(p);
-    return true;
-}
-*/
 bool ClienteArchivo::guardar(Cliente reg){
     FILE *p = fopen(_ruta.c_str(), "ab");
 
