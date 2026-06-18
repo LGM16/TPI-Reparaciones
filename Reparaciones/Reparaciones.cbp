@@ -67,11 +67,12 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Registro.cpp" />
-		<Unit filename="Registro.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="Reparacion.cpp" />
 		<Unit filename="Reparacion.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ReparacionArchivo.cpp" />
+		<Unit filename="ReparacionArchivo.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="ReparacionManager.cpp" />
@@ -80,6 +81,10 @@
 		</Unit>
 		<Unit filename="Tecnico.cpp" />
 		<Unit filename="Tecnico.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="TecnicoArchivo.cpp" />
+		<Unit filename="TecnicoArchivo.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="TecnicoManager.cpp" />
