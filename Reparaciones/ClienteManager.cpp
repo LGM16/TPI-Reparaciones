@@ -85,10 +85,6 @@ void ClienteManager::cargarCliente(){
 }
 
 void ClienteManager::listarClientes(){
-    if(!_archivo.existeArchivo()){
-        cout << "\nNo hay clientes cargados.\n";
-        return;
-    }
 
     int cantidadRegistros = _archivo.getCantidadRegistros();
 
@@ -103,24 +99,26 @@ void ClienteManager::listarClientes(){
     for(int i = 0; i < cantidadRegistros; i++){
         Cliente reg = _archivo.leer(i);
 
-        if(reg.getIdCliente() <= 0){
-            continue;
-        }
+        if(reg.getIdCliente() > 0){
+        
+            hayRegistrosValidos = true;
 
-        hayRegistrosValidos = true;
-
-        if(reg.getEstado()){
-            listar(reg);
-            cout << "-------------------------\n";
-            hayActivos = true;
+            if(reg.getEstado()){
+                
+                listar(reg);
+                cout << "-------------------------\n";
+                hayActivos = true;
+            }
         }
     }
 
     if(!hayRegistrosValidos){
         cout << "\nNo hay clientes cargados.\n";
     }
-    else if(!hayActivos){
-        cout << "\nNo hay clientes activos.\n";
+    else{
+        if(!hayActivos){
+            cout << "\nNo hay clientes activos.\n";
+        }
     }
 }
 
