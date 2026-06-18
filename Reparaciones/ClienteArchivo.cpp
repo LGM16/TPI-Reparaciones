@@ -10,8 +10,6 @@ ClienteArchivo::ClienteArchivo(std::string ruta){
     _ruta = ruta;
 }
 
-///Setters
-
 ///Getters
 
 int ClienteArchivo::getCantidadRegistros(){
@@ -29,6 +27,8 @@ int ClienteArchivo::getCantidadRegistros(){
     fclose(p);
     return cantidadRegistros;
 }
+
+///Metodos
 
 bool ClienteArchivo::guardar(Cliente reg){
     FILE *p = fopen(_ruta.c_str(), "ab");
