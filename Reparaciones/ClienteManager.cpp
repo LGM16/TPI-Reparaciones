@@ -35,7 +35,9 @@ bool ClienteManager::existeId(int id){
 }
 
 void ClienteManager::cargarCliente(){
+    
     string cuit, nombre, apellido, telefono, email, direccion;
+    
     int tipoCliente;
     int idCliente = generarId();
 
@@ -88,13 +90,13 @@ void ClienteManager::listarClientes(){
 
     int cantidadRegistros = _archivo.getCantidadRegistros();
 
+    bool hayRegistrosValidos = false;
+    bool hayActivos = false;
+
     if(cantidadRegistros == 0){
         cout << "\nNo hay clientes cargados.\n";
         return;
     }
-
-    bool hayRegistrosValidos = false;
-    bool hayActivos = false;
 
     for(int i = 0; i < cantidadRegistros; i++){
         Cliente reg = _archivo.leer(i);
@@ -107,6 +109,7 @@ void ClienteManager::listarClientes(){
                 
                 listar(reg);
                 cout << "-------------------------\n";
+                
                 hayActivos = true;
             }
         }
@@ -123,7 +126,9 @@ void ClienteManager::listarClientes(){
 }
 
 void ClienteManager::listarXId(){
+    
     int id;
+    
     cout << "Ingrese el ID del cliente: ";
     cin >> id;
 
@@ -139,7 +144,30 @@ void ClienteManager::listarXId(){
 }
 
 void ClienteManager::listar(Cliente cliente){
-    cliente.mostrar();
+    
+    cout << "ID: " << cliente.getIdCliente() << endl;
+    cout << "CUIT: " << cliente.getCuit() << endl;
+
+    if(cliente.getTipoCliente() == 1){
+        cout << "Tipo Cliente: Particular" << endl;
+        cout << "Nombre: " << cliente.getNombre() << endl;
+        cout << "Apellido: " << cliente.getApellido() << endl;
+    }
+    else{
+        cout << "Tipo Cliente: Empresa" << endl;
+        cout << "Razon Social: " << cliente.getNombre() << endl;
+    }
+
+    cout << "Telefono: " << cliente.getTelefono() << endl;
+    cout << "Email: " << cliente.getEmail() << endl;
+    cout << "Direccion: " << cliente.getDireccion() << endl;
+
+    if(cliente.getEstado()){
+        cout << "Estado: Activo" << endl;
+    }
+    else{
+        cout << "Estado: Inactivo" << endl;
+    }
 }
 
 void ClienteManager::darBajaCliente(){

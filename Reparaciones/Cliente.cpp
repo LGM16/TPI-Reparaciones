@@ -38,16 +38,6 @@ void Cliente::setTipoCliente(int tipoCliente){
     if(tipoCliente == 1 || tipoCliente == 2){
         _tipoCliente = tipoCliente;
     }
-
-    /*
-    if(validarTipoCliente(tipoCliente)){
-        _tipoCliente = tipoCliente;
-    }
-    else{
-        _tipoCliente = 1;
-    }
-    */
-
 }
 
 void Cliente::setTelefono(std::string telefono){
@@ -73,27 +63,6 @@ void Cliente::setEstado(bool estado){
 }
 
 ///Metodos
-
-void Cliente::mostrar(){
-    std::cout << "ID del Cliente: " << getIdCliente() << "\n";
-    std::cout << "CUIT: " << getCuit() << "\n";
-
-    if(getTipoCliente() == 1){
-        std::cout << "Tipo de Cliente: Particular" << "\n";
-        std::cout << "Nombre: " << getNombre() << "\n";
-        std::cout << "Apellido: " << getApellido() << "\n";
-    }
-    else{
-        if(getTipoCliente() == 2){
-            std::cout << "Tipo de Cliente: Empresa" << "\n";
-            std::cout << "Razon Social: " << getNombre() << "\n";
-        }
-    }
-
-    std::cout << "Telefono de Cliente: " << getTelefono() << "\n";
-    std::cout << "Email de Cliente: " << getEmail() << "\n";
-    std::cout << "Direccion de Cliente: " << getDireccion() << "\n";
-}
 
 bool Cliente::validarTipoCliente(int tipoCliente){
     if(tipoCliente == 1 || tipoCliente == 2){

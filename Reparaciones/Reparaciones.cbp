@@ -66,7 +66,6 @@
 		<Unit filename="Persona.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Registro.cpp" />
 		<Unit filename="Reparacion.cpp" />
 		<Unit filename="Reparacion.h">
 			<Option target="&lt;{~None~}&gt;" />

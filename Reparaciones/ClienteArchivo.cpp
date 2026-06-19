@@ -31,6 +31,7 @@ int ClienteArchivo::getCantidadRegistros(){
 ///Metodos
 
 bool ClienteArchivo::guardar(Cliente reg){
+    
     FILE *p = fopen(_ruta.c_str(), "ab");
 
     if(p == NULL){
@@ -44,6 +45,7 @@ bool ClienteArchivo::guardar(Cliente reg){
 }
 
 bool ClienteArchivo::guardar(Cliente reg, int posicionReemplazada){
+    
     FILE *p = fopen(_ruta.c_str(), "rb+");
 
     if(p == NULL){
@@ -73,6 +75,7 @@ bool ClienteArchivo::guardar(Cliente *vec, int cantidadRegistros){
 }
 
 Cliente ClienteArchivo::leer(int posRegistro){
+    
     Cliente reg;
 
     FILE *p = fopen(_ruta.c_str(), "rb");
@@ -88,6 +91,7 @@ Cliente ClienteArchivo::leer(int posRegistro){
 }
 
 void ClienteArchivo::leerTodos(Cliente *vec, int cantidadRegistros){
+    
     FILE *p = fopen(_ruta.c_str(), "rb");
 
     if(p == NULL){
@@ -99,7 +103,9 @@ void ClienteArchivo::leerTodos(Cliente *vec, int cantidadRegistros){
 }
 
 int ClienteArchivo::buscar(int id){
+    
     int i, cantidadRegistros = getCantidadRegistros();
+    
     Cliente reg;
 
     for(i = 0; i < cantidadRegistros; i++){

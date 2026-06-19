@@ -5,8 +5,9 @@ class Tecnico: public Persona{
 private:
 
     int _idTecnico;
-    std::string _usuario;
-    std::string _contrasenia;
+    char _usuario[21];
+    char _contrasenia[51];
+    bool _estado = true;
 
 public:
 
@@ -20,15 +21,16 @@ public:
     void setIdTecnico(int idTecnico);
     void setUsuario(std::string usuario);
     void setContrasenia(std::string contrasenia);
+    void setEstado(bool estado);
 
     ///Getters
 
     int getIdTecnico(){return _idTecnico;}
-    std::string getUsuario(){return _usuario;}
-    std::string getContrasenia(){return _contrasenia;}
+    
+    std::string getUsuario(){return std::string(_usuario);}
+    std::string getContrasenia(){return std::string(_contrasenia);}
+    
+    bool getEstado(){return _estado;}
 
     ///Metodos
-
-    void cargar();
-    void mostrar();
 };
