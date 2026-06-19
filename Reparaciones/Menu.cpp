@@ -28,12 +28,15 @@ void Menu::ejecutar(){
 }
 
 void Menu::menuLogin(){
+    
     string usuario, contrasenia;
+    
     int intentos = 0;
 
     cout << "========== INICIO DE SESION ==========" << endl;
 
     while(intentos < 3 && !getSesionActiva()){
+        
         cout << "Usuario: ";
         cin >> usuario;
         cout << "Contrasenia: ";
@@ -41,10 +44,12 @@ void Menu::menuLogin(){
 
         if(_managerTecnico.validarCredenciales(usuario, contrasenia, _tecnico)){
             setSesionActiva(true);
+
             cout << "Bienvenido " << _tecnico.getNombre() << "!" << endl;
         }
         else{
             intentos++;
+
             cout << "Credenciales incorrectas, intenta de nuevo :(" << endl;
             cout << "Intento: " << intentos << " de 3" << endl;
         }
@@ -52,6 +57,7 @@ void Menu::menuLogin(){
 }
 
 void Menu::menuPrincipal(){
+    
     int opcion;
 
     do{
@@ -95,6 +101,7 @@ void Menu::menuPrincipal(){
 }
 
 void Menu::menuClientes(){
+    
     int opcion;
 
     do{

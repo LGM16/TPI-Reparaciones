@@ -39,3 +39,7 @@ void Tecnico::setContrasenia(std::string contrasenia){
         strcpy(_contrasenia, contrasenia.c_str());
     }
 }
+
+void Tecnico::setEstado(bool estado){
+    _estado = estado;
+}

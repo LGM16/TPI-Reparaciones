@@ -146,10 +146,10 @@ void TecnicoManager::darBajaTecnico(){
 
     Tecnico reg;
 
-    pos = _archivo.buscar(id);
-
     cout << "Ingrese el ID del tecnico a dar de baja: ";
     cin >> id;
+
+    pos = _archivo.buscar(id);
 
     if(pos == -1){
         cout << "No se encontro un tecnico con el ID ingresado." << endl;
@@ -174,11 +174,16 @@ void TecnicoManager::darBajaTecnico(){
 }
 
 bool TecnicoManager::validarCredenciales(string usuario, string contrasenia, Tecnico& tecnico){
-    //validacion provisoria hasta implementar TecnicoArchivo
-    if(usuario == tecnico.getUsuario() && contrasenia == tecnico.getContrasenia()){
-        Persona persona("20123456789", "Lucas", "Migliore");
-        tecnico = Tecnico(persona, 1, usuario, contrasenia);
-        return true;
+    
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    for(int i = 0; i < cantidadRegistros; i++){
+        Tecnico reg = _archivo.leer(i);
+
+        if((reg.getIdTecnico() > 0 && reg.getEstado()) && (reg.getUsuario() == usuario && reg.getContrasenia() == contrasenia)){
+            tecnico = reg;
+            return true;
+        }
     }
     return false;
 }

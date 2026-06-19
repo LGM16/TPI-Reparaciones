@@ -46,6 +46,4 @@ public:
     bool getEstado(){return _estado;}
 
     ///Metodos
-
-    bool validarTipoCliente(int tipoCliente);
 };

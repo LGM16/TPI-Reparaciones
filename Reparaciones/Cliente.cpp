@@ -63,10 +63,3 @@ void Cliente::setEstado(bool estado){
 }
 
 ///Metodos
-
-bool Cliente::validarTipoCliente(int tipoCliente){
-    if(tipoCliente == 1 || tipoCliente == 2){
-        return true;
-    }
-    return false;
-}
