@@ -51,7 +51,7 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="EquipoManager.cpp" />
-		<Unit filename="EquiposManager.h">
+		<Unit filename="EquipoManager.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Fecha.cpp" />
