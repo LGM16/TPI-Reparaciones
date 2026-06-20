@@ -62,7 +62,7 @@ void Menu::menuPrincipal(){
 
     do{
         cout << endl;
-        cout << "===== MENU PRINCIPAL =====" << endl;
+        cout << "========== MENU PRINCIPAL ==========" << endl;
         cout << "1. Clientes" << endl;
         cout << "2. Equipos" << endl;
         cout << "3. Reparaciones" << endl;
@@ -106,7 +106,7 @@ void Menu::menuClientes(){
 
     do{
         cout << endl;
-        cout << "===== MENU CLIENTES =====" << endl;
+        cout << "========== MENU CLIENTES ==========" << endl;
         cout << "1. Cargar cliente" << endl;
         cout << "2. Listar clientes" << endl;
         cout << "3. Buscar cliente por ID" << endl;
@@ -155,5 +155,44 @@ void Menu::menuInformes(){
 }
 
 void Menu::menuTecnicos(){
-    cout << "Menu en construccion." << endl;
+
+    int opcion;
+
+    do{
+        cout << endl;
+        cout << "========== MENU TECNICOS ==========" << endl;
+        cout << "1. Cargar tecnico" << endl;
+        cout << "2. Listar tecnicos" << endl;
+        cout << "3. Buscar tecnico por ID" << endl;
+        cout << "4. Dar de baja tecnico" << endl;
+        cout << "0. Volver" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                _managerTecnico.crearTecnico();
+                break;
+            case 2:
+                _managerTecnico.listarTecnicos();
+                break;
+            case 3:
+                _managerTecnico.listarXId();
+                break;
+            case 4:
+                _managerTecnico.darBajaTecnico();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "\nOpcion no valida, intente nuevamente\n";
+                break;
+        }
+
+        if(opcion != 0){
+            cout << "\n";
+        }
+
+    }while(opcion != 0);    
+    //cout << "Menu en construccion." << endl;
 }
