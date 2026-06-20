@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Tecnico.h"
 #include "ClienteManager.h"
 #include "TecnicoManager.h"
