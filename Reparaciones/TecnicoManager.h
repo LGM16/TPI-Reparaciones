@@ -23,6 +23,5 @@ public:
     void listarXId();
     void listar(Tecnico tecnico);
     void darBajaTecnico();
-
     bool validarCredenciales(std::string usuario, std::string contrasenia, Tecnico& tecnico);
 };
