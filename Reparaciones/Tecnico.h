@@ -26,10 +26,8 @@ public:
     ///Getters
 
     int getIdTecnico(){return _idTecnico;}
-    
     std::string getUsuario(){return std::string(_usuario);}
     std::string getContrasenia(){return std::string(_contrasenia);}
-    
     bool getEstado(){return _estado;}
 
     ///Metodos
