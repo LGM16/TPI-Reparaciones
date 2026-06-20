@@ -18,9 +18,9 @@ private:
     //sumar int numSerie
     Tecnico _idTecnico;
     Cliente _idCliente;
-    std::string _descripcion;
-    std::string _marca;
-    std::string _tipoEquipo;
+    char _descripcion[101];
+    char _marca[51];
+    char _tipoEquipo[50];
     Fecha _fechaIngreso;
     bool _estado = true;
     
@@ -28,6 +28,7 @@ public:
 
     ///Constructores
 
+    Equipo();
     Equipo(int idEquipo, Tecnico idTecnico, Cliente idCliente, std::string descripcion,
            std::string marca, std::string tipoEquipo, Fecha fechaIngreso, bool estado);
 
@@ -44,14 +45,14 @@ public:
 
     ///Getters
 
-    int getIdEquipo();
-    Tecnico getIdTecnico();
-    Cliente getIdCliente();
-    std::string getDescripcion();
-    std::string getMarca();
-    std::string getTipoEquipo();
-    Fecha getFechaIngreso();
-    bool getEstado();
+    int getIdEquipo(){return _idEquipo;}
+    Tecnico getIdTecnico(){return _idTecnico;}
+    Cliente getIdCliente(){return _idCliente;}
+    std::string getDescripcion(){return std::string(_descripcion);}
+    std::string getMarca(){return std::string(_marca);}
+    std::string getTipoEquipo(){return std::string(_tipoEquipo);}
+    Fecha getFechaIngreso(){return _fechaIngreso;}
+    bool getEstado(){return _estado;}
 
     ///Metodos
 };
