@@ -23,10 +23,7 @@ public:
     bool guardar(Tecnico reg);
     bool guardar(Tecnico reg, int posicionReemplazada);
     bool guardar(Tecnico *vec, int cantidadRegistros);
-
     Tecnico leer(int posRegistro);
-
     void leerTodos(Tecnico *vec, int cantidadRegistros);
-
     int buscar(int id);
 };
