@@ -53,7 +53,7 @@ bool TecnicoManager::hayTecnicos(){
     return _archivo.getCantidadRegistros() > 0;
 }
 
-void TecnicoManager::crearTecnico(){
+bool TecnicoManager::crearTecnico(Tecnico& tecnicoCreado){
 
     string nombre, apellido, usuario, contrasenia;
 
@@ -72,7 +72,7 @@ void TecnicoManager::crearTecnico(){
 
     if(existeUsuario(usuario)){
         cout << "El usuario ya existe. Elija otro." << endl;
-        return;
+        return false;
     }
 
     cout << "Contraseña: ";
@@ -83,9 +83,12 @@ void TecnicoManager::crearTecnico(){
 
     if(_archivo.guardar(nuevo)){
         cout << "Tecnico creado con ID: " << idTecnico << endl;
+        tecnicoCreado = nuevo;
+        return true;
     }
     else{
         cout << "No se pudo guardar el tecnico." << endl;
+        return false;
     }
 }
 

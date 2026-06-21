@@ -19,7 +19,7 @@ public:
 
     ///Metodos
 
-    void crearTecnico();
+    bool crearTecnico(Tecnico& tecnicoCreado);
     void listarTecnicos();
     void listarXId();
     void listar(Tecnico tecnico);

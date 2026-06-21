@@ -36,9 +36,26 @@ void Menu::menuLogin(){
     cout << "========== INICIO DE SESION ==========" << endl;
 
     if(!_managerTecnico.hayTecnicos()){
-        cout << "No se encontro tecnicos.dat o no hay tecnicos registrados." << endl;
-        cout << "Debe existir al menos un tecnico activo para iniciar sesion." << endl;
-        return;
+        int opcion;
+
+        cout << "No hay tecnicos registrados (tecnicos.dat no existe o esta vacio)." << endl;
+        cout << "Desea crear el primer tecnico para ingresar? (1: Si, 0: No): ";
+        cin >> opcion;
+
+        if(opcion != 1){
+            cout << "No se puede continuar sin un tecnico registrado." << endl;
+            return;
+        }
+
+        if(_managerTecnico.crearTecnico(_tecnico)){
+            setSesionActiva(true);
+            cout << "Tecnico creado. Bienvenido " << _tecnico.getNombre() << "!" << endl;
+            return;
+        }
+        else{
+            cout << "No se pudo crear el tecnico. Fin del programa." << endl;
+            return;
+        }
     }
 
     while(intentos < 3 && !getSesionActiva()){
@@ -302,9 +319,11 @@ void Menu::menuTecnicos(){
         cin >> opcion;
 
         switch(opcion){
-            case 1:
-                _managerTecnico.crearTecnico();
+            case 1:{
+                Tecnico t;
+                _managerTecnico.crearTecnico(t);
                 break;
+            }
             case 2:
                 _managerTecnico.listarTecnicos();
                 break;
