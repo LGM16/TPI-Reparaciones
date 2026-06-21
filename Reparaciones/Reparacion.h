@@ -7,8 +7,7 @@ class Reparacion{
 private:
 
     int _idReparacion;
-    Equipo _equipo;
-    Cliente _idCliente;
+    int _idEquipo;
     Fecha _fechaIngreso;
     Fecha _fechaEgreso;
     float _importe;
@@ -20,14 +19,13 @@ public:
     ///Constructores
 
     Reparacion();
-    Reparacion(int idReparacion, Equipo equipo, Cliente idCliente, Fecha fechaIngreso,
+    Reparacion(int idReparacion, int idEquipo, Fecha fechaIngreso,
               Fecha fechaEgreso, float importe, int estadoRep, bool estado);
 
     ///Setters
 
     void setIdReparacion(int idReparacion);
-    void setEquipo(Equipo equipo);
-    void setIdCliente(Cliente idCliente);
+    void setIdEquipo(int idEquipo);
     void setFechaIngreso(Fecha fechaIngreso);
     void setFechaEgreso(Fecha fechaEgreso);
     void setImporte(float importe);
@@ -37,8 +35,7 @@ public:
     ///Getters
 
     int getIdReparacion(){return _idReparacion;};
-    Equipo getEquipo(){return _equipo;};
-    Cliente getIdCliente(){return _idCliente;};
+    int getIdEquipo(){return _idEquipo;};
     Fecha getFechaIngreso(){return _fechaIngreso;};
     Fecha getFechaEgreso(){return _fechaEgreso;};
     float getImporte(){return _importe;};

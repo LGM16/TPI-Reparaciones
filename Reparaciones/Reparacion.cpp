@@ -9,14 +9,13 @@ Reparacion::Reparacion(){
     _estado = false; //Inactivo por defecto
 }
 
-Reparacion::Reparacion(int idReparacion, Equipo equipo, Cliente idCliente, Fecha fechaIngreso,
+Reparacion::Reparacion(int idReparacion, int idEquipo, Fecha fechaIngreso,
                          Fecha fechaEgreso, float importe, int estadoRep, bool estado)
-    : _idReparacion(idReparacion), _equipo(equipo), _idCliente(idCliente), _fechaIngreso(fechaIngreso),
+    : _idReparacion(idReparacion), _idEquipo(idEquipo), _fechaIngreso(fechaIngreso),
       _fechaEgreso(fechaEgreso), _importe(importe), _estadoRep(estadoRep), _estado(estado)
 {
     setIdReparacion(idReparacion);
-    setEquipo(equipo);
-    setIdCliente(idCliente);
+    setIdEquipo(idEquipo);
     setFechaIngreso(fechaIngreso);
     setFechaEgreso(fechaEgreso);
     setImporte(importe);
@@ -31,12 +30,10 @@ void Reparacion::setIdReparacion(int idReparacion){
     }
 }
 
-void Reparacion::setEquipo(Equipo equipo){
-    _equipo = equipo;
-}
-
-void Reparacion::setIdCliente(Cliente idCliente){
-    _idCliente = idCliente;
+void Reparacion::setIdEquipo(int idEquipo){
+    if(idEquipo > 0){
+        _idEquipo = idEquipo;
+    }
 }
 
 void Reparacion::setFechaIngreso(Fecha fechaIngreso){

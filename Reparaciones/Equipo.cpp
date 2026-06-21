@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "Reparacion.h"
+#include "Equipo.h"
 
 ///Constructores
 
@@ -12,7 +12,7 @@ Equipo::Equipo()
     _tipoEquipo[0] = '\0';
 }
 
-Equipo::Equipo(int idEquipo, Tecnico idTecnico, Cliente idCliente, std::string descripcion, 
+Equipo::Equipo(int idEquipo, int idTecnico, int idCliente, std::string descripcion, 
     std::string marca, std::string tipoEquipo, Fecha fechaIngreso, bool estado){
         setIdEquipo(idEquipo);
         setIdTecnico(idTecnico);
@@ -32,14 +32,14 @@ void Equipo::setIdEquipo(int idEquipo){
         }
 }
 
-void Equipo::setIdTecnico(Tecnico idTecnico){
-    if(idTecnico.getIdTecnico() > 0){
+void Equipo::setIdTecnico(int idTecnico){
+    if(idTecnico > 0){
         _idTecnico = idTecnico;
     }
 }
 
-void Equipo::setIdCliente(Cliente idCliente){
-    if(idCliente.getIdCliente() > 0){
+void Equipo::setIdCliente(int idCliente){
+    if(idCliente > 0){
         _idCliente = idCliente;
     }
 }

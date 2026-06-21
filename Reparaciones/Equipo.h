@@ -15,12 +15,11 @@ class Equipo{
 private:
 
     int _idEquipo;
-    //sumar int numSerie
-    Tecnico _idTecnico;
-    Cliente _idCliente;
+    int _idTecnico;
+    int _idCliente;
     char _descripcion[101];
     char _marca[51];
-    char _tipoEquipo[50];
+    char _tipoEquipo[51];
     Fecha _fechaIngreso;
     bool _estado = true;
     
@@ -29,14 +28,14 @@ public:
     ///Constructores
 
     Equipo();
-    Equipo(int idEquipo, Tecnico idTecnico, Cliente idCliente, std::string descripcion,
+    Equipo(int idEquipo, int idTecnico, int idCliente, std::string descripcion,
            std::string marca, std::string tipoEquipo, Fecha fechaIngreso, bool estado);
 
     ///Setters
 
     void setIdEquipo(int idEquipo);
-    void setIdTecnico(Tecnico idTecnico);
-    void setIdCliente(Cliente idCliente);
+    void setIdTecnico(int idTecnico);
+    void setIdCliente(int idCliente);
     void setDescripcion(std::string descripcion);
     void setMarca(std::string marca);
     void setTipoEquipo(std::string tipoEquipo);
@@ -46,8 +45,8 @@ public:
     ///Getters
 
     int getIdEquipo(){return _idEquipo;}
-    Tecnico getIdTecnico(){return _idTecnico;}
-    Cliente getIdCliente(){return _idCliente;}
+    int getIdTecnico(){return _idTecnico;}
+    int getIdCliente(){return _idCliente;}
     std::string getDescripcion(){return std::string(_descripcion);}
     std::string getMarca(){return std::string(_marca);}
     std::string getTipoEquipo(){return std::string(_tipoEquipo);}
