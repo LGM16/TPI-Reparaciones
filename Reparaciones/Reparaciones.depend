@@ -95,7 +95,7 @@
 	"ReparacionManager.h"
 	"InformeManager.h"
 
-1782082185 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicomanager.h
+1782084425 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicomanager.h
 	"Tecnico.h"
 	"TecnicoArchivo.h"
 
@@ -104,7 +104,7 @@
 	"ReparacionArchivo.h"
 	"EquipoArchivo.h"
 
-1782082152 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\menu.cpp
+1782084428 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\menu.cpp
 	<iostream>
 	"Menu.h"
 
@@ -131,7 +131,7 @@
 1782071714 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicoarchivo.cpp
 	"TecnicoArchivo.h"
 
-1782082186 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicomanager.cpp
+1782084426 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicomanager.cpp
 	<iostream>
 	"TecnicoManager.h"
 
