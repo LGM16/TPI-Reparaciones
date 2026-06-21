@@ -7,9 +7,8 @@ periférico, etc.
 */
 
 #pragma once
-#include "Tecnico.h"
-#include "Cliente.h"
 #include "Fecha.h"
+#include <string>
 
 class Equipo{
 private:

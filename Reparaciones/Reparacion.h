@@ -1,6 +1,4 @@
 #pragma once
-#include "Equipo.h"
-#include "Cliente.h"
 #include "Fecha.h"
 
 class Reparacion{

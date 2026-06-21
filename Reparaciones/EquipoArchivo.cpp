@@ -32,7 +32,7 @@ int EquipoArchivo::getCantidadRegistros(){
 
 bool EquipoArchivo::guardar(Equipo reg){
 
-    FILE *P = fopen(_ruta.c_str(), "ab");
+    FILE *p = fopen(_ruta.c_str(), "ab");
 
     if(p == NULL){
         return false;
@@ -54,8 +54,66 @@ bool EquipoArchivo::guardar(Equipo reg, int posicionReemplazada){
 
     fseek(p, posicionReemplazada * sizeof(Equipo), SEEK_SET);
 
-    bool pudoEscribir = fwrite(&reg, sizeof(Equipo, 1, p));
+    bool pudoEscribir = fwrite(&reg, sizeof(Equipo), 1, p);
 
     fclose(p);
     return pudoEscribir;
+}
+
+bool EquipoArchivo::guardar(Equipo *vec, int cantidadRegistros){
+
+    FILE *p = fopen(_ruta.c_str(), "ab");
+
+    if(p == NULL){
+        return false;
+    }
+
+    int registrosEscritos = fwrite(vec, sizeof(Equipo), cantidadRegistros, p);
+
+    fclose(p);
+    return registrosEscritos == cantidadRegistros;
+}
+
+Equipo EquipoArchivo::leer(int posRegistro){
+
+    Equipo reg;
+
+    FILE *p = fopen(_ruta.c_str(), "rb");
+
+    if(p == NULL){
+        return reg;
+    }
+
+    fseek(p, posRegistro * sizeof(Equipo), SEEK_SET);
+    fread(&reg, sizeof(Equipo), 1, p);
+    fclose(p);
+    return reg;
+}
+
+void EquipoArchivo::leerTodos(Equipo *vec, int cantidadRegistros){
+
+    FILE *p = fopen(_ruta.c_str(), "rb");
+
+    if(p == NULL){
+        return;
+    }
+
+    fread(vec, sizeof(Equipo), cantidadRegistros, p);
+    fclose(p);
+}
+
+int EquipoArchivo::buscar(int id){
+
+    int i, cantidadRegistros = getCantidadRegistros();
+
+    Equipo reg;
+
+    for(i = 0; i < cantidadRegistros; i++){
+        reg = leer(i);
+
+        if(reg.getIdEquipo() == id){
+            return i;
+        }
+    }
+    return -1;
 }

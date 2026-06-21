@@ -58,6 +58,10 @@
 		<Unit filename="Fecha.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="InformeManager.cpp" />
+		<Unit filename="InformeManager.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h">
 			<Option target="&lt;{~None~}&gt;" />

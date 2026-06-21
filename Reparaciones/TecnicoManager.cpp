@@ -32,17 +32,35 @@ int TecnicoManager::generarId(){
 }
 
 bool TecnicoManager::existeId(int id){
-    return _archivo.buscar(id) != -1; //Si buscar devuelve -1, el ID no existe. ahorra el if
+    return _archivo.buscar(id) != -1;
+}
+
+bool TecnicoManager::existeUsuario(string usuario){
+
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    for(int i = 0; i < cantidadRegistros; i++){
+        Tecnico reg = _archivo.leer(i);
+
+        if(reg.getIdTecnico() > 0 && reg.getUsuario() == usuario){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool TecnicoManager::hayTecnicos(){
+    return _archivo.getCantidadRegistros() > 0;
 }
 
 void TecnicoManager::crearTecnico(){
 
-    std::string nombre, apellido, usuario, contrasenia; 
+    string nombre, apellido, usuario, contrasenia;
 
     int idTecnico = generarId();
 
     cout << "Ingrese los datos del tecnico: " << endl;
-    
+
     cout << "Nombre: ";
     cin >> nombre;
 
@@ -51,6 +69,11 @@ void TecnicoManager::crearTecnico(){
 
     cout << "Usuario: ";
     cin >> usuario;
+
+    if(existeUsuario(usuario)){
+        cout << "El usuario ya existe. Elija otro." << endl;
+        return;
+    }
 
     cout << "Contraseña: ";
     cin >> contrasenia;

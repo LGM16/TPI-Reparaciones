@@ -62,7 +62,8 @@ void ClienteManager::cargarCliente(){
     }
     else{
         cout << "Razon Social: ";
-        cin >> nombre;
+        cin.ignore();
+        getline(cin, nombre);
         apellido = "";
     }
 
@@ -73,7 +74,8 @@ void ClienteManager::cargarCliente(){
     cin >> email;
 
     cout << "Direccion: ";
-    cin >> direccion;
+    cin.ignore();
+    getline(cin, direccion);
 
     Persona persona(cuit, nombre, apellido);
     Cliente nuevo(persona, idCliente, tipoCliente, telefono, email, direccion, true);

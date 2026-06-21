@@ -28,15 +28,21 @@ void Menu::ejecutar(){
 }
 
 void Menu::menuLogin(){
-    
+
     string usuario, contrasenia;
-    
+
     int intentos = 0;
 
     cout << "========== INICIO DE SESION ==========" << endl;
 
+    if(!_managerTecnico.hayTecnicos()){
+        cout << "No se encontro tecnicos.dat o no hay tecnicos registrados." << endl;
+        cout << "Debe existir al menos un tecnico activo para iniciar sesion." << endl;
+        return;
+    }
+
     while(intentos < 3 && !getSesionActiva()){
-        
+
         cout << "Usuario: ";
         cin >> usuario;
         cout << "Contrasenia: ";
@@ -57,7 +63,7 @@ void Menu::menuLogin(){
 }
 
 void Menu::menuPrincipal(){
-    
+
     int opcion;
 
     do{
@@ -101,7 +107,7 @@ void Menu::menuPrincipal(){
 }
 
 void Menu::menuClientes(){
-    
+
     int opcion;
 
     do{
@@ -143,15 +149,141 @@ void Menu::menuClientes(){
 }
 
 void Menu::menuEquipos(){
-    cout << "Menu en construccion." << endl;
+
+    int opcion;
+
+    do{
+        cout << endl;
+        cout << "========== MENU EQUIPOS ==========" << endl;
+        cout << "1. Cargar equipo" << endl;
+        cout << "2. Listar equipos" << endl;
+        cout << "3. Buscar equipo por ID" << endl;
+        cout << "4. Dar de baja equipo" << endl;
+        cout << "0. Volver" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                _managerEquipo.crearEquipo();
+                break;
+            case 2:
+                _managerEquipo.listarEquipos();
+                break;
+            case 3:
+                _managerEquipo.listarXId();
+                break;
+            case 4:
+                _managerEquipo.darBajaEquipo();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "\nOpcion no valida, intente nuevamente\n";
+                break;
+        }
+
+        if(opcion != 0){
+            cout << "\n";
+        }
+
+    }while(opcion != 0);
 }
 
 void Menu::menuReparaciones(){
-    cout << "Menu en construccion." << endl;
+
+    int opcion;
+
+    do{
+        cout << endl;
+        cout << "========== MENU REPARACIONES ==========" << endl;
+        cout << "1. Cargar reparacion" << endl;
+        cout << "2. Listar reparaciones" << endl;
+        cout << "3. Buscar reparacion por ID" << endl;
+        cout << "4. Dar de baja reparacion" << endl;
+        cout << "5. Actualizar estado de reparacion" << endl;
+        cout << "0. Volver" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                _managerReparacion.crearReparacion();
+                break;
+            case 2:
+                _managerReparacion.listarReparaciones();
+                break;
+            case 3:
+                _managerReparacion.listarXId();
+                break;
+            case 4:
+                _managerReparacion.darBajaReparacion();
+                break;
+            case 5:
+                _managerReparacion.actualizarEstadoRep();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "\nOpcion no valida, intente nuevamente\n";
+                break;
+        }
+
+        if(opcion != 0){
+            cout << "\n";
+        }
+
+    }while(opcion != 0);
 }
 
 void Menu::menuInformes(){
-    cout << "Menu en construccion." << endl;
+
+    int opcion;
+
+    do{
+        cout << endl;
+        cout << "========== MENU INFORMES ==========" << endl;
+        cout << "1. Reparaciones en proceso" << endl;
+        cout << "2. Reparaciones por cliente" << endl;
+        cout << "3. Reparaciones por rango de fechas" << endl;
+        cout << "4. Total facturado" << endl;
+        cout << "5. Equipos por tipo" << endl;
+        cout << "6. Reparaciones por tecnico" << endl;
+        cout << "0. Volver" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                _managerInforme.informeReparacionesEnProceso();
+                break;
+            case 2:
+                _managerInforme.informeReparacionesPorCliente();
+                break;
+            case 3:
+                _managerInforme.informeReparacionesPorRangoFechas();
+                break;
+            case 4:
+                _managerInforme.informeTotalFacturado();
+                break;
+            case 5:
+                _managerInforme.informeEquiposPorTipo();
+                break;
+            case 6:
+                _managerInforme.informeReparacionesPorTecnico();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "\nOpcion no valida, intente nuevamente\n";
+                break;
+        }
+
+        if(opcion != 0){
+            cout << "\n";
+        }
+
+    }while(opcion != 0);
 }
 
 void Menu::menuTecnicos(){
@@ -193,6 +325,5 @@ void Menu::menuTecnicos(){
             cout << "\n";
         }
 
-    }while(opcion != 0);    
-    //cout << "Menu en construccion." << endl;
+    }while(opcion != 0);
 }

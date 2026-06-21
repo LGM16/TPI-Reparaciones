@@ -3,10 +3,10 @@
 
 ///Constructor
 
-Reparacion::Reparacion(){
-    _idReparacion = 0;
-    _estadoRep = 1; //En proceso por defecto
-    _estado = false; //Inactivo por defecto
+Reparacion::Reparacion()
+    : _idReparacion(0), _idEquipo(0), _fechaIngreso(), _fechaEgreso(),
+      _importe(0.0f), _estadoRep(1), _estado(false)
+{
 }
 
 Reparacion::Reparacion(int idReparacion, int idEquipo, Fecha fechaIngreso,

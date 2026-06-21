@@ -1,18 +1,30 @@
 #pragma once
-#include <string>
+#include "Equipo.h"
+#include "EquipoArchivo.h"
+#include "ClienteArchivo.h"
+#include "TecnicoArchivo.h"
 
 class EquipoManager{
 private:
 
+    EquipoArchivo _archivo;
+    ClienteArchivo _archivoCliente;
+    TecnicoArchivo _archivoTecnico;
 
+    bool existeId(int id);
+    int generarId();
 
 public:
 
     //Constructores
 
-    //Setters
-
-    //Getters
+    EquipoManager();
 
     //Metodos
+
+    void crearEquipo();
+    void listarEquipos();
+    void listarXId();
+    void listar(Equipo equipo);
+    void darBajaEquipo();
 };

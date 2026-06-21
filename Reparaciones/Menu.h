@@ -2,6 +2,9 @@
 #include "Tecnico.h"
 #include "ClienteManager.h"
 #include "TecnicoManager.h"
+#include "EquipoManager.h"
+#include "ReparacionManager.h"
+#include "InformeManager.h"
 
 class Menu{
 private:
@@ -9,6 +12,9 @@ private:
     Tecnico _tecnico;
     ClienteManager _managerCliente;
     TecnicoManager _managerTecnico;
+    EquipoManager _managerEquipo;
+    ReparacionManager _managerReparacion;
+    InformeManager _managerInforme;
     bool _tecnicoLogueado = false;
 
 public:

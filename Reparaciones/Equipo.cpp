@@ -5,7 +5,7 @@
 ///Constructores
 
 Equipo::Equipo()
-    : _idEquipo(0), _idTecnico(), _idCliente(), _fechaIngreso(), _estado(true)
+    : _idEquipo(0), _idTecnico(0), _idCliente(0), _fechaIngreso(), _estado(true)
 {
     _descripcion[0] = '\0';
     _marca[0] = '\0';
