@@ -35,9 +35,9 @@ bool ClienteManager::existeId(int id){
 }
 
 void ClienteManager::cargarCliente(){
-    
+
     string cuit, nombre, apellido, telefono, email, direccion;
-    
+
     int tipoCliente;
     int idCliente = generarId();
 
@@ -104,14 +104,14 @@ void ClienteManager::listarClientes(){
         Cliente reg = _archivo.leer(i);
 
         if(reg.getIdCliente() > 0){
-        
+
             hayRegistrosValidos = true;
 
             if(reg.getEstado()){
-                
+
                 listar(reg);
                 cout << "-------------------------\n";
-                
+
                 hayActivos = true;
             }
         }
@@ -128,9 +128,15 @@ void ClienteManager::listarClientes(){
 }
 
 void ClienteManager::listarXId(){
-    
+
     int id;
-    
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    if(cantidadRegistros == 0){
+        cout << "\nNo hay clientes cargados.\n";
+        return;
+    }
+
     cout << "Ingrese el ID del cliente: ";
     cin >> id;
 
@@ -146,7 +152,7 @@ void ClienteManager::listarXId(){
 }
 
 void ClienteManager::listar(Cliente cliente){
-    
+
     cout << "ID: " << cliente.getIdCliente() << endl;
     cout << "CUIT: " << cliente.getCuit() << endl;
 
@@ -173,7 +179,15 @@ void ClienteManager::listar(Cliente cliente){
 }
 
 void ClienteManager::darBajaCliente(){
+
     int id;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    if(cantidadRegistros == 0){
+        cout << "\nNo hay clientes cargados.\n";
+        return;
+    }
+
     cout << "Ingrese el ID del cliente a dar de baja: ";
     cin >> id;
 

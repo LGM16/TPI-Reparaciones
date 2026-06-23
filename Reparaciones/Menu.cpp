@@ -36,13 +36,15 @@ void Menu::menuLogin(){
     cout << "========== INICIO DE SESION ==========" << endl;
 
     if(!_managerTecnico.hayTecnicos()){
-        int opcion;
+        string opcion;
+        //int opcion;
 
         cout << "No hay tecnicos registrados (tecnicos.dat no existe o esta vacio)." << endl;
         cout << "Desea crear el primer tecnico para ingresar? (1: Si, 0: No): ";
         cin >> opcion;
 
-        if(opcion != 1){
+        //if(opcion != 1) si uso el int
+        if(opcion != "1" && opcion != "si" && opcion != "Si" && opcion != "SI" && opcion != "sI" && opcion != "s" && opcion != "S" ){
             cout << "No se puede continuar sin un tecnico registrado." << endl;
             return;
         }

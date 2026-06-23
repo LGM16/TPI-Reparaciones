@@ -127,8 +127,14 @@ void ReparacionManager::listarReparaciones(){
 void ReparacionManager::listarXId(){
 
     int id, pos;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
 
     Reparacion reg;
+
+    if(cantidadRegistros == 0){
+        cout << "\nNo hay reparaciones cargadas.\n";
+        return;
+    }
 
     cout << "Ingrese el ID de la reparacion: ";
     cin >> id;
@@ -179,8 +185,14 @@ void ReparacionManager::listar(Reparacion reparacion){
 void ReparacionManager::darBajaReparacion(){
 
     int id, pos;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
 
     Reparacion reg;
+
+    if(cantidadRegistros == 0){
+        cout << "\nNo hay reparaciones cargadas.\n";
+        return;
+    }
 
     cout << "Ingrese el ID de la reparacion a dar de baja: ";
     cin >> id;
@@ -212,8 +224,14 @@ void ReparacionManager::darBajaReparacion(){
 void ReparacionManager::actualizarEstadoRep(){
 
     int id, pos, estadoRep;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
 
     Reparacion reg;
+
+    if(cantidadRegistros == 0){
+        cout << "\nNo hay reparaciones cargadas.\n";
+        return;
+    }
 
     cout << "Ingrese el ID de la reparacion: ";
     cin >> id;

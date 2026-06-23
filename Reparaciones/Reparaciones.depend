@@ -135,3 +135,139 @@
 	<iostream>
 	"TecnicoManager.h"
 
+1781843733 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+
+1781843739 f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.h
+	"Persona.h"
+
+1781210554 f:\lucas\documents\programacion 2\tpi\reparaciones\persona.h
+	<string>
+
+1781815994 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientearchivo.cpp
+	"ClienteArchivo.h"
+
+1781649472 f:\lucas\documents\programacion 2\tpi\reparaciones\clientearchivo.h
+	"Cliente.h"
+	<string>
+
+1782184290 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientemanager.cpp
+	<iostream>
+	"ClienteManager.h"
+
+1781150383 f:\lucas\documents\programacion 2\tpi\reparaciones\clientemanager.h
+	"Cliente.h"
+	"ClienteArchivo.h"
+
+1782103739 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.cpp
+	<iostream>
+	<cstring>
+	"Equipo.h"
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\equipo.h
+	"Fecha.h"
+	<string>
+
+1781150383 f:\lucas\documents\programacion 2\tpi\reparaciones\fecha.h
+
+1782103739 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipoarchivo.cpp
+	"EquipoArchivo.h"
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\equipoarchivo.h
+	"Equipo.h"
+	<string>
+
+1782103739 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipomanager.cpp
+	<iostream>
+	"EquipoManager.h"
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\equipomanager.h
+	"Equipo.h"
+	"EquipoArchivo.h"
+	"ClienteArchivo.h"
+	"TecnicoArchivo.h"
+
+1782023354 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicoarchivo.h
+	"Tecnico.h"
+	<string>
+
+1782023354 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.h
+	"Persona.h"
+
+1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\fecha.cpp
+	<iostream>
+	"Fecha.h"
+
+1782103739 source:f:\lucas\documents\programacion 2\tpi\reparaciones\informemanager.cpp
+	<iostream>
+	<cstring>
+	"InformeManager.h"
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\informemanager.h
+	"ReparacionArchivo.h"
+	"EquipoArchivo.h"
+	"ClienteArchivo.h"
+	"TecnicoArchivo.h"
+	"Fecha.h"
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionarchivo.h
+	"Reparacion.h"
+	<string>
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacion.h
+	"Fecha.h"
+
+1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
+	<iostream>
+	"Menu.h"
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\menu.h
+	"Tecnico.h"
+	"ClienteManager.h"
+	"TecnicoManager.h"
+	"EquipoManager.h"
+	"ReparacionManager.h"
+	"InformeManager.h"
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.h
+	"Tecnico.h"
+	"TecnicoArchivo.h"
+
+1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionmanager.h
+	"Reparacion.h"
+	"ReparacionArchivo.h"
+	"EquipoArchivo.h"
+
+1782172043 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
+	<iostream>
+	"Menu.h"
+
+1781216752 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
+	<iostream>
+	<cstring>
+	"Persona.h"
+
+1782103739 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacion.cpp
+	<iostream>
+	"Reparacion.h"
+
+1782103739 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionarchivo.cpp
+	"ReparacionArchivo.h"
+
+1782184290 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionmanager.cpp
+	<iostream>
+	"ReparacionManager.h"
+
+1781843951 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.cpp
+	<cstring>
+	"Tecnico.h"
+
+1781816024 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicoarchivo.cpp
+	"TecnicoArchivo.h"
+
+1782183253 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.cpp
+	<iostream>
+	"TecnicoManager.h"
+
