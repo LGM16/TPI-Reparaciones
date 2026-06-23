@@ -24,6 +24,8 @@ void Menu::ejecutar(){
     }
     else{
         cout << "No se pudo iniciar sesion, hasta luego! :(" << endl;
+
+        rlutil::setColor(rlutil::WHITE);
     }
 }
 
@@ -32,6 +34,9 @@ void Menu::menuLogin(){
     string usuario, contrasenia;
 
     int intentos = 0;
+
+    rlutil::setBackgroundColor(rlutil::BLUE);
+    rlutil::setColor(rlutil::WHITE);
 
     cout << "========== INICIO DE SESION ==========" << endl;
 
@@ -45,13 +50,19 @@ void Menu::menuLogin(){
 
         //if(opcion != 1) si uso el int
         if(opcion != "1" && opcion != "si" && opcion != "Si" && opcion != "SI" && opcion != "sI" && opcion != "s" && opcion != "S" ){
+            rlutil::setColor(rlutil::RED);
+
             cout << "No se puede continuar sin un tecnico registrado." << endl;
             return;
         }
 
         if(_managerTecnico.crearTecnico(_tecnico)){
             setSesionActiva(true);
+            cout << endl;
             cout << "Tecnico creado. Bienvenido " << _tecnico.getNombre() << "!" << endl;
+
+            rlutil::anykey();
+
             return;
         }
         else{
@@ -64,19 +75,28 @@ void Menu::menuLogin(){
 
         cout << "Usuario: ";
         cin >> usuario;
+
         cout << "Contrasenia: ";
         cin >> contrasenia;
 
         if(_managerTecnico.validarCredenciales(usuario, contrasenia, _tecnico)){
             setSesionActiva(true);
 
+            cout << endl;
             cout << "Bienvenido " << _tecnico.getNombre() << "!" << endl;
+
+            rlutil::anykey();
         }
         else{
             intentos++;
 
+            rlutil::setColor(rlutil::RED);
+
             cout << "Credenciales incorrectas, intenta de nuevo :(" << endl;
             cout << "Intento: " << intentos << " de 3" << endl;
+            cout << "---------------------------------------------" << endl;
+
+            rlutil::setColor(rlutil::WHITE);
         }
     }
 }
@@ -86,6 +106,8 @@ void Menu::menuPrincipal(){
     int opcion;
 
     do{
+        rlutil::cls();
+
         cout << endl;
         cout << "========== MENU PRINCIPAL ==========" << endl;
         cout << "1. Clientes" << endl;
@@ -118,7 +140,14 @@ void Menu::menuPrincipal(){
                 setSesionActiva(false);
                 break;
             default:
+
+                rlutil::setColor(rlutil::RED);
+
                 cout << "Opcion no valida, intente nuevamente" << endl;
+
+                rlutil::anykey();
+                rlutil::setColor(rlutil::WHITE);
+
                 break;
         }
 

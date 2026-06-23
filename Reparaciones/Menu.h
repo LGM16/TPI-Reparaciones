@@ -1,4 +1,5 @@
 #pragma once
+#include "rlutil.h"
 #include "Tecnico.h"
 #include "ClienteManager.h"
 #include "TecnicoManager.h"

@@ -179,7 +179,7 @@
 	"Equipo.h"
 	<string>
 
-1782103739 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipomanager.cpp
+1782185106 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipomanager.cpp
 	<iostream>
 	"EquipoManager.h"
 
@@ -219,11 +219,12 @@
 1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacion.h
 	"Fecha.h"
 
-1781150383 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
+1782186013 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
 	<iostream>
 	"Menu.h"
 
-1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\menu.h
+1782185106 f:\lucas\documents\programacion 2\tpi\reparaciones\menu.h
+	"rlutil.h"
 	"Tecnico.h"
 	"ClienteManager.h"
 	"TecnicoManager.h"
@@ -240,7 +241,7 @@
 	"ReparacionArchivo.h"
 	"EquipoArchivo.h"
 
-1782172043 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
+1782186614 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
 	<iostream>
 	"Menu.h"
 
@@ -267,7 +268,21 @@
 1781816024 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicoarchivo.cpp
 	"TecnicoArchivo.h"
 
-1782183253 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.cpp
+1782185106 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.cpp
 	<iostream>
 	"TecnicoManager.h"
+
+1571584339 f:\lucas\documents\programacion 2\tpi\reparaciones\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
 

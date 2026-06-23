@@ -99,7 +99,8 @@ void TecnicoManager::listarTecnicos(){
     bool hayRegistrosValidos = false;
     bool hayActivos = false;
 
-    if(cantidadRegistros == 0){ //agregar en el resto de los managers
+    ///Esta validacion sobra, si no existe el .dat lo tenes que crear para logearte
+    if(cantidadRegistros == 0){
         cout << "\nNo hay tecnicos cargados.\n";
         return;
     }
@@ -133,14 +134,9 @@ void TecnicoManager::listarTecnicos(){
 
 void TecnicoManager::listarXId(){
 
-    int id, pos, cantidadRegistros = _archivo.getCantidadRegistros();;
+    int id, pos;
 
     Tecnico reg;
-
-    if(cantidadRegistros == 0){ //agregar en el resto de los managers
-        cout << "\nNo hay tecnicos cargados.\n";
-        return;
-    }
 
     cout << "Ingrese el ID del tecnico: ";
     cin >> id;

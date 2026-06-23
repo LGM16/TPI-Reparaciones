@@ -128,9 +128,15 @@ void EquipoManager::listarEquipos(){
 
 void EquipoManager::listarXId(){
 
+    int cantidadRegistros = _archivo.getCantidadRegistros();
     int id, pos;
 
     Equipo reg;
+
+    if(cantidadRegistros == 0){
+        cout << "\nNo hay equipos cargados.\n";
+        return;
+    }
 
     cout << "Ingrese el ID del equipo: ";
     cin >> id;
@@ -168,9 +174,15 @@ void EquipoManager::listar(Equipo equipo){
 
 void EquipoManager::darBajaEquipo(){
 
+    int cantidadRegistros = _archivo.getCantidadRegistros();
     int id, pos;
 
     Equipo reg;
+
+    if(cantidadRegistros == 0){
+        cout << "\nNo hay equipos cargados.\n";
+        return;
+    }
 
     cout << "Ingrese el ID del equipo a dar de baja: ";
     cin >> id;
