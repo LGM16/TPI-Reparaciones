@@ -25,6 +25,6 @@ public:
     void crearEquipo();
     void listarEquipos();
     void listarXId();
-    void listar(Equipo equipo);
+    void listar(const Equipo& equipo);
     void darBajaEquipo();
 };

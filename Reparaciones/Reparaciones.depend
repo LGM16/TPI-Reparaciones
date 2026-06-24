@@ -1,140 +1,4 @@
 # depslib dependency file v1.0
-1781974833 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\cliente.cpp
-	<iostream>
-	<cstring>
-	"Cliente.h"
-
-1781974833 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\cliente.h
-	"Persona.h"
-
-1781974833 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\persona.h
-	<string>
-
-1781974833 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\clientearchivo.cpp
-	"ClienteArchivo.h"
-
-1781974833 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\clientearchivo.h
-	"Cliente.h"
-	<string>
-
-1782082185 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\clientemanager.cpp
-	<iostream>
-	"ClienteManager.h"
-
-1782082185 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\clientemanager.h
-	"Cliente.h"
-	"ClienteArchivo.h"
-
-1782077704 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\equipo.cpp
-	<iostream>
-	<cstring>
-	"Equipo.h"
-
-1782077704 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\equipo.h
-	"Fecha.h"
-	<string>
-
-1781974833 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\fecha.h
-
-1782077706 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\equipoarchivo.cpp
-	"EquipoArchivo.h"
-
-1782077704 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\equipoarchivo.h
-	"Equipo.h"
-	<string>
-
-1782082186 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\equipomanager.cpp
-	<iostream>
-	"EquipoManager.h"
-
-1782082186 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\equipomanager.h
-	"Equipo.h"
-	"EquipoArchivo.h"
-	"ClienteArchivo.h"
-	"TecnicoArchivo.h"
-
-1781987564 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicoarchivo.h
-	"Tecnico.h"
-	<string>
-
-1781987570 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnico.h
-	"Persona.h"
-
-1781974833 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\fecha.cpp
-	<iostream>
-	"Fecha.h"
-
-1782083206 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\informemanager.cpp
-	<iostream>
-	<cstring>
-	"InformeManager.h"
-
-1782083206 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\informemanager.h
-	"ReparacionArchivo.h"
-	"EquipoArchivo.h"
-	"ClienteArchivo.h"
-	"TecnicoArchivo.h"
-	"Fecha.h"
-
-1782077710 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\reparacionarchivo.h
-	"Reparacion.h"
-	<string>
-
-1782077709 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\reparacion.h
-	"Fecha.h"
-
-1781974833 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\main.cpp
-	<iostream>
-	"Menu.h"
-
-1782082777 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\menu.h
-	"Tecnico.h"
-	"ClienteManager.h"
-	"TecnicoManager.h"
-	"EquipoManager.h"
-	"ReparacionManager.h"
-	"InformeManager.h"
-
-1782084425 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicomanager.h
-	"Tecnico.h"
-	"TecnicoArchivo.h"
-
-1782082187 c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\reparacionmanager.h
-	"Reparacion.h"
-	"ReparacionArchivo.h"
-	"EquipoArchivo.h"
-
-1782084428 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\menu.cpp
-	<iostream>
-	"Menu.h"
-
-1781974833 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\persona.cpp
-	<iostream>
-	<cstring>
-	"Persona.h"
-
-1782077720 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\reparacion.cpp
-	<iostream>
-	"Reparacion.h"
-
-1782077712 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\reparacionarchivo.cpp
-	"ReparacionArchivo.h"
-
-1782082187 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\reparacionmanager.cpp
-	<iostream>
-	"ReparacionManager.h"
-
-1781974833 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnico.cpp
-	<cstring>
-	"Tecnico.h"
-
-1782071714 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicoarchivo.cpp
-	"TecnicoArchivo.h"
-
-1782084426 source:c:\users\lucas\documents\utn\tup\programacion ii\repos\tpi-reparaciones\reparaciones\tecnicomanager.cpp
-	<iostream>
-	"TecnicoManager.h"
-
 1781843733 source:f:\lucas\documents\programacion 2\tpi\reparaciones\cliente.cpp
 	<iostream>
 	<cstring>
@@ -232,7 +96,21 @@
 	"ReparacionManager.h"
 	"InformeManager.h"
 
-1782321575 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.h
+1571584339 f:\lucas\documents\programacion 2\tpi\reparaciones\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1782321673 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.h
 	"Tecnico.h"
 	"TecnicoArchivo.h"
 
@@ -268,21 +146,7 @@
 1781816024 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicoarchivo.cpp
 	"TecnicoArchivo.h"
 
-1782266225 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.cpp
+1782321673 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.cpp
 	<iostream>
 	"TecnicoManager.h"
-
-1571584339 f:\lucas\documents\programacion 2\tpi\reparaciones\rlutil.h
-	<iostream>
-	<string>
-	<cstdio>
-	<stdio.h>
-	<string.h>
-	<windows.h>
-	<conio.h>
-	<termios.h>
-	<unistd.h>
-	<sys/ioctl.h>
-	<sys/types.h>
-	<sys/time.h>
 

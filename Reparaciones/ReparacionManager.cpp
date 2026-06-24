@@ -150,7 +150,7 @@ void ReparacionManager::listarXId(){
     listar(reg);
 }
 
-void ReparacionManager::listar(Reparacion reparacion){
+void ReparacionManager::listar(const Reparacion& reparacion){
 
     cout << "ID: " << reparacion.getIdReparacion() << endl;
     cout << "ID Equipo: " << reparacion.getIdEquipo() << endl;

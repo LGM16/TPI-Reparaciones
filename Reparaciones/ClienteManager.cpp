@@ -155,7 +155,7 @@ void ClienteManager::listarXId(){
     listar(reg);
 }
 
-void ClienteManager::listar(Cliente cliente){
+void ClienteManager::listar(const Cliente& cliente){
 
     cout << "ID: " << cliente.getIdCliente() << endl;
     cout << "CUIT: " << cliente.getCuit() << endl;

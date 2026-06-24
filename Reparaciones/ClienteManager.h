@@ -21,6 +21,6 @@ public:
     void cargarCliente();
     void listarClientes();
     void listarXId();
-    void listar(Cliente cliente);
+    void listar(const Cliente& cliente);
     void darBajaCliente();
 };

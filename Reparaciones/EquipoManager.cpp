@@ -152,7 +152,7 @@ void EquipoManager::listarXId(){
     listar(reg);
 }
 
-void EquipoManager::listar(Equipo equipo){
+void EquipoManager::listar(const Equipo& equipo){
 
     cout << "ID: " << equipo.getIdEquipo() << endl;
     cout << "ID Cliente: " << equipo.getIdCliente() << endl;

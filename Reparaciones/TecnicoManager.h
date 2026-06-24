@@ -22,7 +22,7 @@ public:
     bool crearTecnico(Tecnico& tecnicoCreado);
     void listarTecnicos();
     void listarXId();
-    void listar(Tecnico tecnico);
+    void listar(const Tecnico& tecnico);
     void darBajaTecnico();
     bool hayTecnicos();
     bool validarCredenciales(std::string usuario, std::string contrasenia, Tecnico& tecnico);

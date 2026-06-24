@@ -152,7 +152,7 @@ void TecnicoManager::listarXId(){
     listar(reg);
 }
 
-void TecnicoManager::listar(Tecnico tecnico){
+void TecnicoManager::listar(const Tecnico& tecnico){
 
     cout << "ID: " << tecnico.getIdTecnico() << endl;
     cout << "Nombre: " << tecnico.getNombre() << endl;

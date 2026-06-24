@@ -23,7 +23,7 @@ public:
     void crearReparacion();
     void listarReparaciones();
     void listarXId();
-    void listar(Reparacion reparacion);
+    void listar(const Reparacion& reparacion);
     void darBajaReparacion();
     void actualizarEstadoRep();
 };
