@@ -41,14 +41,14 @@ void ClienteManager::cargarCliente(){
     int tipoCliente;
     int idCliente = generarId();
 
-    cout << "-------------------------------\n";
+    cout << "------------------------------------\n"; // linea referencia
     cout << "Ingrese los datos del cliente: " << endl;
 
     cout << "Tipo Cliente (1: Particular, 2: Empresa): ";
     cin >> tipoCliente;
 
     while(tipoCliente != 1 && tipoCliente != 2){
-        cout << "-------------------------------\n";
+        cout << "------------------------------------\n"; // linea referencia
         cout << "Tipo invalido. Ingrese 1 (Particular) o 2 (Empresa): ";
         cin >> tipoCliente;
     }
@@ -83,9 +83,11 @@ void ClienteManager::cargarCliente(){
     Cliente nuevo(persona, idCliente, tipoCliente, telefono, email, direccion, true);
 
     if(_archivo.guardar(nuevo)){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "Cliente cargado con ID: " << idCliente << endl;
     }
     else{
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No se pudo guardar el cliente." << endl;
     }
 }
@@ -112,7 +114,7 @@ void ClienteManager::listarClientes(){
             if(reg.getEstado()){
 
                 listar(reg);
-                cout << "-------------------------\n";
+                cout << "------------------------------------\n"; // linea referencia
 
                 hayActivos = true;
             }

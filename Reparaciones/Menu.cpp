@@ -177,15 +177,22 @@ void Menu::menuClientes(){
         switch(opcion){
             case 1:
                 _managerCliente.cargarCliente();
+                rlutil::anykey();
                 break;
             case 2:
+                rlutil::cls();
                 _managerCliente.listarClientes();
+                rlutil::anykey();
                 break;
             case 3:
+                rlutil::cls();
                 _managerCliente.listarXId();
+                rlutil::anykey();
                 break;
             case 4:
+                rlutil::cls();
                 _managerCliente.darBajaCliente();
+                rlutil::anykey();
                 break;
             case 0:
                 break;
