@@ -193,6 +193,50 @@ void ReparacionManager::listar(const Reparacion& reparacion){
     cout << "------------------------------------\n"; // linea referencia
 }
 
+void ReparacionManager::darAltaReparacion(){
+
+    int id, pos;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    Reparacion reg;
+
+    if(cantidadRegistros == 0){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay reparaciones cargadas.\n";
+        return;
+    }
+
+    cout << "Ingrese el ID de la reparacion a dar de alta: ";
+    cin >> id;
+
+    pos = _archivo.buscar(id);
+
+    if(pos == -1){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro una reparacion con ese ID.\n";
+        return;
+    }
+
+    reg = _archivo.leer(pos);
+
+    if(reg.getEstado()){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "La reparacion ya se encuentra activa.\n";
+        return;
+    }
+
+    reg.setEstado(true);
+
+    if(_archivo.guardar(reg, pos)){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "Reparacion dada de alta correctamente.\n";
+    }
+    else{
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se pudo dar de alta la reparacion.\n";
+    }
+}
+
 void ReparacionManager::darBajaReparacion(){
 
     int id, pos;

@@ -22,5 +22,6 @@ public:
     void listarClientes();
     void listarXId();
     void listar(const Cliente& cliente);
+    void darAltaCliente();
     void darBajaCliente();
 };

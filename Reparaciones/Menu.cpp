@@ -189,7 +189,8 @@ void Menu::menuClientes(){
         cout << "1. Cargar cliente\n";
         cout << "2. Listar clientes\n";
         cout << "3. Buscar cliente por ID\n";
-        cout << "4. Dar de baja cliente\n";
+        cout << "4. Dar de alta cliente\n";
+        cout << "5. Dar de baja cliente\n";
         cout << "0. Volver\n";
         cout << "------------------------------------\n"; // linea referencia
         cout << "Seleccione una opcion: ";
@@ -212,6 +213,11 @@ void Menu::menuClientes(){
                 rlutil::anykey();
                 break;
             case 4:
+                rlutil::cls();
+                _managerCliente.darAltaCliente();
+                rlutil::anykey();
+                break;
+            case 5:
                 rlutil::cls();
                 _managerCliente.darBajaCliente();
                 rlutil::anykey();

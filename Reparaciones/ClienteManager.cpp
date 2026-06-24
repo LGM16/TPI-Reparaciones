@@ -196,6 +196,50 @@ void ClienteManager::listar(const Cliente& cliente){
     cout << "------------------------------------\n"; // linea referencia
 }
 
+void ClienteManager::darAltaCliente(){
+
+    int id, pos;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    if(cantidadRegistros == 0){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay clientes cargados.\n";
+        return;
+    }
+
+    cout << "Ingrese el ID del cliente a dar de baja: ";
+    cin >> id;
+
+    _archivo.buscar(id);
+
+    if(pos == -1){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro un cliente con ese ID.\n";
+        return;
+    }
+
+    Cliente reg = _archivo.leer(pos);
+
+    if(reg.getEstado()){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "El cliente ya se encuentra activo.\n";
+        return;
+    }
+
+    reg.setEstado(true);
+
+    if(_archivo.guardar(reg, pos)){
+        cout << "------------------------------------\n";
+        cout << "Cliente dado de alta correctamente.\n";
+    }
+    else{
+        cout << "------------------------------------\n";
+        cout << "No se pudo dar de alta al cliente.\n";
+    }
+    cout << "------------------------------------\n";
+}
+
+
 void ClienteManager::darBajaCliente(){
 
     int id, pos;

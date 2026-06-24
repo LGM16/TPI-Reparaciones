@@ -24,6 +24,7 @@ public:
     void listarReparaciones();
     void listarXId();
     void listar(const Reparacion& reparacion);
+    void darAltaReparacion();
     void darBajaReparacion();
     void actualizarEstadoRep();
 };
