@@ -59,13 +59,15 @@ bool TecnicoManager::crearTecnico(Tecnico& tecnicoCreado){
 
     int idTecnico = generarId();
 
+    cout << "------------------------------------\n"; // linea referencia
     cout << "Ingrese los datos del tecnico: " << endl;
 
     cout << "Nombre: ";
-    cin >> nombre;
+    cin.ignore();
+    getline(cin, nombre);
 
     cout << "Apellido: ";
-    cin >> apellido;
+    getline(cin, apellido);
 
     cout << "Usuario: ";
     cin >> usuario;
@@ -82,6 +84,7 @@ bool TecnicoManager::crearTecnico(Tecnico& tecnicoCreado){
     Tecnico nuevo(persona, idTecnico, usuario, contrasenia);
 
     if(_archivo.guardar(nuevo)){
+
         cout << "Tecnico creado con ID: " << idTecnico << endl;
         tecnicoCreado = nuevo;
         return true;
@@ -98,12 +101,6 @@ void TecnicoManager::listarTecnicos(){
 
     bool hayRegistrosValidos = false;
     bool hayActivos = false;
-
-    ///Esta validacion sobra, si no existe el .dat lo tenes que crear para logearte
-    if(cantidadRegistros == 0){
-        cout << "\nNo hay tecnicos cargados.\n";
-        return;
-    }
 
     for(int i = 0; i < cantidadRegistros; i++){
         Tecnico reg = _archivo.leer(i);
