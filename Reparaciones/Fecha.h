@@ -2,7 +2,7 @@
 
 class Fecha{
 private:
-    
+
     int _dia;
     int _mes;
     int _anio;
@@ -14,7 +14,7 @@ private:
 public:
 
     ///Constructores
-    
+
     Fecha();
     Fecha(int dia, int mes, int anio);
 
@@ -31,7 +31,6 @@ public:
     int getAnio() const {return _anio;}
 
     ///Metodos
-    
+
     //void agregarDias(int dias); ?
-    // agregar cargar() y mostrar() para no crear un manager?
 };
