@@ -21,7 +21,7 @@ private:
     char _tipoEquipo[51];
     Fecha _fechaIngreso;
     bool _estado = true;
-    
+
 public:
 
     ///Constructores
@@ -43,14 +43,14 @@ public:
 
     ///Getters
 
-    int getIdEquipo(){return _idEquipo;}
-    int getIdTecnico(){return _idTecnico;}
-    int getIdCliente(){return _idCliente;}
-    std::string getDescripcion(){return std::string(_descripcion);}
-    std::string getMarca(){return std::string(_marca);}
-    std::string getTipoEquipo(){return std::string(_tipoEquipo);}
-    Fecha getFechaIngreso(){return _fechaIngreso;}
-    bool getEstado(){return _estado;}
+    int getIdEquipo() const {return _idEquipo;}
+    int getIdTecnico() const {return _idTecnico;}
+    int getIdCliente() const {return _idCliente;}
+    std::string getDescripcion() const {return std::string(_descripcion);}
+    std::string getMarca() const{return std::string(_marca);}
+    std::string getTipoEquipo() const {return std::string(_tipoEquipo);}
+    Fecha getFechaIngreso() const{return _fechaIngreso;}
+    bool getEstado() const {return _estado;}
 
     ///Metodos
 };

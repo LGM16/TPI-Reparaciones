@@ -1,6 +1,6 @@
 #include <iostream>
-using namespace std;
 #include "Menu.h"
+using namespace std;
 
 ///Constructor
 

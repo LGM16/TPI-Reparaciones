@@ -25,10 +25,10 @@ public:
 
     ///Getters
 
-    int getIdTecnico(){return _idTecnico;}
-    std::string getUsuario(){return std::string(_usuario);}
-    std::string getContrasenia(){return std::string(_contrasenia);}
-    bool getEstado(){return _estado;}
+    int getIdTecnico() const {return _idTecnico;}
+    std::string getUsuario() const {return std::string(_usuario);}
+    std::string getContrasenia() const {return std::string(_contrasenia);}
+    bool getEstado() const {return _estado;}
 
     ///Metodos
 };

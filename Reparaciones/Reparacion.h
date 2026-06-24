@@ -32,13 +32,13 @@ public:
 
     ///Getters
 
-    int getIdReparacion(){return _idReparacion;};
-    int getIdEquipo(){return _idEquipo;};
-    Fecha getFechaIngreso(){return _fechaIngreso;};
-    Fecha getFechaEgreso(){return _fechaEgreso;};
-    float getImporte(){return _importe;};
-    int getEstadoRep(){return _estadoRep;};
-    bool getEstado(){return _estado;};
+    int getIdReparacion() const {return _idReparacion;};
+    int getIdEquipo() const {return _idEquipo;};
+    Fecha getFechaIngreso() const {return _fechaIngreso;};
+    Fecha getFechaEgreso() const {return _fechaEgreso;};
+    float getImporte() const {return _importe;};
+    int getEstadoRep() const {return _estadoRep;};
+    bool getEstado() const {return _estado;};
 
     ///Metodos
 };
