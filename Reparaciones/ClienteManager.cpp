@@ -41,12 +41,14 @@ void ClienteManager::cargarCliente(){
     int tipoCliente;
     int idCliente = generarId();
 
+    cout << "-------------------------------\n";
     cout << "Ingrese los datos del cliente: " << endl;
 
     cout << "Tipo Cliente (1: Particular, 2: Empresa): ";
     cin >> tipoCliente;
 
     while(tipoCliente != 1 && tipoCliente != 2){
+        cout << "-------------------------------\n";
         cout << "Tipo invalido. Ingrese 1 (Particular) o 2 (Empresa): ";
         cin >> tipoCliente;
     }

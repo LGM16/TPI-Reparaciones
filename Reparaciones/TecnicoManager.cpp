@@ -115,7 +115,7 @@ void TecnicoManager::listarTecnicos(){
             if(reg.getEstado()){
 
                 listar(reg);
-                cout << "-------------------------\n";
+                cout << "-----------------------------------\n";
 
                 hayActivos = true;
             }

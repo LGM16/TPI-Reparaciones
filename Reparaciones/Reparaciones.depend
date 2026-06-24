@@ -153,7 +153,7 @@
 	"Cliente.h"
 	<string>
 
-1782184290 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientemanager.cpp
+1782259035 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientemanager.cpp
 	<iostream>
 	"ClienteManager.h"
 
@@ -219,7 +219,7 @@
 1782103739 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacion.h
 	"Fecha.h"
 
-1782186013 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
+1782257614 source:f:\lucas\documents\programacion 2\tpi\reparaciones\main.cpp
 	<iostream>
 	"Menu.h"
 
@@ -241,7 +241,7 @@
 	"ReparacionArchivo.h"
 	"EquipoArchivo.h"
 
-1782186614 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
+1782272486 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
 	<iostream>
 	"Menu.h"
 
@@ -268,7 +268,7 @@
 1781816024 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicoarchivo.cpp
 	"TecnicoArchivo.h"
 
-1782185106 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.cpp
+1782266225 source:f:\lucas\documents\programacion 2\tpi\reparaciones\tecnicomanager.cpp
 	<iostream>
 	"TecnicoManager.h"
 
