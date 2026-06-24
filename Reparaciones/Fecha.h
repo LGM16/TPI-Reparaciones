@@ -26,9 +26,9 @@ public:
 
     ///Getters
 
-    int getDia(){return _dia;}
-    int getMes(){return _mes;}
-    int getAnio(){return _anio;}
+    int getDia() const {return _dia;}
+    int getMes() const {return _mes;}
+    int getAnio() const {return _anio;}
 
     ///Metodos
     

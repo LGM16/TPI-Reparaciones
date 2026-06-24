@@ -25,8 +25,8 @@ public:
 
     ///Getters
 
-    std::string getCuit(){return _cuit;}
-    std::string getNombre(){return _nombre;}
-    std::string getApellido(){return _apellido;}
+    std::string getCuit() const {return _cuit;}
+    std::string getNombre() const {return _nombre;}
+    std::string getApellido() const {return _apellido;}
 
 };

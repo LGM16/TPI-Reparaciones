@@ -1,5 +1,6 @@
 #pragma once
 #include "rlutil.h"
+#include <limits>
 #include "Tecnico.h"
 #include "ClienteManager.h"
 #include "TecnicoManager.h"

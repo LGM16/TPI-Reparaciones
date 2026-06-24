@@ -103,7 +103,7 @@ void Menu::menuLogin(){
 
 void Menu::menuPrincipal(){
 
-    int opcion;
+    int opcion = -1;
 
     do{
         rlutil::cls();
@@ -120,6 +120,20 @@ void Menu::menuPrincipal(){
         cout << "------------------------------------\n"; // linea referencia
         cout << "Seleccione una opcion: ";
         cin >> opcion;
+
+        if(cin >> opcion){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+            rlutil::setColor(rlutil::RED);
+
+            cout << "Ingresa un numero.\n";
+
+            rlutil::anykey();
+            rlutil::setColor(rlutil::WHITE);
+
+            continue;
+        }
 
         switch(opcion){
             case 1:
