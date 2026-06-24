@@ -1,4 +1,5 @@
 #pragma once
+//#include "rlutil.h"
 #include "Cliente.h"
 #include <string>
 
@@ -25,8 +26,8 @@ public:
     bool guardar(Cliente *vec, int cantidadRegistros);
 
     Cliente leer(int posRegistro);
-    
+
     void leerTodos(Cliente *vec, int cantidadRegistros);
-    
+
     int buscar(int id);
 };

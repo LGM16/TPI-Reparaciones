@@ -35,7 +35,7 @@ void InformeManager::informeReparacionesEnProceso(){
     int cantidad = _archivoReparacion.getCantidadRegistros();
     bool hayResultados = false;
 
-    cout << "\n===== REPARACIONES EN PROCESO =====\n";
+    cout << "========== REPARACIONES EN PROCESO ==========\n";
 
     if(cantidad == 0){
         cout << "No hay reparaciones cargadas.\n";
@@ -67,13 +67,13 @@ void InformeManager::informeReparacionesPorCliente(){
     cin >> idCliente;
 
     if(_archivoCliente.buscar(idCliente) == -1){
-        cout << "No existe un cliente con ese ID." << endl;
+        cout << "No existe un cliente con ese ID.\n";
         return;
     }
 
     cantidad = _archivoReparacion.getCantidadRegistros();
 
-    cout << "\n===== REPARACIONES DEL CLIENTE " << idCliente << " =====\n";
+    cout << "========== REPARACIONES DEL CLIENTE " << idCliente << " ==========\n";
 
     for(int i = 0; i < cantidad; i++){
         Reparacion reg = _archivoReparacion.leer(i);
@@ -115,7 +115,7 @@ void InformeManager::informeReparacionesPorRangoFechas(){
 
     cantidad = _archivoReparacion.getCantidadRegistros();
 
-    cout << "\n===== REPARACIONES POR RANGO DE FECHAS =====\n";
+    cout << "========== REPARACIONES POR RANGO DE FECHAS ==========\n";
 
     for(int i = 0; i < cantidad; i++){
         Reparacion reg = _archivoReparacion.leer(i);
@@ -148,7 +148,7 @@ void InformeManager::informeTotalFacturado(){
         }
     }
 
-    cout << "\n===== TOTAL FACTURADO (REPARADAS) =====\n";
+    cout << "========== TOTAL FACTURADO (REPARADAS) ==========\n";
     cout << "Importe total: $" << total << endl;
 }
 
@@ -160,7 +160,7 @@ void InformeManager::informeEquiposPorTipo(){
     int conteos[50];
     int cantTipos = 0;
 
-    cout << "\n===== EQUIPOS POR TIPO =====\n";
+    cout << "========== EQUIPOS POR TIPO ==========\n";
 
     if(cantidad == 0){
         cout << "No hay equipos cargados.\n";
@@ -209,13 +209,13 @@ void InformeManager::informeReparacionesPorTecnico(){
     cin >> idTecnico;
 
     if(_archivoTecnico.buscar(idTecnico) == -1){
-        cout << "No existe un tecnico con ese ID." << endl;
+        cout << "No existe un tecnico con ese ID.\n";
         return;
     }
 
     cantidad = _archivoReparacion.getCantidadRegistros();
 
-    cout << "\n===== REPARACIONES DEL TECNICO " << idTecnico << " =====\n";
+    cout << "========== REPARACIONES DEL TECNICO " << idTecnico << " ==========\n";
 
     for(int i = 0; i < cantidad; i++){
         Reparacion reg = _archivoReparacion.leer(i);

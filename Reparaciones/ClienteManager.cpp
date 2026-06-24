@@ -42,7 +42,7 @@ void ClienteManager::cargarCliente(){
     int idCliente = generarId();
 
     cout << "------------------------------------\n"; // linea referencia
-    cout << "Ingrese los datos del cliente: " << endl;
+    cout << "Ingrese los datos del cliente: \n";
 
     cout << "Tipo Cliente (1: Particular, 2: Empresa): ";
     cin >> tipoCliente;
@@ -107,6 +107,8 @@ void ClienteManager::listarClientes(){
         return;
     }
 
+    cout << "------------------------------------\n"; // linea referencia
+
     for(int i = 0; i < cantidadRegistros; i++){
         Cliente reg = _archivo.leer(i);
 
@@ -116,8 +118,8 @@ void ClienteManager::listarClientes(){
 
             if(reg.getEstado()){
 
+
                 listar(reg);
-                //cout << "------------------------------------\n"; // linea referencia
 
                 hayActivos = true;
             }
@@ -138,8 +140,10 @@ void ClienteManager::listarClientes(){
 
 void ClienteManager::listarXId(){
 
-    int id;
+    int id, pos;
     int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    Cliente reg;
 
     if(cantidadRegistros == 0){
         cout << "------------------------------------\n"; // linea referencia
@@ -150,7 +154,7 @@ void ClienteManager::listarXId(){
     cout << "Ingrese el ID del cliente: ";
     cin >> id;
 
-    int pos = _archivo.buscar(id);
+    pos = _archivo.buscar(id);
 
     if(pos == -1){
         cout << "------------------------------------\n"; // linea referencia
@@ -158,7 +162,7 @@ void ClienteManager::listarXId(){
         return;
     }
 
-    Cliente reg = _archivo.leer(pos);
+    reg = _archivo.leer(pos);
 
     cout << "------------------------------------\n"; // linea referencia
     listar(reg);
@@ -194,7 +198,7 @@ void ClienteManager::listar(const Cliente& cliente){
 
 void ClienteManager::darBajaCliente(){
 
-    int id;
+    int id, pos;
     int cantidadRegistros = _archivo.getCantidadRegistros();
 
     if(cantidadRegistros == 0){
@@ -206,7 +210,7 @@ void ClienteManager::darBajaCliente(){
     cout << "Ingrese el ID del cliente a dar de baja: ";
     cin >> id;
 
-    int pos = _archivo.buscar(id);
+    _archivo.buscar(id);
 
     if(pos == -1){
         cout << "------------------------------------\n"; // linea referencia
@@ -225,11 +229,12 @@ void ClienteManager::darBajaCliente(){
     reg.setEstado(false);
 
     if(_archivo.guardar(reg, pos)){
-        cout << "------------------------------------\n"; // linea referencia
+        cout << "------------------------------------\n";
         cout << "Cliente dado de baja correctamente.\n";
     }
     else{
-        cout << "------------------------------------\n"; // linea referencia
+        cout << "------------------------------------\n";
         cout << "No se pudo dar de baja al cliente.\n";
     }
+    cout << "------------------------------------\n";
 }

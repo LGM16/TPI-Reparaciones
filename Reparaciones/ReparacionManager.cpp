@@ -45,13 +45,14 @@ void ReparacionManager::crearReparacion(){
 
     int idReparacion = generarId();
 
-    cout << "Ingrese los datos de la reparacion: " << endl;
+    cout << "------------------------------------\n"; // linea referencia
+    cout << "Ingrese los datos de la reparacion: \n";
 
     cout << "ID Equipo: ";
     cin >> idEquipo;
 
     if(_archivoEquipo.buscar(idEquipo) == -1){
-        cout << "No existe un equipo con ese ID." << endl;
+        cout << "No existe un equipo con ese ID.\n";
         return;
     }
 
@@ -81,7 +82,8 @@ void ReparacionManager::crearReparacion(){
         cout << "Reparacion cargada con ID: " << idReparacion << endl;
     }
     else{
-        cout << "No se pudo guardar la reparacion." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se pudo guardar la reparacion.\n";
     }
 }
 
@@ -93,9 +95,12 @@ void ReparacionManager::listarReparaciones(){
     bool hayActivos = false;
 
     if(cantidadRegistros == 0){
-        cout << "\nNo hay reparaciones cargadas.\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay reparaciones cargadas.\n";
         return;
     }
+
+    cout << "------------------------------------\n"; // linea referencia
 
     for(int i = 0; i < cantidadRegistros; i++){
         Reparacion reg = _archivo.leer(i);
@@ -107,7 +112,6 @@ void ReparacionManager::listarReparaciones(){
             if(reg.getEstado()){
 
                 listar(reg);
-                cout << "-------------------------\n";
 
                 hayActivos = true;
             }
@@ -115,11 +119,13 @@ void ReparacionManager::listarReparaciones(){
     }
 
     if(!hayRegistrosValidos){
-        cout << "\nNo hay reparaciones cargadas.\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay reparaciones cargadas.\n";
     }
     else{
         if(!hayActivos){
-            cout << "\nNo hay reparaciones activas.\n";
+            cout << "------------------------------------\n"; // linea referencia
+            cout << "No hay reparaciones activas.\n";
         }
     }
 }
@@ -132,7 +138,8 @@ void ReparacionManager::listarXId(){
     Reparacion reg;
 
     if(cantidadRegistros == 0){
-        cout << "\nNo hay reparaciones cargadas.\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay reparaciones cargadas.\n";
         return;
     }
 
@@ -142,11 +149,14 @@ void ReparacionManager::listarXId(){
     pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro una reparacion con ese ID." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro una reparacion con ese ID.\n";
         return;
     }
 
     reg = _archivo.leer(pos);
+
+    cout << "------------------------------------\n"; // linea referencia
     listar(reg);
 }
 
@@ -164,22 +174,23 @@ void ReparacionManager::listar(const Reparacion& reparacion){
 
     switch(reparacion.getEstadoRep()){
         case 1:
-            cout << "Estado reparacion: En proceso" << endl;
+            cout << "Estado reparacion: En proceso\n";
             break;
         case 2:
-            cout << "Estado reparacion: Reparado" << endl;
+            cout << "Estado reparacion: Reparado\n";
             break;
         case 3:
-            cout << "Estado reparacion: No reparado" << endl;
+            cout << "Estado reparacion: No reparado\n";
             break;
     }
 
     if(reparacion.getEstado()){
-        cout << "Estado: Activo" << endl;
+        cout << "Estado: Activo\n";
     }
     else{
-        cout << "Estado: Inactivo" << endl;
+        cout << "Estado: Inactivo\n";
     }
+    cout << "------------------------------------\n"; // linea referencia
 }
 
 void ReparacionManager::darBajaReparacion(){
@@ -190,7 +201,8 @@ void ReparacionManager::darBajaReparacion(){
     Reparacion reg;
 
     if(cantidadRegistros == 0){
-        cout << "\nNo hay reparaciones cargadas.\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay reparaciones cargadas.\n";
         return;
     }
 
@@ -200,24 +212,28 @@ void ReparacionManager::darBajaReparacion(){
     pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro una reparacion con ese ID." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro una reparacion con ese ID.\n";
         return;
     }
 
     reg = _archivo.leer(pos);
 
     if(!reg.getEstado()){
-        cout << "La reparacion ya se encuentra inactiva." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "La reparacion ya se encuentra inactiva.\n";
         return;
     }
 
     reg.setEstado(false);
 
     if(_archivo.guardar(reg, pos)){
-        cout << "Reparacion dada de baja correctamente." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "Reparacion dada de baja correctamente.\n";
     }
     else{
-        cout << "No se pudo dar de baja la reparacion." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se pudo dar de baja la reparacion.\n";
     }
 }
 
@@ -229,7 +245,8 @@ void ReparacionManager::actualizarEstadoRep(){
     Reparacion reg;
 
     if(cantidadRegistros == 0){
-        cout << "\nNo hay reparaciones cargadas.\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay reparaciones cargadas.\n";
         return;
     }
 
@@ -239,14 +256,16 @@ void ReparacionManager::actualizarEstadoRep(){
     pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro una reparacion con ese ID." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro una reparacion con ese ID.\n";
         return;
     }
 
     reg = _archivo.leer(pos);
 
     if(!reg.getEstado()){
-        cout << "La reparacion se encuentra inactiva." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "La reparacion se encuentra inactiva.\n";
         return;
     }
 
@@ -261,9 +280,10 @@ void ReparacionManager::actualizarEstadoRep(){
     reg.setEstadoRep(estadoRep);
 
     if(_archivo.guardar(reg, pos)){
-        cout << "Estado de reparacion actualizado correctamente." << endl;
+        cout << "Estado de reparacion actualizado correctamente.\n";
     }
     else{
-        cout << "No se pudo actualizar el estado de la reparacion." << endl;
+        cout << "No se pudo actualizar el estado de la reparacion.\n";
     }
+    cout << "------------------------------------\n"; // linea referencia
 }

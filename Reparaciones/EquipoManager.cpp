@@ -44,13 +44,15 @@ void EquipoManager::crearEquipo(){
 
     int idEquipo = generarId();
 
-    cout << "Ingrese los datos del equipo: " << endl;
+    cout << "------------------------------------\n"; // linea referencia
+    cout << "Ingrese los datos del equipo: \n";
 
     cout << "ID Cliente: ";
     cin >> idCliente;
 
     if(_archivoCliente.buscar(idCliente) == -1){
-        cout << "No existe un cliente con ese ID." << endl;
+        cout << "------------------------------------\n";
+        cout << "No existe un cliente con ese ID.\n";
         return;
     }
 
@@ -58,7 +60,8 @@ void EquipoManager::crearEquipo(){
     cin >> idTecnico;
 
     if(_archivoTecnico.buscar(idTecnico) == -1){
-        cout << "No existe un tecnico con ese ID." << endl;
+        cout << "------------------------------------\n";
+        cout << "No existe un tecnico con ese ID.\n";
         return;
     }
 
@@ -80,10 +83,12 @@ void EquipoManager::crearEquipo(){
     Equipo nuevo(idEquipo, idTecnico, idCliente, descripcion, marca, tipoEquipo, fechaIngreso, true);
 
     if(_archivo.guardar(nuevo)){
+        cout << "------------------------------------\n";
         cout << "Equipo cargado con ID: " << idEquipo << endl;
     }
     else{
-        cout << "No se pudo guardar el equipo." << endl;
+        cout << "------------------------------------\n";
+        cout << "No se pudo guardar el equipo.\n";
     }
 }
 
@@ -95,9 +100,12 @@ void EquipoManager::listarEquipos(){
     bool hayActivos = false;
 
     if(cantidadRegistros == 0){
-        cout << "\nNo hay equipos cargados.\n";
+        cout << "------------------------------------\n";
+        cout << "No hay equipos cargados.\n";
         return;
     }
+
+    cout << "------------------------------------\n";
 
     for(int i = 0; i < cantidadRegistros; i++){
         Equipo reg = _archivo.leer(i);
@@ -109,7 +117,6 @@ void EquipoManager::listarEquipos(){
             if(reg.getEstado()){
 
                 listar(reg);
-                cout << "-------------------------\n";
 
                 hayActivos = true;
             }
@@ -117,11 +124,13 @@ void EquipoManager::listarEquipos(){
     }
 
     if(!hayRegistrosValidos){
-        cout << "\nNo hay equipos cargados.\n";
+        cout << "------------------------------------\n";
+        cout << "No hay equipos cargados.\n";
     }
     else{
         if(!hayActivos){
-            cout << "\nNo hay equipos activos.\n";
+            cout << "------------------------------------\n";
+            cout << "No hay equipos activos.\n";
         }
     }
 }
@@ -134,7 +143,8 @@ void EquipoManager::listarXId(){
     Equipo reg;
 
     if(cantidadRegistros == 0){
-        cout << "\nNo hay equipos cargados.\n";
+        cout << "------------------------------------\n";
+        cout << "No hay equipos cargados.\n";
         return;
     }
 
@@ -144,7 +154,8 @@ void EquipoManager::listarXId(){
     pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro un equipo con ese ID." << endl;
+        cout << "------------------------------------\n";
+        cout << "No se encontro un equipo con ese ID.\n";
         return;
     }
 
@@ -165,11 +176,12 @@ void EquipoManager::listar(const Equipo& equipo){
          << equipo.getFechaIngreso().getAnio() << endl;
 
     if(equipo.getEstado()){
-        cout << "Estado: Activo" << endl;
+        cout << "Estado: Activo\n";
     }
     else{
-        cout << "Estado: Inactivo" << endl;
+        cout << "Estado: Inactivo\n";
     }
+    cout << "------------------------------------\n";
 }
 
 void EquipoManager::darBajaEquipo(){
@@ -180,7 +192,8 @@ void EquipoManager::darBajaEquipo(){
     Equipo reg;
 
     if(cantidadRegistros == 0){
-        cout << "\nNo hay equipos cargados.\n";
+        cout << "------------------------------------\n";
+        cout << "No hay equipos cargados.\n";
         return;
     }
 
@@ -190,23 +203,28 @@ void EquipoManager::darBajaEquipo(){
     pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro un equipo con ese ID." << endl;
+        cout << "------------------------------------\n";
+        cout << "No se encontro un equipo con ese ID.\n";
         return;
     }
 
     reg = _archivo.leer(pos);
 
     if(!reg.getEstado()){
-        cout << "El equipo ya se encuentra inactivo." << endl;
+        cout << "------------------------------------\n";
+        cout << "El equipo ya se encuentra inactivo.\n";
         return;
     }
 
     reg.setEstado(false);
 
     if(_archivo.guardar(reg, pos)){
-        cout << "Equipo dado de baja correctamente." << endl;
+        cout << "------------------------------------\n";
+        cout << "Equipo dado de baja correctamente.\n";
     }
     else{
-        cout << "No se pudo dar de baja al equipo." << endl;
+        cout << "------------------------------------\n";
+        cout << "No se pudo dar de baja al equipo.\n";
     }
+    cout << "------------------------------------\n";
 }

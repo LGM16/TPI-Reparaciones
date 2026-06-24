@@ -60,7 +60,7 @@ bool TecnicoManager::crearTecnico(Tecnico& tecnicoCreado){
     int idTecnico = generarId();
 
     cout << "------------------------------------\n"; // linea referencia
-    cout << "Ingrese los datos del tecnico: " << endl;
+    cout << "Ingrese los datos del tecnico: \n";
 
     cout << "Nombre: ";
     cin.ignore();
@@ -73,7 +73,7 @@ bool TecnicoManager::crearTecnico(Tecnico& tecnicoCreado){
     cin >> usuario;
 
     if(existeUsuario(usuario)){
-        cout << "El usuario ya existe. Elija otro." << endl;
+        cout << "El usuario ya existe. Elija otro.\n";
         return false;
     }
 
@@ -90,7 +90,8 @@ bool TecnicoManager::crearTecnico(Tecnico& tecnicoCreado){
         return true;
     }
     else{
-        cout << "No se pudo guardar el tecnico." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se pudo guardar el tecnico.\n";
         return false;
     }
 }
@@ -102,6 +103,8 @@ void TecnicoManager::listarTecnicos(){
     bool hayRegistrosValidos = false;
     bool hayActivos = false;
 
+    cout << "------------------------------------\n"; // linea referencia
+
     for(int i = 0; i < cantidadRegistros; i++){
         Tecnico reg = _archivo.leer(i);
 
@@ -112,7 +115,6 @@ void TecnicoManager::listarTecnicos(){
             if(reg.getEstado()){
 
                 listar(reg);
-                cout << "-----------------------------------\n";
 
                 hayActivos = true;
             }
@@ -120,11 +122,13 @@ void TecnicoManager::listarTecnicos(){
     }
 
     if(!hayRegistrosValidos){
-        cout << "\nNo hay tecnicos cargados.\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay tecnicos cargados.\n";
     }
     else{
         if(!hayActivos){
-            cout << "\nNo hay tecnicos activos.\n";
+            cout << "------------------------------------\n"; // linea referencia
+            cout << "No hay tecnicos activos.\n";
         }
     }
 }
@@ -141,11 +145,14 @@ void TecnicoManager::listarXId(){
     pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro un tecnico con el ID ingresado." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro un tecnico con el ID ingresado.\n";
         return;
     }
 
     reg = _archivo.leer(pos);
+
+    cout << "------------------------------------\n"; // linea referencia
     listar(reg);
 }
 
@@ -157,11 +164,12 @@ void TecnicoManager::listar(const Tecnico& tecnico){
     cout << "Usuario: " << tecnico.getUsuario() << endl;
     //cout << "Estado: " << (tecnico.getEstado() ? "Activo" : "Inactivo") << endl; operador ternario?
     if(tecnico.getEstado()){
-        cout << "Estado: Activo" << endl;
+        cout << "Estado: Activo\n";
     }
     else{
-        cout << "Estado: Inactivo" << endl;
+        cout << "Estado: Inactivo\n";
     }
+    cout << "------------------------------------\n"; // linea referencia
 }
 
 void TecnicoManager::darBajaTecnico(){
@@ -176,24 +184,28 @@ void TecnicoManager::darBajaTecnico(){
     pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro un tecnico con el ID ingresado." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro un tecnico con el ID ingresado.\n";
         return;
     }
 
     reg = _archivo.leer(pos);
 
     if(!reg.getEstado()){
-        cout << "El tecnico ya se encuentra inactivo." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "El tecnico ya se encuentra inactivo.\n";
         return;
     }
 
     reg.setEstado(false);
 
     if(_archivo.guardar(reg, pos)){
-        cout << "Tecnico dado de baja exitosamente." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "Tecnico dado de baja exitosamente.\n";
     }
     else{
-        cout << "No se pudo dar de baja el tecnico." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se pudo dar de baja el tecnico.\n";
     }
 }
 
