@@ -207,7 +207,7 @@ void ClienteManager::darAltaCliente(){
         return;
     }
 
-    cout << "Ingrese el ID del cliente a dar de baja: ";
+    cout << "Ingrese el ID del cliente a dar de alta: ";
     cin >> id;
 
     _archivo.buscar(id);

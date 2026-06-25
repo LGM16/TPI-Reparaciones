@@ -172,6 +172,43 @@ void TecnicoManager::listar(const Tecnico& tecnico){
     cout << "------------------------------------\n"; // linea referencia
 }
 
+void TecnicoManager::darAltaTecnico(){
+
+    int id, pos;
+
+    Tecnico reg;
+
+    cout << "Ingrese el ID del tecnico a dar de alta: ";
+    cin >> id;
+
+    pos = _archivo.buscar(id);
+
+    if(pos == -1){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro un tecnico con el ID ingresado.\n";
+        return;
+    }
+
+    reg = _archivo.leer(pos);
+
+    if(reg.getEstado()){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "El tecnico ya se encuentra activo.\n";
+        return;
+    }
+
+    reg.setEstado(true);
+
+    if(_archivo.guardar(reg, pos)){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "Tecnico dado de alta exitosamente.\n";
+    }
+    else{
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se pudo dar de alta el tecnico.\n";
+    }
+}
+
 void TecnicoManager::darBajaTecnico(){
 
     int id, pos;

@@ -26,5 +26,6 @@ public:
     void listarEquipos();
     void listarXId();
     void listar(const Equipo& equipo);
+    void darAltaEquipo();
     void darBajaEquipo();
 };

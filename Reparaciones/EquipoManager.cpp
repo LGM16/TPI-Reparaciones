@@ -184,6 +184,51 @@ void EquipoManager::listar(const Equipo& equipo){
     cout << "------------------------------------\n";
 }
 
+void EquipoManager::darAltaEquipo(){
+
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+    int id, pos;
+
+    Equipo reg;
+
+    if(cantidadRegistros == 0){
+        cout << "------------------------------------\n";
+        cout << "No hay equipos cargados.\n";
+        return;
+    }
+
+    cout << "Ingrese el ID del equipo a dar de alta: ";
+    cin >> id;
+
+    pos = _archivo.buscar(id);
+
+    if(pos == -1){
+        cout << "------------------------------------\n";
+        cout << "No se encontro un equipo con ese ID.\n";
+        return;
+    }
+
+    reg = _archivo.leer(pos);
+
+    if(reg.getEstado()){
+        cout << "------------------------------------\n";
+        cout << "El equipo ya se encuentra activo.\n";
+        return;
+    }
+
+    reg.setEstado(true);
+
+    if(_archivo.guardar(reg, pos)){
+        cout << "------------------------------------\n";
+        cout << "Equipo dado de alta correctamente.\n";
+    }
+    else{
+        cout << "------------------------------------\n";
+        cout << "No se pudo dar de alta al equipo.\n";
+    }
+    cout << "------------------------------------\n";
+}
+
 void EquipoManager::darBajaEquipo(){
 
     int cantidadRegistros = _archivo.getCantidadRegistros();

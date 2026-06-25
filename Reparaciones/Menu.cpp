@@ -258,7 +258,8 @@ void Menu::menuEquipos(){
         cout << "1. Cargar equipo\n";
         cout << "2. Listar equipos\n";
         cout << "3. Buscar equipo por ID\n";
-        cout << "4. Dar de baja equipo\n";
+        cout << "4. Dar de alta equipo\n";
+        cout << "5. Dar de baja equipo\n";
         cout << "0. Volver\n";
         cout << "------------------------------------\n"; // linea referencia
         cout << "Seleccione una opcion: ";
@@ -281,6 +282,11 @@ void Menu::menuEquipos(){
                 rlutil::anykey();
                 break;
             case 4:
+                rlutil::cls();
+                _managerEquipo.darAltaEquipo();
+                rlutil::anykey();
+                break;
+            case 5:
                 rlutil::cls();
                 _managerEquipo.darBajaEquipo();
                 rlutil::anykey();
@@ -320,8 +326,9 @@ void Menu::menuReparaciones(){
         cout << "1. Cargar reparacion\n";
         cout << "2. Listar reparaciones\n";
         cout << "3. Buscar reparacion por ID\n";
-        cout << "4. Dar de baja reparacion\n";
-        cout << "5. Actualizar estado de reparacion\n";
+        cout << "4. Dar de alta reparacion\n";
+        cout << "5. Dar de baja reparacion\n";
+        cout << "6. Actualizar estado de reparacion\n";
         cout << "0. Volver\n";
         cout << "------------------------------------\n"; // linea referencia
         cout << "Seleccione una opcion: ";
@@ -345,10 +352,15 @@ void Menu::menuReparaciones(){
                 break;
             case 4:
                 rlutil::cls();
-                _managerReparacion.darBajaReparacion();
+                _managerReparacion.darAltaReparacion();
                 rlutil::anykey();
                 break;
             case 5:
+                rlutil::cls();
+                _managerReparacion.darBajaReparacion();
+                rlutil::anykey();
+                break;
+            case 6:
                 rlutil::cls();
                 _managerReparacion.actualizarEstadoRep();
                 rlutil::anykey();
@@ -463,7 +475,8 @@ void Menu::menuTecnicos(){
         cout << "1. Cargar tecnico\n";
         cout << "2. Listar tecnicos\n";
         cout << "3. Buscar tecnico por ID\n";
-        cout << "4. Dar de baja tecnico\n";
+        cout << "4. Dar de alta tecnico\n";
+        cout << "5. Dar de baja tecnico\n";
         cout << "0. Volver\n";
         cout << "------------------------------------\n"; // linea referencia
         cout << "Seleccione una opcion: ";
@@ -488,6 +501,11 @@ void Menu::menuTecnicos(){
                 rlutil::anykey();
                 break;
             case 4:
+                rlutil::cls();
+                _managerTecnico.darAltaTecnico();
+                rlutil::anykey();
+                break;
+            case 5:
                 rlutil::cls();
                 _managerTecnico.darBajaTecnico();
                 rlutil::anykey();

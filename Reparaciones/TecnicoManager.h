@@ -23,6 +23,7 @@ public:
     void listarTecnicos();
     void listarXId();
     void listar(const Tecnico& tecnico);
+    void darAltaTecnico();
     void darBajaTecnico();
     bool hayTecnicos();
     bool validarCredenciales(std::string usuario, std::string contrasenia, Tecnico& tecnico);
