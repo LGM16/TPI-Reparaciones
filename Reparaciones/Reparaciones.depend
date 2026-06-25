@@ -17,7 +17,7 @@
 	"Cliente.h"
 	<string>
 
-1782391719 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientemanager.cpp
+1782420864 source:f:\lucas\documents\programacion 2\tpi\reparaciones\clientemanager.cpp
 	<iostream>
 	"ClienteManager.h"
 
@@ -126,7 +126,7 @@
 	<iostream>
 	"Menu.h"
 
-1782348074 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
+1782420374 source:f:\lucas\documents\programacion 2\tpi\reparaciones\persona.cpp
 	<iostream>
 	<cstring>
 	"Persona.h"
