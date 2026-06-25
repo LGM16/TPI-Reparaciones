@@ -73,6 +73,7 @@ bool TecnicoManager::crearTecnico(Tecnico& tecnicoCreado){
     cin >> usuario;
 
     if(existeUsuario(usuario)){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "El usuario ya existe. Elija otro.\n";
         return false;
     }

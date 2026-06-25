@@ -152,12 +152,13 @@ void InformeManager::informeReparacionesPorRangoFechas(){
                 cout << "ID: " << reg.getIdReparacion()
                      << " | Fecha ingreso: " << reg.getFechaIngreso().toString()
                      << " | Importe: $" << reg.getImporte() << endl;
+                cout << "------------------------------------------------------\n"; // linea referencia
             }
         }
     }
 
-    cout << "------------------------------------------------------\n"; // linea referencia
     cout << "Total en rango: " << contador << endl;
+    cout << "------------------------------------------------------\n"; // linea referencia
 }
 
 void InformeManager::informeTotalFacturado(){
@@ -175,6 +176,7 @@ void InformeManager::informeTotalFacturado(){
 
     cout << "========== TOTAL FACTURADO (REPARADAS) ==========\n";
     cout << "Importe total: $" << total << endl;
+    cout << "-------------------------------------------------\n"; // linea referencia
 }
 
 void InformeManager::informeEquiposPorTipo(){
