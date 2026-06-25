@@ -40,9 +40,9 @@ void EquipoManager::crearEquipo(){
     string descripcion, marca, tipoEquipo;
 
     int idTecnico, idCliente;
-    int dia, mes, anio,pos;
-
     int idEquipo = generarId();
+
+    Fecha fechaIngreso;
 
     cout << "------------------------------------\n"; // linea referencia
     cout << "Ingrese los datos del equipo: \n";
@@ -72,15 +72,15 @@ void EquipoManager::crearEquipo(){
     getline(cin, descripcion);
 
     cout << "Marca: ";
+    //getline(cin, marca);
     cin >> marca;
 
     cout << "Tipo de equipo: ";
     cin >> tipoEquipo;
 
-    cout << "Fecha de ingreso (dia mes anio): ";
-    cin >> dia >> mes >> anio;
+    cout << "Fecha de ingreso (DD/MM//AAAA): ";
 
-    Fecha fechaIngreso(dia, mes, anio);
+    fechaIngreso.cargar();
 
     Equipo nuevo(idEquipo, idTecnico, idCliente, descripcion, marca, tipoEquipo, fechaIngreso, true);
 
@@ -173,9 +173,7 @@ void EquipoManager::listar(const Equipo& equipo){
     cout << "Descripcion: " << equipo.getDescripcion() << endl;
     cout << "Marca: " << equipo.getMarca() << endl;
     cout << "Tipo: " << equipo.getTipoEquipo() << endl;
-    cout << "Fecha ingreso: " << equipo.getFechaIngreso().getDia() << "/"
-         << equipo.getFechaIngreso().getMes() << "/"
-         << equipo.getFechaIngreso().getAnio() << endl;
+    cout << "Fecha ingreso: " << equipo.getFechaIngreso().toString() << endl;
 
     if(equipo.getEstado()){
         cout << "Estado: Activo\n";

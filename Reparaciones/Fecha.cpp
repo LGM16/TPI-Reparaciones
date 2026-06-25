@@ -10,12 +10,14 @@ Fecha::Fecha(){
 
 Fecha::Fecha(int dia, int mes, int anio){
 
-    if(validarFecha(dia,mes,anio)){
+    if(validarFecha(dia,mes,anio))
+    {
         _dia = dia;
         _mes = mes;
         _anio = anio;
     }
-    else{    
+    else
+    {
         establecerFechaDefecto();
     }
 }
@@ -39,11 +41,11 @@ void Fecha::setAnio(int anio){
 void Fecha::establecerFechaDefecto(){
     _dia = 1;
     _mes = 1;
-    _anio = 2023;
+    _anio = 1995;
 }
 
 int Fecha::obtenerCantDias(int mes, int anio){
-    
+
     int maxDias;
 
     switch (mes){
@@ -70,18 +72,21 @@ int Fecha::obtenerCantDias(int mes, int anio){
 }
 
 bool Fecha::validarFecha(int dia, int mes, int anio){
-    
+
     // Año válido
-    if (anio <= 0)
+    if (anio <= 0){
         return false;
+    }
 
     // Mes válido
-    if (mes < 1 || mes > 12)
+    if (mes < 1 || mes > 12){
         return false;
+    }
 
     // Día mínimo válido
-    if (dia < 1)
+    if (dia < 1){
         return false;
+    }
 
     int maxDias;
 
@@ -106,36 +111,44 @@ string Fecha::toString(){
     mes = to_string(_mes);
     anio = to_string(_anio);
 
-    if(_dia < 10)
-    {
-        if(_mes < 10)
-        {
+    if(_dia < 10){
+        if(_mes < 10){
             fecha = "0" + dia + "/" + "0" + mes + "/" + anio;
         }
-        else
-        {
+        else{
             fecha = "0" + dia + "/" + mes + "/" + anio;
 
         }
     }
-    else  // si viene x else -> dia es > 10
-    {
-        if(_mes < 10)
-        {
+    else{  // si viene x else -> dia es > 10
+
+        if(_mes < 10){
             fecha = dia + "/" + "0" + mes + "/" + anio;
         }
-        else
-        {
+        else{
             fecha = dia + "/" + mes + "/" + anio;
         }
     }
     return fecha;
 }
 
-void Fecha::cargar()
-{
-    cout << "Fecha (DD MM AAAA) :" << endl;
-    cin >> _dia >> _mes >> _anio;
+void Fecha::cargar(){
+
+    int dia,mes,anio;
+
+    do{
+        cout << "Fecha (D/M/AAAA): \n";
+        cin >> dia >> mes >> anio;
+
+        if(validarFecha(dia,mes,anio)){
+            _dia = dia;
+            _mes = mes;
+            _anio = anio;
+
+            break;
+        }
+        cout << "Fecha invalida, intenta nuevamente. \n";
+    }while(true);
 }
 
 void Fecha::mostrar()

@@ -37,13 +37,12 @@ bool ReparacionManager::existeId(int id){
 
 void ReparacionManager::crearReparacion(){
 
-    int idEquipo;
-    int diaIng, mesIng, anioIng;
-    int diaEgr, mesEgr, anioEgr;
+    int idEquipo, posEquipo;
     float importe;
     int estadoRep;
-
     int idReparacion = generarId();
+
+    Fecha fechaEgreso;
 
     cout << "------------------------------------\n"; // linea referencia
     cout << "Ingrese los datos de la reparacion: \n";
@@ -51,16 +50,21 @@ void ReparacionManager::crearReparacion(){
     cout << "ID Equipo: ";
     cin >> idEquipo;
 
-    if(_archivoEquipo.buscar(idEquipo) == -1){
+    posEquipo = _archivoEquipo.buscar(idEquipo);
+
+    if(posEquipo == -1){
         cout << "No existe un equipo con ese ID.\n";
         return;
     }
 
-    cout << "Fecha de ingreso (DD/MM/AAAA): ";
-    cin >> diaIng >> mesIng >> anioIng;
+    Equipo equipo = _archivoEquipo.leer(posEquipo);
+    Fecha fechaIngreso = equipo.getFechaIngreso();
+
+    cout << "Fecha de ingreso (del equipo): " << fechaIngreso.toString() << endl;
 
     cout << "Fecha de egreso (DD/MM/AAAA): ";
-    cin >> diaEgr >> mesEgr >> anioEgr;
+
+    fechaEgreso.cargar();
 
     cout << "Importe: $";
     cin >> importe;
@@ -72,9 +76,6 @@ void ReparacionManager::crearReparacion(){
         cout << "Estado invalido. Ingrese 1, 2 o 3: ";
         cin >> estadoRep;
     }
-
-    Fecha fechaIngreso(diaIng, mesIng, anioIng);
-    Fecha fechaEgreso(diaEgr, mesEgr, anioEgr);
 
     Reparacion nueva(idReparacion, idEquipo, fechaIngreso, fechaEgreso, importe, estadoRep, true);
 
@@ -164,13 +165,9 @@ void ReparacionManager::listar(const Reparacion& reparacion){
 
     cout << "ID: " << reparacion.getIdReparacion() << endl;
     cout << "ID Equipo: " << reparacion.getIdEquipo() << endl;
-    cout << "Fecha ingreso: " << reparacion.getFechaIngreso().getDia() << "/"
-         << reparacion.getFechaIngreso().getMes() << "/"
-         << reparacion.getFechaIngreso().getAnio() << endl;
-    cout << "Fecha egreso: " << reparacion.getFechaEgreso().getDia() << "/"
-         << reparacion.getFechaEgreso().getMes() << "/"
-         << reparacion.getFechaEgreso().getAnio() << endl;
-    cout << "Importe: " << reparacion.getImporte() << endl;
+    cout << "Fecha ingreso: " << reparacion.getFechaIngreso().toString() << endl;
+    cout << "Fecha egreso: " << reparacion.getFechaEgreso().toString() << endl;
+    cout << "Importe: $" << reparacion.getImporte() << endl;
 
     switch(reparacion.getEstadoRep()){
         case 1:
