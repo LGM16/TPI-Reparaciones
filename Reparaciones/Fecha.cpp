@@ -98,3 +98,47 @@ bool Fecha::validarFecha(int dia, int mes, int anio){
 
     return dia <= maxDias; // Equivale al if comentado de arriba
 }
+
+string Fecha::toString(){
+
+    string dia, mes, anio, fecha;
+    dia = to_string(_dia);
+    mes = to_string(_mes);
+    anio = to_string(_anio);
+
+    if(_dia < 10)
+    {
+        if(_mes < 10)
+        {
+            fecha = "0" + dia + "/" + "0" + mes + "/" + anio;
+        }
+        else
+        {
+            fecha = "0" + dia + "/" + mes + "/" + anio;
+
+        }
+    }
+    else  // si viene x else -> dia es > 10
+    {
+        if(_mes < 10)
+        {
+            fecha = dia + "/" + "0" + mes + "/" + anio;
+        }
+        else
+        {
+            fecha = dia + "/" + mes + "/" + anio;
+        }
+    }
+    return fecha;
+}
+
+void Fecha::cargar()
+{
+    cout << "Fecha (DD MM AAAA) :" << endl;
+    cin >> _dia >> _mes >> _anio;
+}
+
+void Fecha::mostrar()
+{
+    cout << "La fecha es: " << _dia << "/" << _mes << "/" << _anio << endl;
+}

@@ -32,5 +32,9 @@ public:
 
     ///Metodos
 
+    std::string toString();
+    void cargar();
+    void mostrar();
+
     //void agregarDias(int dias); ?
 };
