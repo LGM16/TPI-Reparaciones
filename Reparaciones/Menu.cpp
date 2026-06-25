@@ -121,21 +121,17 @@ void Menu::menuPrincipal(){
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
-        /*  si ingreso una letra, menu se rompe, esto no lo soluciona
-        if(cin >> opcion){
+        if(!(cin >> opcion)){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             rlutil::setColor(rlutil::RED);
-
             cout << "Ingresa un numero.\n";
-
             rlutil::anykey();
             rlutil::setColor(rlutil::WHITE);
 
-            continue;
+            opcion = -1;
         }
-        */
 
         switch(opcion){
             case 1:
