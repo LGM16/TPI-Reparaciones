@@ -196,6 +196,60 @@ void ClienteManager::listar(const Cliente& cliente){
     cout << "------------------------------------\n"; // linea referencia
 }
 
+/* hace un submenu de modificacion de atributos?
+void ClienteManager::modificarCuit(){
+
+    int id, pos;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    string cuitNuevo, cuitAnterior;
+
+    if(cantidadRegistros == 0){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay clientes cargados.\n";
+        return;
+    }
+
+    cout << "Ingrese el ID del cliente a modificar: ";
+    cin >> id;
+
+    pos = _archivo.buscar(id);
+
+    if(pos == -1){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro un cliente con ese ID.\n";
+        return;
+    }
+
+    Cliente reg = _archivo.leer(pos);
+
+    if(reg.getEstado()){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "El cliente ya se encuentra activo.\n";
+        return;
+    }
+
+    cuitAnterior = reg.getCuit();
+
+    cout << "CUIT actual: \n";
+
+    if(cuitAnterior.empty()){
+        cout << "el CUIT esta vacio/ es invalido\n";
+    }
+    else{
+        cout << cuitAnterior << endl;
+    }
+
+
+    cout << "Ingrese el nuevo CUIT (11 digitos): ";
+    cin >> cuitNuevo;
+
+    reg.setCuit(cuitNuevo);
+
+}
+*/
+
+
 void ClienteManager::darAltaCliente(){
 
     int id, pos;

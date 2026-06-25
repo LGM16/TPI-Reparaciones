@@ -21,9 +21,12 @@ Persona::Persona(std::string cuit, std::string nombre, std::string apellido){
 ///Setters
 
 void Persona::setCuit(std::string cuit){
+        strcpy(_cuit, cuit.c_str());
+/*
     if(cuit.length() == 11){
         strcpy(_cuit, cuit.c_str());
     }
+*/
 }
 
 void Persona::setNombre(std::string nombre){
