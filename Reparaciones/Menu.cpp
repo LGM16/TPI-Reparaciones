@@ -121,6 +121,7 @@ void Menu::menuPrincipal(){
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
+        /*
         if(!(cin >> opcion)){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -132,6 +133,7 @@ void Menu::menuPrincipal(){
 
             opcion = -1;
         }
+        */
 
         switch(opcion){
             case 1:
