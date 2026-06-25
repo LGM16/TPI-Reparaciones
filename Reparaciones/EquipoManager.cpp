@@ -40,7 +40,7 @@ void EquipoManager::crearEquipo(){
     string descripcion, marca, tipoEquipo;
 
     int idTecnico, idCliente;
-    int dia, mes, anio;
+    int dia, mes, anio,pos;
 
     int idEquipo = generarId();
 
@@ -49,6 +49,8 @@ void EquipoManager::crearEquipo(){
 
     cout << "ID Cliente: ";
     cin >> idCliente;
+
+    //pos = _archivoCliente
 
     if(_archivoCliente.buscar(idCliente) == -1){
         cout << "------------------------------------\n";

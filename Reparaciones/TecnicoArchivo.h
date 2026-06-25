@@ -26,4 +26,5 @@ public:
     Tecnico leer(int posRegistro);
     void leerTodos(Tecnico *vec, int cantidadRegistros);
     int buscar(int id);
+    void vaciar();
 };

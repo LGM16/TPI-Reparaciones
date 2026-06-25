@@ -56,13 +56,13 @@ void ReparacionManager::crearReparacion(){
         return;
     }
 
-    cout << "Fecha de ingreso (dia mes anio): ";
+    cout << "Fecha de ingreso (DD/MM/AAAA): ";
     cin >> diaIng >> mesIng >> anioIng;
 
-    cout << "Fecha de egreso (dia mes anio): ";
+    cout << "Fecha de egreso (DD/MM/AAAA): ";
     cin >> diaEgr >> mesEgr >> anioEgr;
 
-    cout << "Importe: ";
+    cout << "Importe: $";
     cin >> importe;
 
     cout << "Estado reparacion (1: en proceso, 2: reparado, 3: no reparado): ";

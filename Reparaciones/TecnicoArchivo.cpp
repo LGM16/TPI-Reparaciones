@@ -117,3 +117,13 @@ int TecnicoArchivo::buscar(int id){
     }
     return -1;
 }
+
+void TecnicoArchivo::vaciar(){
+
+    FILE *p = fopen(_ruta.c_str(), "wb");
+
+    if(p == NULL){
+        return;
+    }
+    fclose(p);
+}
