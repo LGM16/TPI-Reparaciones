@@ -1,0 +1,28 @@
+------------------------------------
+Ingrese los datos del tecnico:
+Nombre: Brian
+Apellido: Lara Campos
+Usuario: blara
+Contrasenia: objetos
+Tecnico creado con ID: 4
+------------------------------------
+Ingrese los datos del tecnico:
+Nombre: Daniel
+Apellido: Kloster
+Usuario: elgentes
+Contrasenia: elgentes
+Tecnico creado con ID: 5
+------------------------------------
+Ingrese los datos del tecnico:
+Nombre: Daniela
+Apellido: Pinto
+Usuario: dpinto
+Contrasenia: dpinto
+Tecnico creado con ID: 6
+------------------------------------
+Ingrese los datos del tecnico:
+Nombre: Angel
+Apellido: Simon
+Usuario: asimon
+Contrasenia: asimon4321
+Tecnico creado con ID: 7

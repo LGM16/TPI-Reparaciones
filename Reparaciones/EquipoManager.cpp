@@ -67,7 +67,7 @@ void EquipoManager::crearEquipo(){
         return;
     }
 
-    cout << "Descripcion: ";
+    cout << "Descripcion de la falla: ";
     cin.ignore();
     getline(cin, descripcion);
 
@@ -78,8 +78,7 @@ void EquipoManager::crearEquipo(){
     cout << "Tipo de equipo: ";
     cin >> tipoEquipo;
 
-    cout << "Fecha de ingreso (DD/MM//AAAA): ";
-
+    cout << "Fecha de ingreso (DD/MM/AAAA): \n";
     fechaIngreso.cargar();
 
     Equipo nuevo(idEquipo, idTecnico, idCliente, descripcion, marca, tipoEquipo, fechaIngreso, true);

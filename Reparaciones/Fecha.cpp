@@ -137,8 +137,13 @@ void Fecha::cargar(){
     int dia,mes,anio;
 
     do{
-        cout << "Fecha (D/M/AAAA): \n";
-        cin >> dia >> mes >> anio;
+
+        cout << "Dia: ";
+        cin >> dia;
+        cout << "Mes: ";
+        cin >> mes;
+        cout << "Anio: ";
+        cin >> anio;
 
         if(validarFecha(dia,mes,anio)){
             _dia = dia;

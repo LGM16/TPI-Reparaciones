@@ -44,7 +44,7 @@
 	"Equipo.h"
 	<string>
 
-1782393845 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipomanager.cpp
+1782399509 source:f:\lucas\documents\programacion 2\tpi\reparaciones\equipomanager.cpp
 	<iostream>
 	"EquipoManager.h"
 
@@ -61,11 +61,11 @@
 1782348074 f:\lucas\documents\programacion 2\tpi\reparaciones\tecnico.h
 	"Persona.h"
 
-1782362410 source:f:\lucas\documents\programacion 2\tpi\reparaciones\fecha.cpp
+1782399504 source:f:\lucas\documents\programacion 2\tpi\reparaciones\fecha.cpp
 	<iostream>
 	"Fecha.h"
 
-1782348074 source:f:\lucas\documents\programacion 2\tpi\reparaciones\informemanager.cpp
+1782401074 source:f:\lucas\documents\programacion 2\tpi\reparaciones\informemanager.cpp
 	<iostream>
 	<cstring>
 	"InformeManager.h"
@@ -116,12 +116,12 @@
 	"Tecnico.h"
 	"TecnicoArchivo.h"
 
-1782348074 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionmanager.h
+1782401074 f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionmanager.h
 	"Reparacion.h"
 	"ReparacionArchivo.h"
 	"EquipoArchivo.h"
 
-1782362179 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
+1782398627 source:f:\lucas\documents\programacion 2\tpi\reparaciones\menu.cpp
 	<iostream>
 	"Menu.h"
 
@@ -137,7 +137,7 @@
 1782348074 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionarchivo.cpp
 	"ReparacionArchivo.h"
 
-1782394597 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionmanager.cpp
+1782399504 source:f:\lucas\documents\programacion 2\tpi\reparaciones\reparacionmanager.cpp
 	<iostream>
 	"ReparacionManager.h"
 

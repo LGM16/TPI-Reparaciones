@@ -35,6 +35,10 @@ bool ReparacionManager::existeId(int id){
     return _archivo.buscar(id) != -1;
 }
 
+int ReparacionManager::fechaAEntero(Fecha fecha){
+    return fecha.getAnio() * 10000 + fecha.getMes() * 100 + fecha.getDia();
+}
+
 void ReparacionManager::crearReparacion(){
 
     int idEquipo, posEquipo;
@@ -62,9 +66,23 @@ void ReparacionManager::crearReparacion(){
 
     cout << "Fecha de ingreso (del equipo): " << fechaIngreso.toString() << endl;
 
-    cout << "Fecha de egreso (DD/MM/AAAA): ";
+    do{
+        cout << "Fecha de egreso estimada (DD/MM/AAAA): \n";
 
-    fechaEgreso.cargar();
+        fechaEgreso.cargar();
+
+        if(fechaAEntero(fechaEgreso) >= fechaAEntero(fechaIngreso)){
+            break;
+        }
+
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "La fecha de egreso no puede ser anterior al ingreso (" << fechaIngreso.toString() << ").\n";
+        cout << "Intente nuevamente.\n";
+
+    }while(true);
+
+
+
 
     cout << "Importe: $";
     cin >> importe;

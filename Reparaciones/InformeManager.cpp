@@ -9,7 +9,7 @@ using namespace std;
 InformeManager::InformeManager(){
 }
 
-///Metodos privados
+///Metodos
 
 int InformeManager::fechaAEntero(Fecha fecha){
     return fecha.getAnio() * 10000 + fecha.getMes() * 100 + fecha.getDia();
@@ -27,8 +27,6 @@ bool InformeManager::fechaEnRango(Fecha fecha, Fecha fechaDesde, Fecha fechaHast
         return false;
     }
 }
-
-///Metodos
 
 void InformeManager::informeReparacionesEnProceso(){
 

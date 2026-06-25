@@ -1,0 +1,46 @@
+------------------------------------
+ID: 1
+ID Cliente: 1
+ID Tecnico: 1
+Descripcion: Cable roto
+Marca: Logitech
+Tipo: Teclado
+Fecha ingreso: 01/01/2023
+Estado: Activo
+------------------------------------
+ID: 2
+ID Cliente: 1
+ID Tecnico: 1
+Descripcion: Falla tecla
+Marca: Genius
+Tipo: Mouse
+Fecha ingreso: 25/06/2026
+Estado: Activo
+------------------------------------
+ID: 3
+ID Cliente: 2
+ID Tecnico: 5
+Descripcion: Falso contacto
+Marca: Noganet
+Tipo: Parlantes
+Fecha ingreso: 16/02/2020
+Estado: Activo
+------------------------------------
+ID: 4
+ID Cliente: 10
+ID Tecnico: 7
+Descripcion: Blue screen
+Marca: Gigabyte
+Tipo: Monitor
+Fecha ingreso: 10/05/2022
+Estado: Activo
+------------------------------------
+ID: 5
+ID Cliente: 3
+ID Tecnico: 2
+Descripcion: No prende
+Marca: Razer
+Tipo: Auriculares
+Fecha ingreso: 12/09/2015
+Estado: Activo
+------------------------------------

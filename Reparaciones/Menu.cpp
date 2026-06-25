@@ -471,7 +471,7 @@ void Menu::menuTecnicos(){
         cout << endl;
         cout << "========== MENU TECNICOS ==========\n";
         cout << "1. Cargar tecnico\n";
-        cout << "2. Listar tecnicos\n";
+        cout << "2. Listar tecnicos dados de alta\n";
         cout << "3. Buscar tecnico por ID\n";
         cout << "4. Dar de alta tecnico\n";
         cout << "5. Dar de baja tecnico\n";

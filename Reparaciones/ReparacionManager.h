@@ -9,8 +9,9 @@ private:
     ReparacionArchivo _archivo;
     EquipoArchivo _archivoEquipo;
 
-    bool existeId(int id);
     int generarId();
+    bool existeId(int id);
+    int fechaAEntero(Fecha fecha);
 
 public:
 
