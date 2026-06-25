@@ -195,7 +195,7 @@ void ReparacionManager::listar(const Reparacion& reparacion){
             cout << "Estado reparacion: Reparado\n";
             break;
         case 3:
-            cout << "Estado reparacion: No reparado\n";
+            cout << "Estado reparacion: Sin reparacion\n";
             break;
     }
 
@@ -328,10 +328,11 @@ void ReparacionManager::actualizarEstadoRep(){
         return;
     }
 
-    cout << "Nuevo estado (1: en proceso, 2: reparado, 3: no reparado): ";
+    cout << "Nuevo estado (1: en proceso, 2: reparado, 3: sin reparacion): ";
     cin >> estadoRep;
 
     while(estadoRep < 1 || estadoRep > 3){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "Estado invalido. Ingrese 1, 2 o 3: ";
         cin >> estadoRep;
     }
@@ -339,9 +340,11 @@ void ReparacionManager::actualizarEstadoRep(){
     reg.setEstadoRep(estadoRep);
 
     if(_archivo.guardar(reg, pos)){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "Estado de reparacion actualizado correctamente.\n";
     }
     else{
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No se pudo actualizar el estado de la reparacion.\n";
     }
     cout << "------------------------------------\n"; // linea referencia

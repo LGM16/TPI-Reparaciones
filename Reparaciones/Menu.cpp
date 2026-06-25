@@ -254,7 +254,7 @@ void Menu::menuEquipos(){
         cout << endl;
         cout << "========== MENU EQUIPOS ==========\n";
         cout << "1. Cargar equipo\n";
-        cout << "2. Listar equipos\n";
+        cout << "2. Listar equipos dados de alta\n";
         cout << "3. Buscar equipo por ID\n";
         cout << "4. Dar de alta equipo\n";
         cout << "5. Dar de baja equipo\n";
@@ -322,7 +322,7 @@ void Menu::menuReparaciones(){
         cout << endl;
         cout << "========== MENU REPARACIONES ==========\n";
         cout << "1. Cargar reparacion\n";
-        cout << "2. Listar reparaciones\n";
+        cout << "2. Listar reparaciones dadas de alta\n";
         cout << "3. Buscar reparacion por ID\n";
         cout << "4. Dar de alta reparacion\n";
         cout << "5. Dar de baja reparacion\n";

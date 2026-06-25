@@ -1,0 +1,33 @@
+------------------------------------
+ID: 1
+ID Equipo: 1
+Fecha ingreso: 01/01/2023
+Fecha egreso: 02/06/2028
+Importe: $50000
+Estado reparacion: En proceso
+Estado: Activo
+------------------------------------
+ID: 2
+ID Equipo: 1
+Fecha ingreso: 01/01/2023
+Fecha egreso: 01/01/2022
+Importe: $50000
+Estado reparacion: En proceso
+Estado: Activo
+------------------------------------
+ID: 3
+ID Equipo: 1
+Fecha ingreso: 01/01/2023
+Fecha egreso: 01/01/2023
+Importe: $10000
+Estado reparacion: En proceso
+Estado: Activo
+------------------------------------
+ID: 4
+ID Equipo: 4
+Fecha ingreso: 10/05/2022
+Fecha egreso: 20/05/2022
+Importe: $200000
+Estado reparacion: En proceso
+Estado: Activo
+------------------------------------

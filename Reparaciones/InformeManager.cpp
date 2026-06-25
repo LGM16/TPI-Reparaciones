@@ -36,6 +36,7 @@ void InformeManager::informeReparacionesEnProceso(){
     cout << "========== REPARACIONES EN PROCESO ==========\n";
 
     if(cantidad == 0){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No hay reparaciones cargadas.\n";
         return;
     }
@@ -52,6 +53,7 @@ void InformeManager::informeReparacionesEnProceso(){
     }
 
     if(!hayResultados){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No hay reparaciones en proceso.\n";
     }
 }
@@ -65,6 +67,7 @@ void InformeManager::informeReparacionesPorCliente(){
     cin >> idCliente;
 
     if(_archivoCliente.buscar(idCliente) == -1){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No existe un cliente con ese ID.\n";
         return;
     }
@@ -93,6 +96,7 @@ void InformeManager::informeReparacionesPorCliente(){
     }
 
     if(!hayResultados){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No hay reparaciones para ese cliente.\n";
     }
 }
@@ -102,10 +106,10 @@ void InformeManager::informeReparacionesPorRangoFechas(){
     int diaD, mesD, anioD, diaH, mesH, anioH;
     int cantidad, contador = 0;
 
-    cout << "Fecha desde (dia mes anio): ";
+    cout << "Fecha desde (DD/MM/AAAA): ";
     cin >> diaD >> mesD >> anioD;
 
-    cout << "Fecha hasta (dia mes anio): ";
+    cout << "Fecha hasta (DD/MM/AAAA): ";
     cin >> diaH >> mesH >> anioH;
 
     Fecha desde(diaD, mesD, anioD);
@@ -161,6 +165,7 @@ void InformeManager::informeEquiposPorTipo(){
     cout << "========== EQUIPOS POR TIPO ==========\n";
 
     if(cantidad == 0){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No hay equipos cargados.\n";
         return;
     }
@@ -189,6 +194,7 @@ void InformeManager::informeEquiposPorTipo(){
     }
 
     if(cantTipos == 0){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No hay equipos activos.\n";
         return;
     }
@@ -207,6 +213,7 @@ void InformeManager::informeReparacionesPorTecnico(){
     cin >> idTecnico;
 
     if(_archivoTecnico.buscar(idTecnico) == -1){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No existe un tecnico con ese ID.\n";
         return;
     }
@@ -235,6 +242,7 @@ void InformeManager::informeReparacionesPorTecnico(){
     }
 
     if(contador == 0){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No hay reparaciones asignadas a ese tecnico.\n";
     }
     else{
