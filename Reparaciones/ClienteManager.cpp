@@ -210,7 +210,7 @@ void ClienteManager::darAltaCliente(){
     cout << "Ingrese el ID del cliente a dar de alta: ";
     cin >> id;
 
-    _archivo.buscar(id);
+    pos = _archivo.buscar(id);
 
     if(pos == -1){
         cout << "------------------------------------\n"; // linea referencia
@@ -254,7 +254,7 @@ void ClienteManager::darBajaCliente(){
     cout << "Ingrese el ID del cliente a dar de baja: ";
     cin >> id;
 
-    _archivo.buscar(id);
+    pos = _archivo.buscar(id);
 
     if(pos == -1){
         cout << "------------------------------------\n"; // linea referencia

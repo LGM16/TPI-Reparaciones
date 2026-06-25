@@ -187,7 +187,7 @@ void Menu::menuClientes(){
         cout << endl;
         cout << "========== MENU CLIENTES ==========\n";
         cout << "1. Cargar cliente\n";
-        cout << "2. Listar clientes\n";
+        cout << "2. Listar clientes dados de alta\n";
         cout << "3. Buscar cliente por ID\n";
         cout << "4. Dar de alta cliente\n";
         cout << "5. Dar de baja cliente\n";
