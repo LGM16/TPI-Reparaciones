@@ -6,7 +6,9 @@ using namespace std;
 int main(){
 
     Menu menu;
-    menu.ejecutar();
+
+    //menu.ejecutar();
+    menu.menuPrincipal();
 
     return 0;
 }

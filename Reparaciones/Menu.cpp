@@ -1,6 +1,6 @@
 #include <iostream>
-using namespace std;
 #include "Menu.h"
+using namespace std;
 
 ///Constructor
 
@@ -23,48 +23,119 @@ void Menu::ejecutar(){
         menuPrincipal();
     }
     else{
-        cout << "No se pudo iniciar sesion, hasta luego! :(" << endl;
+        cout << "No se pudo iniciar sesion, hasta luego! :(\n";
+
+        rlutil::setColor(rlutil::WHITE);
     }
 }
 
 void Menu::menuLogin(){
+
     string usuario, contrasenia;
+
     int intentos = 0;
 
-    cout << "===== INICIO DE SESION =====" << endl;
+    rlutil::setBackgroundColor(rlutil::BLUE);
+    rlutil::setColor(rlutil::WHITE);
+
+    cout << "========== INICIO DE SESION ==========\n";
+
+    if(!_managerTecnico.hayTecnicos()){
+        string opcion;
+        //int opcion;
+
+        cout << "No hay tecnicos registrados (tecnicos.dat no existe o esta vacio).\n";
+        cout << "Desea crear el primer tecnico para ingresar? (1: Si, 0: No): ";
+        cin >> opcion;
+
+        //if(opcion != 1) si uso el int
+        if(opcion != "1" && opcion != "si" && opcion != "Si" && opcion != "SI" && opcion != "sI" && opcion != "s" && opcion != "S" ){
+            rlutil::setColor(rlutil::RED);
+
+            cout << "No se puede continuar sin un tecnico registrado.\n";
+            return;
+        }
+
+        if(_managerTecnico.crearTecnico(_tecnico)){
+            setSesionActiva(true);
+            cout << endl;
+            cout << "Tecnico creado. Bienvenido " << _tecnico.getNombre() << "!\n";
+
+            rlutil::anykey();
+
+            return;
+        }
+        else{
+            cout << "No se pudo crear el tecnico. Fin del programa.\n";
+            return;
+        }
+    }
 
     while(intentos < 3 && !getSesionActiva()){
+
         cout << "Usuario: ";
         cin >> usuario;
+
         cout << "Contrasenia: ";
         cin >> contrasenia;
 
         if(_managerTecnico.validarCredenciales(usuario, contrasenia, _tecnico)){
             setSesionActiva(true);
-            cout << "Bienvenido " << _tecnico.getNombre() << "!" << endl;
+
+            cout << endl;
+            cout << "Bienvenido " << _tecnico.getNombre() << "!\n";
+
+            rlutil::anykey();
         }
         else{
             intentos++;
-            cout << "Credenciales incorrectas, intenta de nuevo :(" << endl;
-            cout << "Intento: " << intentos << " de 3" << endl;
+
+            rlutil::setColor(rlutil::RED);
+
+            cout << "Credenciales incorrectas, intenta de nuevo :(\n";
+            cout << "Intento: " << intentos << " de 3\n";
+            cout << "---------------------------------------------\n";
+
+            rlutil::setColor(rlutil::WHITE);
         }
     }
 }
 
 void Menu::menuPrincipal(){
+
     int opcion;
 
     do{
+        rlutil::cls();
+        rlutil::setBackgroundColor(rlutil::BLUE);
+
         cout << endl;
-        cout << "===== MENU PRINCIPAL =====" << endl;
-        cout << "1. Clientes" << endl;
-        cout << "2. Equipos" << endl;
-        cout << "3. Reparaciones" << endl;
-        cout << "4. Informes" << endl;
-        cout << "5. Tecnicos" << endl;
-        cout << "0. Salir" << endl;
+        cout << "========== MENU PRINCIPAL ==========\n";
+        cout << "1. Clientes\n";
+        cout << "2. Equipos\n";
+        cout << "3. Reparaciones\n";
+        cout << "4. Informes\n";
+        cout << "5. Tecnicos\n";
+        cout << "0. Salir\n";
+        cout << "------------------------------------\n"; // linea referencia
         cout << "Seleccione una opcion: ";
         cin >> opcion;
+
+        /*  si ingreso una letra, menu se rompe, esto no lo soluciona
+        if(cin >> opcion){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+            rlutil::setColor(rlutil::RED);
+
+            cout << "Ingresa un numero.\n";
+
+            rlutil::anykey();
+            rlutil::setColor(rlutil::WHITE);
+
+            continue;
+        }
+        */
 
         switch(opcion){
             case 1:
@@ -83,11 +154,23 @@ void Menu::menuPrincipal(){
                 menuTecnicos();
                 break;
             case 0:
-                cout << "Sesion cerrada, hasta luego!" << endl;
+                cout << "------------------------------------\n"; // linea referencia
+                cout << "Sesion cerrada, hasta luego!\n";
+                cout << "------------------------------------\n"; // linea referencia
                 setSesionActiva(false);
                 break;
             default:
-                cout << "Opcion no valida, intente nuevamente" << endl;
+                ///copiar en todos los default
+
+                rlutil::cls();
+                rlutil::setColor(rlutil::RED);
+
+                cout << "------------------------------------\n"; // linea referencia
+                cout << "Opcion no valida, intente nuevamente\n";
+                cout << "------------------------------------\n"; // linea referencia
+
+                rlutil::anykey();
+                rlutil::setColor(rlutil::WHITE);
                 break;
         }
 
@@ -95,58 +178,357 @@ void Menu::menuPrincipal(){
 }
 
 void Menu::menuClientes(){
+
     int opcion;
 
     do{
+        rlutil::cls();
+
         cout << endl;
-        cout << "===== MENU CLIENTES =====" << endl;
-        cout << "1. Cargar cliente" << endl;
-        cout << "2. Listar clientes" << endl;
-        cout << "3. Buscar cliente por ID" << endl;
-        cout << "4. Dar de baja cliente" << endl;
-        cout << "0. Volver" << endl;
+        cout << "========== MENU CLIENTES ==========\n";
+        cout << "1. Cargar cliente\n";
+        cout << "2. Listar clientes dados de alta\n";
+        cout << "3. Buscar cliente por ID\n";
+        cout << "4. Dar de alta cliente\n";
+        cout << "5. Dar de baja cliente\n";
+        cout << "0. Volver\n";
+        cout << "------------------------------------\n"; // linea referencia
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch(opcion){
             case 1:
+                rlutil::cls();
                 _managerCliente.cargarCliente();
+                rlutil::anykey();
                 break;
             case 2:
+                rlutil::cls();
                 _managerCliente.listarClientes();
+                rlutil::anykey();
                 break;
             case 3:
+                rlutil::cls();
                 _managerCliente.listarXId();
+                rlutil::anykey();
                 break;
             case 4:
+                rlutil::cls();
+                _managerCliente.darAltaCliente();
+                rlutil::anykey();
+                break;
+            case 5:
+                rlutil::cls();
                 _managerCliente.darBajaCliente();
+                rlutil::anykey();
                 break;
             case 0:
                 break;
             default:
-                cout << "\nOpcion no valida, intente nuevamente\n";
+                ///copiar en todos los default
+
+                rlutil::cls();
+                rlutil::setColor(rlutil::RED);
+
+                cout << "------------------------------------\n"; // linea referencia
+                cout << "Opcion no valida, intente nuevamente\n";
+                cout << "------------------------------------\n"; // linea referencia
+
+                rlutil::anykey();
+                rlutil::setColor(rlutil::WHITE);
                 break;
         }
 
         if(opcion != 0){
-            cout << "\n";
+            cout << endl;
         }
 
     }while(opcion != 0);
 }
 
 void Menu::menuEquipos(){
-    cout << "Menu de equipos en construccion." << endl;
+
+    int opcion;
+
+    do{
+        rlutil::cls();
+
+        cout << endl;
+        cout << "========== MENU EQUIPOS ==========\n";
+        cout << "1. Cargar equipo\n";
+        cout << "2. Listar equipos\n";
+        cout << "3. Buscar equipo por ID\n";
+        cout << "4. Dar de alta equipo\n";
+        cout << "5. Dar de baja equipo\n";
+        cout << "0. Volver\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                rlutil::cls();
+                _managerEquipo.crearEquipo();
+                rlutil::anykey();
+                break;
+            case 2:
+                rlutil::cls();
+                _managerEquipo.listarEquipos();
+                rlutil::anykey();
+                break;
+            case 3:
+                rlutil::cls();
+                _managerEquipo.listarXId();
+                rlutil::anykey();
+                break;
+            case 4:
+                rlutil::cls();
+                _managerEquipo.darAltaEquipo();
+                rlutil::anykey();
+                break;
+            case 5:
+                rlutil::cls();
+                _managerEquipo.darBajaEquipo();
+                rlutil::anykey();
+                break;
+            case 0:
+                break;
+            default:
+
+                rlutil::cls();
+                rlutil::setColor(rlutil::RED);
+
+                cout << "------------------------------------\n"; // linea referencia
+                cout << "Opcion no valida, intente nuevamente\n";
+                cout << "------------------------------------\n"; // linea referencia
+
+                rlutil::anykey();
+                rlutil::setColor(rlutil::WHITE);
+                break;
+        }
+
+        if(opcion != 0){
+            cout << endl;
+        }
+
+    }while(opcion != 0);
 }
 
 void Menu::menuReparaciones(){
-    cout << "Menu de reparaciones en construccion." << endl;
+
+    int opcion;
+
+    do{
+        rlutil::cls();
+
+        cout << endl;
+        cout << "========== MENU REPARACIONES ==========\n";
+        cout << "1. Cargar reparacion\n";
+        cout << "2. Listar reparaciones\n";
+        cout << "3. Buscar reparacion por ID\n";
+        cout << "4. Dar de alta reparacion\n";
+        cout << "5. Dar de baja reparacion\n";
+        cout << "6. Actualizar estado de reparacion\n";
+        cout << "0. Volver\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                rlutil::cls();
+                _managerReparacion.crearReparacion();
+                rlutil::anykey();
+                break;
+            case 2:
+                rlutil::cls();
+                _managerReparacion.listarReparaciones();
+                rlutil::anykey();
+                break;
+            case 3:
+                rlutil::cls();
+                _managerReparacion.listarXId();
+                rlutil::anykey();
+                break;
+            case 4:
+                rlutil::cls();
+                _managerReparacion.darAltaReparacion();
+                rlutil::anykey();
+                break;
+            case 5:
+                rlutil::cls();
+                _managerReparacion.darBajaReparacion();
+                rlutil::anykey();
+                break;
+            case 6:
+                rlutil::cls();
+                _managerReparacion.actualizarEstadoRep();
+                rlutil::anykey();
+                break;
+            case 0:
+                break;
+            default:
+                ///copiar en todos los default
+
+                rlutil::cls();
+                rlutil::setColor(rlutil::RED);
+
+                cout << "------------------------------------\n"; // linea referencia
+                cout << "Opcion no valida, intente nuevamente\n";
+                cout << "------------------------------------\n"; // linea referencia
+
+                rlutil::anykey();
+                rlutil::setColor(rlutil::WHITE);
+                break;
+        }
+
+        if(opcion != 0){
+            cout << endl;
+        }
+
+    }while(opcion != 0);
 }
 
 void Menu::menuInformes(){
-    cout << "Menu de informes en construccion." << endl;
+
+    int opcion;
+
+    do{
+        rlutil::cls();
+
+        cout << endl;
+        cout << "========== MENU INFORMES ==========\n";
+        cout << "1. Reparaciones en proceso\n";
+        cout << "2. Reparaciones por cliente\n";
+        cout << "3. Reparaciones por rango de fechas\n";
+        cout << "4. Total facturado\n";
+        cout << "5. Equipos por tipo\n";
+        cout << "6. Reparaciones por tecnico\n";
+        cout << "0. Volver\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                rlutil::cls();
+                _managerInforme.informeReparacionesEnProceso();
+                rlutil::anykey();
+                break;
+            case 2:
+                rlutil::cls();
+                _managerInforme.informeReparacionesPorCliente();
+                rlutil::anykey();
+                break;
+            case 3:
+                rlutil::cls();                _managerInforme.informeReparacionesPorRangoFechas();
+                rlutil::anykey();
+                break;
+            case 4:
+                rlutil::cls();
+                _managerInforme.informeTotalFacturado();
+                rlutil::anykey();
+                break;
+            case 5:
+                rlutil::cls();
+                _managerInforme.informeEquiposPorTipo();
+                rlutil::anykey();
+                break;
+            case 6:
+                rlutil::cls();
+                _managerInforme.informeReparacionesPorTecnico();
+                rlutil::anykey();
+                break;
+            case 0:
+                break;
+            default:
+                ///copiar en todos los default
+
+                rlutil::cls();
+                rlutil::setColor(rlutil::RED);
+
+                cout << "------------------------------------\n"; // linea referencia
+                cout << "Opcion no valida, intente nuevamente\n";
+                cout << "------------------------------------\n"; // linea referencia
+
+                rlutil::anykey();
+                rlutil::setColor(rlutil::WHITE);
+                break;
+        }
+
+        if(opcion != 0){
+            cout << endl;
+        }
+
+    }while(opcion != 0);
 }
 
 void Menu::menuTecnicos(){
-    cout << "Menu de tecnicos en construccion." << endl;
+
+    int opcion;
+
+    do{
+        rlutil::cls();
+
+        cout << endl;
+        cout << "========== MENU TECNICOS ==========\n";
+        cout << "1. Cargar tecnico\n";
+        cout << "2. Listar tecnicos\n";
+        cout << "3. Buscar tecnico por ID\n";
+        cout << "4. Dar de alta tecnico\n";
+        cout << "5. Dar de baja tecnico\n";
+        cout << "0. Volver\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch(opcion){
+            case 1:{
+                rlutil::cls();
+                Tecnico t;
+                _managerTecnico.crearTecnico(t);
+                rlutil::anykey();
+                break;
+            }
+            case 2:
+                rlutil::cls();
+                _managerTecnico.listarTecnicos();
+                rlutil::anykey();
+                break;
+            case 3:
+                rlutil::cls();
+                _managerTecnico.listarXId();
+                rlutil::anykey();
+                break;
+            case 4:
+                rlutil::cls();
+                _managerTecnico.darAltaTecnico();
+                rlutil::anykey();
+                break;
+            case 5:
+                rlutil::cls();
+                _managerTecnico.darBajaTecnico();
+                rlutil::anykey();
+                break;
+            case 0:
+                break;
+            default:
+
+                rlutil::cls();
+                rlutil::setColor(rlutil::RED);
+
+                cout << "------------------------------------\n"; // linea referencia
+                cout << "Opcion no valida, intente nuevamente\n";
+                cout << "------------------------------------\n"; // linea referencia
+
+                rlutil::anykey();
+                rlutil::setColor(rlutil::WHITE);
+                break;
+        }
+
+        if(opcion != 0){
+            cout << endl;
+        }
+
+    }while(opcion != 0);
 }

@@ -6,14 +6,15 @@
 class Persona{
 protected:
 
-    std::string _cuit;
-    std::string _nombre;
-    std::string _apellido;
+    char _cuit[12];
+    char _nombre[51];
+    char _apellido[51];
 
 public:
 
     ///Constructores
 
+    Persona();
     Persona(std::string cuit, std::string nombre, std::string apellido);
 
     ///Setters
@@ -24,8 +25,8 @@ public:
 
     ///Getters
 
-    std::string getCuit(){return _cuit;}
-    std::string getNombre(){return _nombre;}
-    std::string getApellido(){return _apellido;}
+    std::string getCuit() const {return _cuit;}
+    std::string getNombre() const {return _nombre;}
+    std::string getApellido() const {return _apellido;}
 
 };

@@ -10,15 +10,10 @@ ClienteArchivo::ClienteArchivo(std::string ruta){
     _ruta = ruta;
 }
 
-///Setters
-
 ///Getters
 
 int ClienteArchivo::getCantidadRegistros(){
-    if(!existeArchivo()){
-        return 0;
-    }
-    
+
     FILE *p = fopen(_ruta.c_str(), "rb"); //Lo abro nuevamente sabiendo que existe
 
     if(p == NULL){
@@ -28,25 +23,15 @@ int ClienteArchivo::getCantidadRegistros(){
     fseek(p, 0, SEEK_END);  //Mueve el puntero al final del archivo
 
     int cantidadRegistros = ftell(p) / sizeof(Cliente); //Devuelve la posicion actual del puntero
-    
+
     fclose(p);
     return cantidadRegistros;
 }
 
 ///Metodos
 
-bool ClienteArchivo::existeArchivo(){
-    FILE *p = fopen(_ruta.c_str(), "rb"); //Si el archivo no existe devuelve 0
-
-    if(p == NULL){
-        return false;
-    }
-
-    fclose(p);
-    return true;
-}
-
 bool ClienteArchivo::guardar(Cliente reg){
+    
     FILE *p = fopen(_ruta.c_str(), "ab");
 
     if(p == NULL){
@@ -60,6 +45,7 @@ bool ClienteArchivo::guardar(Cliente reg){
 }
 
 bool ClienteArchivo::guardar(Cliente reg, int posicionReemplazada){
+    
     FILE *p = fopen(_ruta.c_str(), "rb+");
 
     if(p == NULL){
@@ -89,6 +75,7 @@ bool ClienteArchivo::guardar(Cliente *vec, int cantidadRegistros){
 }
 
 Cliente ClienteArchivo::leer(int posRegistro){
+    
     Cliente reg;
 
     FILE *p = fopen(_ruta.c_str(), "rb");
@@ -104,6 +91,7 @@ Cliente ClienteArchivo::leer(int posRegistro){
 }
 
 void ClienteArchivo::leerTodos(Cliente *vec, int cantidadRegistros){
+    
     FILE *p = fopen(_ruta.c_str(), "rb");
 
     if(p == NULL){
@@ -115,7 +103,9 @@ void ClienteArchivo::leerTodos(Cliente *vec, int cantidadRegistros){
 }
 
 int ClienteArchivo::buscar(int id){
+    
     int i, cantidadRegistros = getCantidadRegistros();
+    
     Cliente reg;
 
     for(i = 0; i < cantidadRegistros; i++){

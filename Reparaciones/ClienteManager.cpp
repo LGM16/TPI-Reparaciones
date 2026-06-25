@@ -35,16 +35,20 @@ bool ClienteManager::existeId(int id){
 }
 
 void ClienteManager::cargarCliente(){
+
     string cuit, nombre, apellido, telefono, email, direccion;
+
     int tipoCliente;
     int idCliente = generarId();
 
-    cout << "Ingrese los datos del cliente: " << endl;
+    cout << "------------------------------------\n"; // linea referencia
+    cout << "Ingrese los datos del cliente: \n";
 
     cout << "Tipo Cliente (1: Particular, 2: Empresa): ";
     cin >> tipoCliente;
 
     while(tipoCliente != 1 && tipoCliente != 2){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "Tipo invalido. Ingrese 1 (Particular) o 2 (Empresa): ";
         cin >> tipoCliente;
     }
@@ -54,13 +58,16 @@ void ClienteManager::cargarCliente(){
 
     if(tipoCliente == 1){
         cout << "Nombre: ";
-        cin >> nombre;
+        cin.ignore();
+        getline(cin, nombre);
+
         cout << "Apellido: ";
-        cin >> apellido;
+        getline(cin, apellido);
     }
     else{
         cout << "Razon Social: ";
-        cin >> nombre;
+        cin.ignore();
+        getline(cin, nombre);
         apellido = "";
     }
 
@@ -71,104 +78,207 @@ void ClienteManager::cargarCliente(){
     cin >> email;
 
     cout << "Direccion: ";
-    cin >> direccion;
+    cin.ignore();
+    getline(cin, direccion);
 
     Persona persona(cuit, nombre, apellido);
     Cliente nuevo(persona, idCliente, tipoCliente, telefono, email, direccion, true);
 
     if(_archivo.guardar(nuevo)){
+        cout << "------------------------------------\n"; // linea referencia
         cout << "Cliente cargado con ID: " << idCliente << endl;
     }
     else{
+        cout << "------------------------------------\n"; // linea referencia
         cout << "No se pudo guardar el cliente." << endl;
     }
 }
 
 void ClienteManager::listarClientes(){
-    if(!_archivo.existeArchivo()){
-        cout << "\nNo hay clientes cargados.\n";
-        return;
-    }
 
     int cantidadRegistros = _archivo.getCantidadRegistros();
-
-    if(cantidadRegistros == 0){
-        cout << "\nNo hay clientes cargados.\n";
-        return;
-    }
 
     bool hayRegistrosValidos = false;
     bool hayActivos = false;
 
+    if(cantidadRegistros == 0){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay clientes cargados.\n";
+        return;
+    }
+
+    cout << "------------------------------------\n"; // linea referencia
+
     for(int i = 0; i < cantidadRegistros; i++){
         Cliente reg = _archivo.leer(i);
 
-        if(reg.getIdCliente() <= 0){
-            continue;
-        }
+        if(reg.getIdCliente() > 0){
 
-        hayRegistrosValidos = true;
+            hayRegistrosValidos = true;
 
-        if(reg.getEstado()){
-            listar(reg);
-            cout << "-------------------------\n";
-            hayActivos = true;
+            if(reg.getEstado()){
+
+
+                listar(reg);
+
+                hayActivos = true;
+            }
         }
     }
 
     if(!hayRegistrosValidos){
-        cout << "\nNo hay clientes cargados.\n";
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay clientes cargados.\n";
     }
-    else if(!hayActivos){
-        cout << "\nNo hay clientes activos.\n";
+    else{
+        if(!hayActivos){
+            cout << "------------------------------------\n"; // linea referencia
+            cout << "No hay clientes activos.\n";
+        }
     }
 }
 
 void ClienteManager::listarXId(){
-    int id;
+
+    int id, pos;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    Cliente reg;
+
+    if(cantidadRegistros == 0){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay clientes cargados.\n";
+        return;
+    }
+
     cout << "Ingrese el ID del cliente: ";
     cin >> id;
 
-    int pos = _archivo.buscar(id);
+    pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro un cliente con ese ID." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro un cliente con ese ID\n.";
+        return;
+    }
+
+    reg = _archivo.leer(pos);
+
+    cout << "------------------------------------\n"; // linea referencia
+    listar(reg);
+}
+
+void ClienteManager::listar(const Cliente& cliente){
+
+    cout << "ID: " << cliente.getIdCliente() << endl;
+    cout << "CUIT: " << cliente.getCuit() << endl;
+
+    if(cliente.getTipoCliente() == 1){
+        cout << "Tipo Cliente: Particular\n";
+        cout << "Nombre: " << cliente.getNombre() << endl;
+        cout << "Apellido: " << cliente.getApellido() << endl;
+    }
+    else{
+        cout << "Tipo Cliente: Empresa\n";
+        cout << "Razon Social: " << cliente.getNombre() << endl;
+    }
+
+    cout << "Telefono: " << cliente.getTelefono() << endl;
+    cout << "Email: " << cliente.getEmail() << endl;
+    cout << "Direccion: " << cliente.getDireccion() << endl;
+
+    if(cliente.getEstado()){
+        cout << "Estado: Activo\n";
+    }
+    else{
+        cout << "Estado: Inactivo\n";
+    }
+    cout << "------------------------------------\n"; // linea referencia
+}
+
+void ClienteManager::darAltaCliente(){
+
+    int id, pos;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    if(cantidadRegistros == 0){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay clientes cargados.\n";
+        return;
+    }
+
+    cout << "Ingrese el ID del cliente a dar de alta: ";
+    cin >> id;
+
+    pos = _archivo.buscar(id);
+
+    if(pos == -1){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro un cliente con ese ID.\n";
         return;
     }
 
     Cliente reg = _archivo.leer(pos);
-    listar(reg);
+
+    if(reg.getEstado()){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "El cliente ya se encuentra activo.\n";
+        return;
+    }
+
+    reg.setEstado(true);
+
+    if(_archivo.guardar(reg, pos)){
+        cout << "------------------------------------\n";
+        cout << "Cliente dado de alta correctamente.\n";
+    }
+    else{
+        cout << "------------------------------------\n";
+        cout << "No se pudo dar de alta al cliente.\n";
+    }
+    cout << "------------------------------------\n";
 }
 
-void ClienteManager::listar(Cliente cliente){
-    cliente.mostrar();
-}
 
 void ClienteManager::darBajaCliente(){
-    int id;
+
+    int id, pos;
+    int cantidadRegistros = _archivo.getCantidadRegistros();
+
+    if(cantidadRegistros == 0){
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No hay clientes cargados.\n";
+        return;
+    }
+
     cout << "Ingrese el ID del cliente a dar de baja: ";
     cin >> id;
 
-    int pos = _archivo.buscar(id);
+    pos = _archivo.buscar(id);
 
     if(pos == -1){
-        cout << "No se encontro un cliente con ese ID." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "No se encontro un cliente con ese ID.\n";
         return;
     }
 
     Cliente reg = _archivo.leer(pos);
 
     if(!reg.getEstado()){
-        cout << "El cliente ya se encuentra inactivo." << endl;
+        cout << "------------------------------------\n"; // linea referencia
+        cout << "El cliente ya se encuentra inactivo.\n";
         return;
     }
 
     reg.setEstado(false);
 
     if(_archivo.guardar(reg, pos)){
-        cout << "Cliente dado de baja correctamente." << endl;
+        cout << "------------------------------------\n";
+        cout << "Cliente dado de baja correctamente.\n";
     }
     else{
-        cout << "No se pudo dar de baja al cliente." << endl;
+        cout << "------------------------------------\n";
+        cout << "No se pudo dar de baja al cliente.\n";
     }
+    cout << "------------------------------------\n";
 }

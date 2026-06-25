@@ -51,11 +51,15 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="EquipoManager.cpp" />
-		<Unit filename="EquiposManager.h">
+		<Unit filename="EquipoManager.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="InformeManager.cpp" />
+		<Unit filename="InformeManager.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Menu.cpp" />
@@ -66,12 +70,12 @@
 		<Unit filename="Persona.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Registro.cpp" />
-		<Unit filename="Registro.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="Reparacion.cpp" />
 		<Unit filename="Reparacion.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ReparacionArchivo.cpp" />
+		<Unit filename="ReparacionArchivo.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="ReparacionManager.cpp" />
@@ -82,11 +86,16 @@
 		<Unit filename="Tecnico.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="TecnicoArchivo.cpp" />
+		<Unit filename="TecnicoArchivo.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="TecnicoManager.cpp" />
 		<Unit filename="TecnicoManager.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="rlutil.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

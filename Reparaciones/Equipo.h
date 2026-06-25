@@ -7,35 +7,34 @@ periférico, etc.
 */
 
 #pragma once
-#include "Tecnico.h"
-#include "Cliente.h"
 #include "Fecha.h"
+#include <string>
 
 class Equipo{
 private:
 
     int _idEquipo;
-    //sumar int numSerie
-    Tecnico _idTecnico;
-    Cliente _idCliente;
-    std::string _descripcion;
-    std::string _marca;
-    std::string _tipoEquipo;
+    int _idTecnico;
+    int _idCliente;
+    char _descripcion[101];
+    char _marca[51];
+    char _tipoEquipo[51];
     Fecha _fechaIngreso;
     bool _estado = true;
-    
+
 public:
 
     ///Constructores
 
-    Equipo(int idEquipo, Tecnico idTecnico, Cliente idCliente, std::string descripcion,
+    Equipo();
+    Equipo(int idEquipo, int idTecnico, int idCliente, std::string descripcion,
            std::string marca, std::string tipoEquipo, Fecha fechaIngreso, bool estado);
 
     ///Setters
 
     void setIdEquipo(int idEquipo);
-    void setIdTecnico(Tecnico idTecnico);
-    void setIdCliente(Cliente idCliente);
+    void setIdTecnico(int idTecnico);
+    void setIdCliente(int idCliente);
     void setDescripcion(std::string descripcion);
     void setMarca(std::string marca);
     void setTipoEquipo(std::string tipoEquipo);
@@ -44,14 +43,14 @@ public:
 
     ///Getters
 
-    int getIdEquipo();
-    Tecnico getIdTecnico();
-    Cliente getIdCliente();
-    std::string getDescripcion();
-    std::string getMarca();
-    std::string getTipoEquipo();
-    Fecha getFechaIngreso();
-    bool getEstado();
+    int getIdEquipo() const {return _idEquipo;}
+    int getIdTecnico() const {return _idTecnico;}
+    int getIdCliente() const {return _idCliente;}
+    std::string getDescripcion() const {return std::string(_descripcion);}
+    std::string getMarca() const{return std::string(_marca);}
+    std::string getTipoEquipo() const {return std::string(_tipoEquipo);}
+    Fecha getFechaIngreso() const{return _fechaIngreso;}
+    bool getEstado() const {return _estado;}
 
     ///Metodos
 };

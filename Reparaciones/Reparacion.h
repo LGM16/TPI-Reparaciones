@@ -1,29 +1,29 @@
 #pragma once
-#include "Equipo.h"
-#include "Cliente.h"
 #include "Fecha.h"
 
 class Reparacion{
 private:
 
-    Equipo _equipo;
-    Cliente _idCliente;
+    int _idReparacion;
+    int _idEquipo;
     Fecha _fechaIngreso;
     Fecha _fechaEgreso;
     float _importe;
-    int _estadoRep; // quiza: 1: en proceso; 2: reparado; 3: no reparado
-    bool _estado = true;
+    int _estadoRep; // 1: en proceso; 2: reparado; 3: no reparado
+    bool _estado = false;
 
 public:
 
     ///Constructores
 
     Reparacion();
+    Reparacion(int idReparacion, int idEquipo, Fecha fechaIngreso,
+              Fecha fechaEgreso, float importe, int estadoRep, bool estado);
 
     ///Setters
 
-    void setEquipo(Equipo equipo);
-    void setIdCliente(Cliente idCliente);
+    void setIdReparacion(int idReparacion);
+    void setIdEquipo(int idEquipo);
     void setFechaIngreso(Fecha fechaIngreso);
     void setFechaEgreso(Fecha fechaEgreso);
     void setImporte(float importe);
@@ -32,13 +32,13 @@ public:
 
     ///Getters
 
-    Equipo getEquipo();
-    Cliente getIdCliente();
-    Fecha getFechaIngreso();
-    Fecha getFechaEgreso();
-    float getImporte();
-    int getEstadoRep();
-    bool getEstado();
+    int getIdReparacion() const {return _idReparacion;};
+    int getIdEquipo() const {return _idEquipo;};
+    Fecha getFechaIngreso() const {return _fechaIngreso;};
+    Fecha getFechaEgreso() const {return _fechaEgreso;};
+    float getImporte() const {return _importe;};
+    int getEstadoRep() const {return _estadoRep;};
+    bool getEstado() const {return _estado;};
 
     ///Metodos
 };

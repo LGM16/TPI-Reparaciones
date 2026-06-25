@@ -1,21 +1,23 @@
+#include <cstring>
 #include "Tecnico.h"
 
 ///Constructores
 
 Tecnico::Tecnico()
-    : Persona("", "", ""),
+    : Persona(),
       _idTecnico(0),
-      _usuario(""),
-      _contrasenia("")
+      _estado(true)
 {
+    _usuario[0] = '\0';
+    _contrasenia[0] = '\0';
 }
 
 Tecnico::Tecnico(Persona persona, int idTecnico, std::string usuario, std::string contrasenia)
-    : Persona(persona.getCuit(), persona.getNombre(), persona.getApellido()),
-      _idTecnico(idTecnico),
-      _usuario(usuario),
-      _contrasenia(contrasenia)
+    : Persona(persona.getCuit(), persona.getNombre(), persona.getApellido())
 {
+    setIdTecnico(idTecnico);
+    setUsuario(usuario);
+    setContrasenia(contrasenia);
 }
 
 ///Setters
@@ -28,12 +30,16 @@ void Tecnico::setIdTecnico(int idTecnico){
 
 void Tecnico::setUsuario(std::string usuario){
     if(usuario.length() >= 3 && usuario.length() <= 20){
-        _usuario = usuario;
+        strcpy(_usuario, usuario.c_str());
     }
 }
 
 void Tecnico::setContrasenia(std::string contrasenia){
-    if(contrasenia.length() >= 1){
-        _contrasenia = contrasenia;
+    if(contrasenia.length() >= 1 && contrasenia.length() <= 50){
+        strcpy(_contrasenia, contrasenia.c_str());
     }
+}
+
+void Tecnico::setEstado(bool estado){
+    _estado = estado;
 }
