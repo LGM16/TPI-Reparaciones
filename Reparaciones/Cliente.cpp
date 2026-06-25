@@ -41,15 +41,21 @@ void Cliente::setTipoCliente(int tipoCliente){
 }
 
 void Cliente::setTelefono(std::string telefono){
+        strcpy(_telefono, telefono.c_str());
+/*
     if(telefono.length() >= 8 && telefono.length() <= 15){ //idem .size()
         strcpy(_telefono, telefono.c_str());
     }
+*/
 }
 
 void Cliente::setEmail(std::string email){
+        strcpy(_email, email.c_str());
+/*
     if(email.find('@') != std::string::npos && email.length() <= 50){
         strcpy(_email, email.c_str());
     }
+*/
 }
 
 void Cliente::setDireccion(std::string direccion){

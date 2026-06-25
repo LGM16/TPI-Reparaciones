@@ -49,7 +49,8 @@ void Menu::menuLogin(){
         cin >> opcion;
 
         //if(opcion != 1) si uso el int
-        if(opcion != "1" && opcion != "si" && opcion != "Si" && opcion != "SI" && opcion != "sI" && opcion != "s" && opcion != "S" ){
+        if(opcion != "1" && opcion != "si" && opcion != "Si" && opcion != "SI"
+           && opcion != "sI" && opcion != "s" && opcion != "S" ){
             rlutil::setColor(rlutil::RED);
 
             cout << "No se puede continuar sin un tecnico registrado.\n";

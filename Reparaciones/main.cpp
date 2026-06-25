@@ -7,8 +7,8 @@ int main(){
 
     Menu menu;
 
-    //menu.ejecutar();
-    menu.menuPrincipal();
+    menu.ejecutar();
+    //menu.menuPrincipal();
 
     return 0;
 }
