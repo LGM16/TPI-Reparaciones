@@ -74,7 +74,7 @@ int Fecha::obtenerCantDias(int mes, int anio){
 bool Fecha::validarFecha(int dia, int mes, int anio){
 
     // Año válido
-    if (anio <= 0){
+    if (anio < 1900 || anio > 2100 ){
         return false;
     }
 
@@ -152,6 +152,7 @@ void Fecha::cargar(){
 
             break;
         }
+        cout << "------------------------------------------------------\n"; // linea referencia
         cout << "Fecha invalida, intenta nuevamente. \n";
     }while(true);
 }

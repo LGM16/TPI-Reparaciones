@@ -30,25 +30,26 @@ bool InformeManager::fechaEnRango(Fecha fecha, Fecha fechaDesde, Fecha fechaHast
 
 void InformeManager::informeReparacionesEnProceso(){
 
-    int cantidad = _archivoReparacion.getCantidadRegistros();
+    int cantidadRegistros = _archivoReparacion.getCantidadRegistros();
     bool hayResultados = false;
 
     cout << "========== REPARACIONES EN PROCESO ==========\n";
 
-    if(cantidad == 0){
-        cout << "------------------------------------\n"; // linea referencia
+    if(cantidadRegistros == 0){
+        cout << "---------------------------------------------\n"; // linea referencia
         cout << "No hay reparaciones cargadas.\n";
         return;
     }
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < cantidadRegistros; i++){
         Reparacion reg = _archivoReparacion.leer(i);
 
         if(reg.getIdReparacion() > 0 && reg.getEstado() && reg.getEstadoRep() == 1){
             hayResultados = true;
             cout << "ID: " << reg.getIdReparacion()
                  << " | Equipo: " << reg.getIdEquipo()
-                 << " | Importe: " << reg.getImporte() << endl;
+                 << " | Importe: $" << reg.getImporte() << endl;
+            cout << "---------------------------------------------\n"; // linea referencia
         }
     }
 
@@ -60,11 +61,13 @@ void InformeManager::informeReparacionesEnProceso(){
 
 void InformeManager::informeReparacionesPorCliente(){
 
-    int idCliente, cantidad;
+    int idCliente, cantidadRegistros;
     bool hayResultados = false;
 
     cout << "Ingrese el ID del cliente: ";
     cin >> idCliente;
+
+    rlutil::cls();
 
     if(_archivoCliente.buscar(idCliente) == -1){
         cout << "------------------------------------\n"; // linea referencia
@@ -72,11 +75,11 @@ void InformeManager::informeReparacionesPorCliente(){
         return;
     }
 
-    cantidad = _archivoReparacion.getCantidadRegistros();
+    cantidadRegistros = _archivoReparacion.getCantidadRegistros();
 
     cout << "========== REPARACIONES DEL CLIENTE " << idCliente << " ==========\n";
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < cantidadRegistros; i++){
         Reparacion reg = _archivoReparacion.leer(i);
 
         if(reg.getIdReparacion() > 0 && reg.getEstado()){
@@ -89,7 +92,8 @@ void InformeManager::informeReparacionesPorCliente(){
                     hayResultados = true;
                     cout << "Reparacion ID: " << reg.getIdReparacion()
                          << " | Equipo: " << reg.getIdEquipo()
-                         << " | Importe: " << reg.getImporte() << endl;
+                         << " | Importe: $" << reg.getImporte() << endl;
+                    cout << "------------------------------------------------\n"; // linea referencia
                 }
             }
         }
@@ -103,46 +107,65 @@ void InformeManager::informeReparacionesPorCliente(){
 
 void InformeManager::informeReparacionesPorRangoFechas(){
 
-    int diaD, mesD, anioD, diaH, mesH, anioH;
-    int cantidad, contador = 0;
+    int cantidadRegistros, contador = 0;
 
-    cout << "Fecha desde (DD/MM/AAAA): ";
-    cin >> diaD >> mesD >> anioD;
+    Fecha fechaDesde;
+    Fecha fechaHasta;
 
-    cout << "Fecha hasta (DD/MM/AAAA): ";
-    cin >> diaH >> mesH >> anioH;
+    do{
 
-    Fecha desde(diaD, mesD, anioD);
-    Fecha hasta(diaH, mesH, anioH);
+        cout << "------------------------------------------------------\n"; // linea referencia
+        cout << "Fecha desde (DD/MM/AAAA): \n";
+        fechaDesde.cargar();
 
-    cantidad = _archivoReparacion.getCantidadRegistros();
+        cout << "Fecha hasta (DD/MM/AAAA): \n";
+        fechaHasta.cargar();
+
+        if(fechaAEntero(fechaDesde) <= fechaAEntero(fechaHasta)){
+            break;
+        }
+
+        cout << "------------------------------------------------------\n"; // linea referencia
+        cout << "La fecha 'desde' no puede ser posterior a 'hasta'.\n";
+        cout << "Desde: " << fechaDesde.toString()
+             << " hasta: " << fechaHasta.toString() << endl;
+        cout << "------------------------------------------------------\n"; // linea referencia
+        cout << "Intente nuevamente \n";
+
+    }while(true);
+
+    cantidadRegistros = _archivoReparacion.getCantidadRegistros();
+
+    rlutil::cls();
 
     cout << "========== REPARACIONES POR RANGO DE FECHAS ==========\n";
+    cout << "Rango desde: " << fechaDesde.toString()
+         << " hasta: " << fechaHasta.toString() << endl;
+    cout << "------------------------------------------------------\n"; // linea referencia
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < cantidadRegistros; i++){
         Reparacion reg = _archivoReparacion.leer(i);
 
         if(reg.getIdReparacion() > 0 && reg.getEstado()){
-            if(fechaEnRango(reg.getFechaIngreso(), desde, hasta)){
+            if(fechaEnRango(reg.getFechaIngreso(), fechaDesde, fechaHasta)){
                 contador++;
                 cout << "ID: " << reg.getIdReparacion()
-                     << " | Fecha ingreso: " << reg.getFechaIngreso().getDia() << "/"
-                     << reg.getFechaIngreso().getMes() << "/"
-                     << reg.getFechaIngreso().getAnio()
-                     << " | Importe: " << reg.getImporte() << endl;
+                     << " | Fecha ingreso: " << reg.getFechaIngreso().toString()
+                     << " | Importe: $" << reg.getImporte() << endl;
             }
         }
     }
 
+    cout << "------------------------------------------------------\n"; // linea referencia
     cout << "Total en rango: " << contador << endl;
 }
 
 void InformeManager::informeTotalFacturado(){
 
-    int cantidad = _archivoReparacion.getCantidadRegistros();
+    int cantidadRegistros = _archivoReparacion.getCantidadRegistros();
     float total = 0;
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < cantidadRegistros; i++){
         Reparacion reg = _archivoReparacion.leer(i);
 
         if(reg.getIdReparacion() > 0 && reg.getEstado() && reg.getEstadoRep() == 2){
@@ -156,7 +179,7 @@ void InformeManager::informeTotalFacturado(){
 
 void InformeManager::informeEquiposPorTipo(){
 
-    int cantidad = _archivoEquipo.getCantidadRegistros();
+    int cantidadRegistros = _archivoEquipo.getCantidadRegistros();
 
     char tipos[50][51];
     int conteos[50];
@@ -164,13 +187,13 @@ void InformeManager::informeEquiposPorTipo(){
 
     cout << "========== EQUIPOS POR TIPO ==========\n";
 
-    if(cantidad == 0){
+    if(cantidadRegistros == 0){
         cout << "------------------------------------\n"; // linea referencia
         cout << "No hay equipos cargados.\n";
         return;
     }
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < cantidadRegistros; i++){
         Equipo reg = _archivoEquipo.leer(i);
 
         if(reg.getIdEquipo() > 0 && reg.getEstado()){
@@ -194,35 +217,45 @@ void InformeManager::informeEquiposPorTipo(){
     }
 
     if(cantTipos == 0){
-        cout << "------------------------------------\n"; // linea referencia
         cout << "No hay equipos activos.\n";
+        cout << "--------------------------------------\n"; // linea referencia
         return;
     }
 
     for(int i = 0; i < cantTipos; i++){
         cout << tipos[i] << ": " << conteos[i] << endl;
+        cout << "--------------------------------------\n"; // linea referencia
     }
 }
 
 void InformeManager::informeReparacionesPorTecnico(){
 
-    int idTecnico, cantidad;
+    int idTecnico, cantidadRegistros, pos;
     int contador = 0;
+
+    Tecnico tecnico;
 
     cout << "Ingrese el ID del tecnico: ";
     cin >> idTecnico;
 
-    if(_archivoTecnico.buscar(idTecnico) == -1){
+    pos = _archivoTecnico.buscar(idTecnico);
+
+    if(pos == -1){
         cout << "------------------------------------\n"; // linea referencia
         cout << "No existe un tecnico con ese ID.\n";
         return;
     }
 
-    cantidad = _archivoReparacion.getCantidadRegistros();
+    cantidadRegistros = _archivoReparacion.getCantidadRegistros();
+    tecnico = _archivoTecnico.leer(pos);
+
+    rlutil::cls();
 
     cout << "========== REPARACIONES DEL TECNICO " << idTecnico << " ==========\n";
+    cout << "Tecnico: " << tecnico.getNombre() << " " << tecnico.getApellido() << endl;
+    cout << "------------------------------------------------\n"; // linea referencia
 
-    for(int i = 0; i < cantidad; i++){
+    for(int i = 0; i < cantidadRegistros; i++){
         Reparacion reg = _archivoReparacion.leer(i);
 
         if(reg.getIdReparacion() > 0 && reg.getEstado()){
@@ -236,16 +269,18 @@ void InformeManager::informeReparacionesPorTecnico(){
                     cout << "Reparacion ID: " << reg.getIdReparacion()
                          << " | Equipo: " << reg.getIdEquipo()
                          << " | EstadoRep: " << reg.getEstadoRep() << endl;
+                    cout << "------------------------------------------------\n"; // linea referencia
                 }
             }
         }
     }
 
     if(contador == 0){
-        cout << "------------------------------------\n"; // linea referencia
+        cout << "------------------------------------------------\n"; // linea referencia
         cout << "No hay reparaciones asignadas a ese tecnico.\n";
     }
     else{
         cout << "Total reparaciones: " << contador << endl;
+        cout << "------------------------------------------------\n"; // linea referencia
     }
 }

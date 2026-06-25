@@ -1,4 +1,5 @@
 #pragma once
+#include "rlutil.h"
 #include "ReparacionArchivo.h"
 #include "EquipoArchivo.h"
 #include "ClienteArchivo.h"
